@@ -1,0 +1,78 @@
+@import "../styles/mixin.scss";
+#main{
+  padding-bottom: 1.5rem;
+}
+.job_content{
+  padding: 3% 3% 0 3%;
+}
+.job_lists li{
+  padding: 3%;
+  background: #fff;
+  +li{
+    margin-top: 3%;
+  }
+  a {
+    display: block;
+    color: #808080;
+    h4{
+      font-weight: 100;
+      @include sc(.4rem,#000);
+      span.inforight{
+        color: #e4393c;
+      }
+    }
+    p{
+      margin-top: .15rem;
+      [class^="icon-"], [class*=" icon-"]{
+        margin-right: .1rem;
+      }
+    }
+    p.title:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #808080;
+        width: 100%;
+        height: 1px;
+        -webkit-transform: scaleY(0.3);
+        transform: scaleY(0.3);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    p.title{
+      position: relative;
+      padding-top: .15rem;
+      span{
+        @include sc(.3rem,$vuecolor);
+        height: .8rem;
+        line-height: .8rem;
+        margin-left: .3rem;
+        position: relative;
+        +span:before{
+          position: absolute;
+          display: table;
+          content: "";
+          width: 1px;
+          height: .3rem;
+          background: $vuecolor;
+          left:-.15rem;
+          top: .24rem;
+        }
+      }
+    }
+    img{
+      width: .8rem;
+      height: .8rem;
+      border-radius: 50%;
+    }
+  }
+}
+.backTop{
+  position: fixed;
+  right: 10px;
+  bottom: 1.4rem;
+  width: .6rem;
+  z-index: 100;
+  cursor: pointer;
+}

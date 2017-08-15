@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?ujio0e');
+  src:  url('fonts/icomoon.eot?ujio0e#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ujio0e') format('truetype'),
+    url('fonts/icomoon.woff?ujio0e') format('woff'),
+    url('fonts/icomoon.svg?ujio0e#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-close:before {
+  content: "\e900";
+}
+.icon-company:before {
+  content: "\e901";
+}
+.icon-down:before {
+  content: "\e902";
+}
+.icon-earth:before {
+  content: "\e903";
+}
+.icon-education:before {
+  content: "\e904";
+}
+.icon-left:before {
+  content: "\e905";
+}
+.icon-love:before {
+  content: "\e906";
+}
+.icon-me:before {
+  content: "\e907";
+}
+.icon-message:before {
+  content: "\e908";
+}
+.icon-position:before {
+  content: "\e909";
+}
+.icon-right:before {
+  content: "\e90a";
+}
+.icon-seniority:before {
+  content: "\e90b";
+}
+.icon-top:before {
+  content: "\e90c";
+}
+
