@@ -28,6 +28,7 @@
 </template>
 
 <script>
+    import axios from "axios"
     export default {
         data () {
             return {
@@ -41,6 +42,7 @@
         created(){
             this.$nextTick(function () {
                 // this.getData();
+                this.loadData();
             });
         },
         mounted(){
@@ -82,6 +84,15 @@
                     //error callback
                     console.log(response)
                 });
+            },
+            loadData(){
+                axios.get('/static/data/joblist.json')
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
             }
         }
     }
