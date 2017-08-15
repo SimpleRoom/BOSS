@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import login from '@/components/login/login'
+// import defaultlogin from '@/components/login/defaultlogin'
 
 
 //1 、组件异步加载，只有在组件被访问的时候才会加载，提高了性能
