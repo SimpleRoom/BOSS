@@ -22,6 +22,9 @@
                 isloading:false
             }
         },
+        computed:{
+
+        },
         methods:{
             showitem:function(){
               //console.log('aaa');
@@ -30,7 +33,12 @@
                 console.log(el)
             }
         },
+        // 創建后挂载到root之后调用该钩子函数
         mounted(){
+
+        },
+        // 该实例被创建还没挂载root之前，ajax可以在这里
+        created(){
 
         }
     }

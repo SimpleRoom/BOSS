@@ -39,15 +39,6 @@
                 jobs: []
             }
         },
-        created(){
-            this.$nextTick(function () {
-                // this.getData();
-                this.loadData();
-            });
-        },
-        mounted(){
-            window.addEventListener("scroll", this.willscroll);
-        },
         computed: {},
         methods: {
             willscroll(){
@@ -75,25 +66,28 @@
                     if ((d.scrollTop + b.scrollTop) === 0) clearInterval(this.timer, window.onscroll = this.willscroll);
                 }, 10);
             },
-            getData(){
-                this.$http.get(this.apiurl).then(response => {
-                    if(response.body.code==0){
-                        this.jobs=response.body.main;
-                    }
-                }).catch(response => {
-                    //error callback
-                    console.log(response)
-                });
-            },
             loadData(){
-                axios.get('/static/data/joblist.json')
-                    .then(function (response) {
+                let _this=this;
+                this.$http.get('/static/data/joblist.json')
+                    .then(response => {
+                        if(response.data.code=="0"){
+                            _this.jobs=response.data.main;
+                        }
                         console.log(response);
                     })
-                    .catch(function (error) {
+                    .catch(error => {
                         console.log(error);
                     });
             }
+        },
+        mounted(){
+            window.addEventListener("scroll", this.willscroll);
+        },
+        created(){
+            this.$nextTick(function () {
+                // this.getData();
+                this.loadData();
+            });
         }
     }
 

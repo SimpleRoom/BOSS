@@ -1,6 +1,14 @@
 @import "../styles/mixin.scss";
 #main{
   padding-bottom: 1.5rem;
+  background: #E9EFEF;
+}
+.same_title{
+  height: 1rem;
+  line-height: 1rem;
+  background:$vuecolor;
+  color: #fff;
+  text-align: center;
 }
 .job_content{
   padding: 3% 3% 0 3%;
@@ -25,6 +33,10 @@
       margin-top: .15rem;
       [class^="icon-"], [class*=" icon-"]{
         margin-right: .1rem;
+        margin-left: .3rem;
+      }
+      span:nth-child(1){
+        margin-left: 0;
       }
     }
     p.title:before{
@@ -44,7 +56,7 @@
       position: relative;
       padding-top: .15rem;
       span{
-        @include sc(.3rem,$vuecolor);
+        @include sc(.4rem,$vuecolor);
         height: .8rem;
         line-height: .8rem;
         margin-left: .3rem;
