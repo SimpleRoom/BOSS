@@ -9,6 +9,7 @@ const home = resolve => require(['@/components/common/home'], resolve)
 const joblist = resolve => require(['@/components/job/joblist'], resolve)
 const jobdetial = resolve => require(['@/components/job/jobdetial'], resolve)
 const company = resolve => require(['@/components/company/company'], resolve)
+const comDetail = resolve => require(['@/components/company/comDetail'], resolve)
 const message = resolve => require(['@/components/message/message'], resolve)
 const aboutme = resolve => require(['@/components/aboutme/myinfo'], resolve)
 
@@ -55,6 +56,11 @@ export default new Router({
         path:"/detial/:jobId",
         name:"detial",
         component:jobdetial
+      },
+      {
+      	path:"/comdetail/:id",
+      	name:"comDetail",
+      	component:comDetail
       }
   ]
 })

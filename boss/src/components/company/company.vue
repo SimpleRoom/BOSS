@@ -1,19 +1,22 @@
 <template>
   <div class="company-list">
-    <div class="head clear">
-    	公司
-    	<div class="right"><span class="icon-earth"></span></div>
-    </div>
-    <div class="head-tab">
-    	<ul class="clear">
-    		<li>融资<span class="icon-down"></span></li>
-    		<li>规模<span class="icon-down"></span></li>
-    		<li>行业<span class="icon-down"></span></li>
-    	</ul>
+  	<div class="top">
+	    <div class="head clear">
+	    	公司
+	    	<div class="right"><span class="icon-earth"></span></div>
+	    </div>
+	    <div class="head-tab">
+	    	<ul class="clear">
+	    		<li v-for="(item,index) in titleData" @click="tabChange(index)">{{item.title}}<span class="icon-down"></span></li>
+	    	</ul>
+
+	    	 <tableView :tabData="tabData1" @hide="hide" v-if="showHide"></tableView>
+
+	    </div>
     </div>
     <div class="content">
     	<ul>
-    		<li class="clear" v-for="item in InfoData" :id="item.id">
+    		<router-link tag="li" class="clear" v-for="item in InfoData" :key="item.id" :to="{path : /comdetail/+item.id}">
     			<div class="right pull-left">
     				<img :src="item.comp_pic" alt="" />
     			</div>
@@ -23,18 +26,35 @@
     				<p><span>{{item.comp_nature}}</span><span>|</span><span>不需要融资</span><span>|</span><span>{{item.comp_people}}</span></p>
     				<div>热招:<span style="color: #76D5CF;">{{item.hot_pos_name}}</span>等<span>{{item.hot_pos_no}}</span>个职位<span class="icon-right pull-right"></span></div>
     			</div>
-    		</li>
+    		</router-link>
     	</ul>
     </div>
   </div>
 </template>
 
 <script>
+	import tableView from './table.vue'
 export default {
   name: 'hello',
+  components:{
+  	tableView
+  },
   data () {
     return {
-      InfoData:[]
+      InfoData:[],
+      titleData:[
+      	{"title":"融资"},
+      	{"title":"规模"},
+      	{"title":"行业"},
+      	
+      ],
+      tabData:[
+      	["全部","未融资","天使轮","A轮","B轮","C轮","D轮及以上","已上市","不需要融资"],
+      	["全部","0-20人","20-99人","100-499人","500-999人","1000-9999人","10000以上"],
+      	["全部","非互联网行业","健康医疗","生活服务","旅游","金融","信息安全","广告营销","数据服务","智能硬件","文化娱乐","网络招聘","分类信息","电子商务","企业服务","移动互联网","社交网络","教育培训","游戏","O2O","互联网","媒体","IT软件"]
+      ],
+      tabData1:[],
+      showHide:false
     }
   },
   watch:{
@@ -45,13 +65,21 @@ export default {
   },
   methods:{
 		fenchData(){
-			var _this=this;
-			this.$http.get('../../../static/data/joblist.json').then(function(res){
+			const _this=this;
+			this.$http.get('/static/data/joblist.json').then((res)=>{
 				if(res.data.code==0){
 					_this.InfoData=res.data.company;
 					console.log(_this.InfoData)
 				}
 			})
+		},
+		tabChange(index){
+//			this.showHide=true;
+			this.tabData1=this.tabData[index];
+			this.showHide=true;
+		},
+		hide(){
+			this.showHide=false;
 		}
   },
   // 創建后挂载到root之后调用该钩子函数
@@ -70,6 +98,11 @@ export default {
 	.company-list{
 		background: #E9EFEF;
 	}
+	.top{
+		position: fixed;
+		width: 100%;
+		z-index: 999;
+	}
 	.head{
 		font-size: 0.481481rem;
 		padding: 0.37037rem 0;
@@ -87,6 +120,7 @@ export default {
 	.head-tab{
 		background: #fff;
 		color: #8D8D8D;
+		position: relative;
 		ul{
 			list-style: none;
 			padding: 0.37037rem 0;
@@ -103,7 +137,7 @@ export default {
 		}
 	}
 	.content{
-		margin: 0.185185rem 0.185185rem 0 0.185185rem;
+		padding: 2.705rem 0.185185rem 0 0.185185rem;
 		ul{
 			list-style: none;
 			li{
@@ -155,5 +189,14 @@ export default {
 				}
 			}
 		}
+	}
+	
+	/*动画效果*/
+	.slidedown-enter,.slidedown-leave-active{
+		opacity: 0;
+		transform: translate3d(0,0,0);
+	}
+	.slidedown-enter-active,.slidedown-leave-active{
+		transition: all 0.5s ease-in;
 	}
 </style>

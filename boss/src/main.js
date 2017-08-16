@@ -14,6 +14,10 @@ import "./styles/base.scss"
 
 Vue.prototype.$http = axios  //其他页面在使用axios的时候直接  this.$http就可以了
 
+//使用mintUI插件
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use(MintUI)
 
 
 Vue.config.productionTip = false
