@@ -75,7 +75,7 @@
     }
     .navbar a{
       color: #808080;
-      padding:.1rem 0;
+      padding:.18rem 0;
       transition: all .5s;
       text-align: center;
       span{

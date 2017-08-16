@@ -22,8 +22,7 @@
                 </li>
             </ul>
         </div>
-        <img v-show="willshow" @click="gotop" src="/static/images/backTop.png"
-             class="backTop" alt="">
+        <img v-show="willshow" @click="gotop" src="/static/images/backTop.png" class="backTop" alt="">
     </div>
 </template>
 
