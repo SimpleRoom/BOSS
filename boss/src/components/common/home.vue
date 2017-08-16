@@ -47,12 +47,6 @@
 
 <style lang="scss" scoped>
     @import "../../styles/mixin.scss";
-    /*#home{*/
-      /*position: relative;*/
-      /*width: 100%;*/
-      /*padding-bottom: 1.5rem;*/
-      /*background: #E6EFED;*/
-    /*}*/
     .navbar{
       width: 100%;
       position: fixed;

@@ -22,7 +22,7 @@
         <div class="job_content" id="jobcontent">
             <ul class="job_lists">
                 <li v-for="job in jobs">
-                    <router-link to="detail">
+                    <router-link @click="changeDetialId(job)" :to="{ name: 'detial', params: { jobId: job.id }}">
                         <h4 class="clear">{{job.need_job}}<span class="inforight">{{job.job_money}}</span>
                         </h4>
                         <p class="clear"><span></span>{{job.conmpany}}</p>
@@ -53,7 +53,8 @@
                 timer: null,
                 mainscroll: null,
                 apiurl: "/static/data/joblist.json",
-                jobs: []
+                jobs: [],
+                jobId:""
             }
         },
         computed: {},
