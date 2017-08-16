@@ -3,13 +3,7 @@
   padding-bottom: 1.8rem;
   background: #E9EFEF;
 }
-.same_title{
-  height: 1rem;
-  line-height: 1rem;
-  background:$vuecolor;
-  color: #fff;
-  text-align: center;
-}
+
 .job_content{
   padding: 3% 3% 0 3%;
 }
@@ -87,4 +81,49 @@
   width: .6rem;
   z-index: 100;
   cursor: pointer;
+}
+// .job_header
+
+.job_header{
+  padding: 0.37037rem 0;
+  background: $vuecolor;
+  .job_header_icon{
+    margin-right: .3rem;
+    position: relative;
+    overflow: hidden;
+    span{
+      @include sc(.48rem,#fff);
+      float: left;
+      margin-left: .6rem;
+    }
+  }
+  .job_header_icon b{
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: .48rem;
+    background: #fff;
+    margin: 0 .15rem;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1.2rem;
+  }
+}
+.job_header_left{
+  float: left;
+  color: #FFF;
+  padding-left: .4rem;
+  font-size: .4rem;
+  span+span{
+    margin-left: .3rem;
+  }
+}
+.job_nav{
+  background: #fff;
+  padding: 0.37037rem 0;
+}
+.job_nav li{
+  text-align: center;
+  color: #8D8D8D;
+  border-right: 1px solid #E5E5E5;
 }

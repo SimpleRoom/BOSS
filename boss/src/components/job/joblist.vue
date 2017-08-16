@@ -1,6 +1,24 @@
 <template>
     <div id="main">
-        <h3 class="same_title">主要职位介绍</h3>
+        <div class="job_header clear">
+            <div class="job_header_left">
+                <span>web前端</span>
+                <span>HTML5</span>
+            </div>
+            <div class="inforight job_header_icon">
+                <span><i class="iconfont icon-jiahao"></i></span>
+                <b></b>
+                <span><i class="iconfont icon-sousuo"></i></span>
+            </div>
+        </div>
+        <div class="job_nav">
+            <ul class="flex_parent">
+                <li class="flex_child">推荐<span class="icon-down"></span></li>
+                <li class="flex_child">上海<span class="icon-down"></span></li>
+                <li class="flex_child">公司<span class="icon-down"></span></li>
+                <li class="flex_child">要求<span class="icon-down"></span></li>
+            </ul>
+        </div>
         <div class="job_content" id="jobcontent">
             <ul class="job_lists">
                 <li v-for="job in jobs">

@@ -96,6 +96,8 @@
 
 .icon-qian:before { content: "\e605"; }
 
+.icon-jiahao:before { content: "\e665"; }
+
 .icon-yinsi:before { content: "\e62a"; }
 
 .icon-tongzhi:before { content: "\e60e"; }
@@ -112,7 +114,7 @@
 
 .icon-jianli:before { content: "\e707"; }
 
-.icon-message:before { content: "\e6ad"; }
+.icon-xiaoxi:before { content: "\e6ad"; }
 
 .icon-hot:before { content: "\e701"; }
 
