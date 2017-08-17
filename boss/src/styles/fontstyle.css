@@ -110,6 +110,8 @@
 
 .icon-correct1:before { content: "\e604"; }
 
+.icon-loading:before { content: "\e648"; }
+
 .icon-ditie:before { content: "\e606"; }
 
 .icon-jianli:before { content: "\e707"; }

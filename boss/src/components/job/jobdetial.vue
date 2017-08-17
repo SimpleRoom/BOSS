@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h3>{{tempInfo}}</h3>
+    <h3>{{id}}</h3>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
   methods:{
     fetchData(){
       this.id=this.$route.params.jobId;
-      console.log();
+      console.log(this.id);
     }
   },
   // 創建后挂载到root之后调用该钩子函数

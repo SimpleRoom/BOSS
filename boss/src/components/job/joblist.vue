@@ -19,8 +19,9 @@
                 <li class="flex_child">要求<span class="icon-down"></span></li>
             </ul>
         </div>
-        <div class="job_content" id="jobcontent">
-            <ul class="job_lists">
+        <!--列表-->
+        <div class="job_content" id="jobcontent" ref="wrapper">
+            <ul class="page-infinite-list job_lists" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="50">
                 <li v-for="job in jobs">
                     <router-link @click="changeDetialId(job)" :to="{ name: 'detial', params: { jobId: job.id }}">
                         <h4 class="clear">{{job.need_job}}<span class="inforight">{{job.job_money}}</span>
@@ -39,13 +40,16 @@
                     </router-link>
                 </li>
             </ul>
+            <div v-show="loading" class="page-infinite-loading">
+                <mt-spinner type="fading-circle"></mt-spinner>加载中...
+            </div>
         </div>
+        <!--上拉加載-->
         <img v-show="willshow" @click="gotop" src="/static/images/backTop.png" class="backTop" alt="">
     </div>
 </template>
 
 <script>
-    import axios from "axios"
     export default {
         data () {
             return {
@@ -54,7 +58,11 @@
                 mainscroll: null,
                 apiurl: "/static/data/joblist.json",
                 jobs: [],
-                jobId:""
+                temp:[],
+                jobId:"",
+                loading: false,
+                allLoaded: false,
+                wrapperHeight: 0
             }
         },
         computed: {},
@@ -90,16 +98,30 @@
                     .then(response => {
                         if(response.data.code=="0"){
                             _this.jobs=response.data.main;
+                            // 模擬每次下拉加載的10條假數據
+                            _this.temp=response.data.main;
+                            console.log(response.data);
                         }
-                        console.log(response);
                     })
                     .catch(error => {
                         console.log(error);
                     });
+            },
+            // 模擬無限下拉加載
+            loadMore() {
+                this.loading = true;
+                setTimeout(() => {
+                    this.jobs=this.jobs.concat(this.temp);
+                    this.loading = false;
+                    // console.log(this.jobs);
+                }, 2500);
             }
+            
         },
         mounted(){
             window.addEventListener("scroll", this.willscroll);
+            this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top;
+            // console.log(this.$refs.wrapper.getBoundingClientRect().top);
         },
         created(){
             this.$nextTick(function () {
@@ -113,4 +135,5 @@
 
 <style lang="scss" scoped>
     @import "../../styles/main.scss";
+    
 </style>
