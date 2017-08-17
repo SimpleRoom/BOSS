@@ -1,0 +1,31 @@
+@import "../styles/mixin.scss";
+.job_detial_header{
+    padding: 0.4rem 0;
+    background: $vuecolor;
+    position: relative;
+    h3{
+        text-align: center;
+        @include sc(.48rem,#fff);
+        font-weight: 100;
+    }
+    a{
+        position: absolute;
+        @include sc(.6rem,#fff);
+        left: .4rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .job_detial_icon{
+        position: absolute;
+        right: .4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        @include sc(.8rem,#fff);
+        .icon-aixin{
+            margin-right: .2rem;
+        }
+        .selected{
+            color: $red;
+        }
+    }
+}

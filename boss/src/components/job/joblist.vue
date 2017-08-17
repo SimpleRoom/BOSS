@@ -41,7 +41,7 @@
                 </li>
             </ul>
             <div v-show="loading" class="page-infinite-loading">
-                <mt-spinner type="fading-circle"></mt-spinner>加载中...
+                <mt-spinner type="fading-circle"></mt-spinner>客官您滑慢点...
             </div>
         </div>
         <!--上拉加載-->
@@ -105,7 +105,7 @@
                     })
                     .catch(error => {
                         console.log(error);
-                    });
+                });
             },
             // 模擬無限下拉加載
             loadMore() {

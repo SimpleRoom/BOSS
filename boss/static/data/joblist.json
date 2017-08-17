@@ -13,7 +13,64 @@
       "src":"/static/images/mayun.jpg",
       "seniority":"3-5年",
       "education":"本科",
-      "detial":"这里是详细的信息列表！！！！！！！"
+      "detial":{
+        "good_tips":["股票期权","带薪年假","不打卡","免费零食","交通便利","移动互联网","领导nice"],
+        "com_img":"/static/images/company1.jpg",
+        "com_msg":["互联网","B轮","20-99人"],
+        "com_address":{
+          "front_road":"黄浦区淮海路",
+          "front_detial":"上海市黄浦区淮海路中路98号大上海广场508"
+        },
+        "job_responsibility":["工作职责","*网站的前端架构与实现","*响应式设计与移动端优化"],
+        "job_requirements":[
+          "工作要求",
+          "*本科及以上学历，计算机、通讯等相关专业学历优先",
+          "*精通各种Web前端技术，包括HTML/CSS/Javascript等",
+          "*能根据设计稿独立完成网页的构建",
+          "*深刻理解Web标准，以及不同浏览器的代码兼容问题和解决方案",
+          "*熟悉一门非Web前端脚本的语言（如Java/PHP/C++）或Node.js，并有实践经验优先",
+          "*个性乐观开朗，逻辑性强，善于和各种背景的人合作"
+          ],
+        "job_skill":["angular","HTML5/CSS","Bootstrap"],
+        "team_info":{
+          "code":"1",
+          "team_msg":"由Payxx联合创始人Max-Li以及以前Google团队共同成立，专注于大数据领域和互联网公司。愿景是建成一流的健康平台，用设计和数据科技提升人民的健康水平，目前有4个App，针对海外市场，用户超过800万，B轮融资5亿。"
+        },
+        "your_compare":{
+          "total_count":"540",
+          "you_count":"25"
+        },
+        "boss_online":"刚刚活跃",
+        "recommend_jobs":[
+          {
+            "need_job":"高级前端开发",
+            "comp_name":"美团点评",
+            "comp_nature":"D轮及以上",
+            "comp_place":"上海",
+            "comp_seniority":"3-5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_1.jpg"
+          },
+          {
+            "need_job":"HTML5前端",
+            "comp_name":"饿了么",
+            "comp_nature":"B轮",
+            "comp_place":"上海",
+            "comp_seniority":"2-3年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_3.jpg"
+          },
+          {
+            "need_job":"REACT资深前端",
+            "comp_name":"饿了么",
+            "comp_nature":"C轮",
+            "comp_place":"上海",
+            "comp_seniority":"5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_4.jpg"
+          }
+        ]
+      }
     },
     {
       "id":"1",
@@ -26,7 +83,64 @@
       "src":"/static/images/huimei.jpg",
       "seniority":"2-3年",
       "education":"本科",
-      "detial":"这里是详细的信息列表！！！！！！！"
+      "detial":{
+        "good_tips":["股票期权","带薪年假","不打卡","免费零食","移动互联网","领导nice"],
+        "com_img":"/static/images/company2.jpg",
+        "com_msg":["互联网","B轮","50-199人"],
+        "com_address":{
+          "front_road":"闵行区莲花路",
+          "front_detial":"上海市闵行区莲花路时代华庭广场5楼108室"
+        },
+        "job_responsibility":["工作职责","*网站的前端架构与实现","*响应式设计与移动端优化"],
+        "job_requirements":[
+          "工作要求",
+          "1、本科及以上学历，计算机、通讯等相关专业学历优先",
+          "2、精通各种Web前端技术，包括HTML/CSS/Javascript等",
+          "3、能根据设计稿独立完成网页的构建",
+          "4、深刻理解Web标准，以及不同浏览器的代码兼容问题和解决方案",
+          "5、熟悉一门非Web前端脚本的语言（如Java/PHP/C++）或Node.js，并有实践经验优先",
+          "6、个性乐观开朗，逻辑性强，善于和各种背景的人合作"
+          ],
+        "job_skill":["vue","NG","HTML5/CSS3","Bootstrap"],
+        "team_info":{
+          "code":"0",
+          "team_msg":"由Payxx联合创始人Max-Li以及以前Google团队共同成立，专注于大数据领域和互联网公司。愿景是建成一流的健康平台，用设计和数据科技提升人民的健康水平，目前有4个App，针对海外市场，用户超过800万，B轮融资5亿。"
+        },
+        "your_compare":{
+          "total_count":"540",
+          "you_count":"25"
+        },
+        "boss_online":"1天前",
+        "recommend_jobs":[
+          {
+            "need_job":"高级前端开发",
+            "comp_name":"美团点评",
+            "comp_nature":"D轮及以上",
+            "comp_place":"上海",
+            "comp_seniority":"3-5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_1.jpg"
+          },
+          {
+            "need_job":"HTML5前端",
+            "comp_name":"饿了么",
+            "comp_nature":"B轮",
+            "comp_place":"上海",
+            "comp_seniority":"2-3年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_4.jpg"
+          },
+          {
+            "need_job":"REACT资深前端",
+            "comp_name":"饿了么",
+            "comp_nature":"C轮",
+            "comp_place":"上海",
+            "comp_seniority":"5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_5.jpg"
+          }
+        ]
+      }
     },
     {
       "id":"2",
@@ -38,7 +152,65 @@
       "title":"CTO",
       "src":"/static/images/xueyou.png",
       "seniority":"1-2年",
-      "education":"本科"
+      "education":"本科",
+      "detial":{
+        "good_tips":["股票期权","带薪年假","不打卡","免费零食","移动互联网","领导nice"],
+        "com_img":"/static/images/company3.jpg",
+        "com_msg":["移动互联网","A轮","100-999人"],
+        "com_address":{
+          "front_road":"松江区皮球路",
+          "front_detial":"上海市松江区皮球中路108号"
+        },
+        "job_responsibility":["主要责任","*网站的前端架构与实现","*响应式设计与移动端优化"],
+        "job_requirements":[
+          "工作要求",
+          "1.本科及以上学历，计算机、通讯等相关专业学历优先",
+          "2.精通各种Web前端技术，包括HTML/CSS/Javascript等",
+          "3.能根据设计稿独立完成网页的构建",
+          "4.深刻理解Web标准，以及不同浏览器的代码兼容问题和解决方案",
+          "5.熟悉一门非Web前端脚本的语言（如Java/PHP/C++）或Node.js，并有实践经验优先",
+          "6.个性乐观开朗，逻辑性强，善于和各种背景的人合作"
+          ],
+        "job_skill":["vue","NG","HTML5/CSS3","Bootstrap"],
+        "team_info":{
+          "code":"0",
+          "team_msg":"以前Google团队共同成立，专注于大数据领域和互联网公司。愿景是建成一流的健康平台，用设计和数据科技提升人民的健康水平，目前有4个App，针对海外市场，用户超过800万，B轮融资5亿。"
+        },
+        "your_compare":{
+          "total_count":"540",
+          "you_count":"25"
+        },
+        "boss_online":"1天前",
+        "recommend_jobs":[
+          {
+            "need_job":"高级前端开发",
+            "comp_name":"美团点评",
+            "comp_nature":"D轮及以上",
+            "comp_place":"上海",
+            "comp_seniority":"3-5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_1.jpg"
+          },
+          {
+            "need_job":"HTML5前端",
+            "comp_name":"饿了么",
+            "comp_nature":"B轮",
+            "comp_place":"上海",
+            "comp_seniority":"2-3年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_4.jpg"
+          },
+          {
+            "need_job":"REACT资深前端",
+            "comp_name":"饿了么",
+            "comp_nature":"C轮",
+            "comp_place":"上海",
+            "comp_seniority":"5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_5.jpg"
+          }
+        ]
+      }
     },
     {
       "id":"3",
@@ -50,7 +222,65 @@
       "title":"CEO",
       "src":"/static/images/huateng.jpg",
       "seniority":"3-5年",
-      "education":"本科"
+      "education":"本科",
+      "detial":{
+        "good_tips":["股票期权","带薪年假","不打卡","免费零食","移动互联网","领导nice"],
+        "com_img":"/static/images/company3.jpg",
+        "com_msg":["移动互联网","A轮","100-999人"],
+        "com_address":{
+          "front_road":"陆家嘴人民大道",
+          "front_detial":"陆家嘴人民大道民生广场88号203"
+        },
+        "job_responsibility":["主要责任","*网站的前端架构与实现","*响应式设计与移动端优化"],
+        "job_requirements":[
+          "工作要求",
+          "1.本科及以上学历，计算机、通讯等相关专业学历优先",
+          "2.精通各种Web前端技术，包括HTML/CSS/Javascript等",
+          "3.能根据设计稿独立完成网页的构建",
+          "4.深刻理解Web标准，以及不同浏览器的代码兼容问题和解决方案",
+          "5.熟悉一门非Web前端脚本的语言（如Java/PHP/C++）或Node.js，并有实践经验优先",
+          "6.个性乐观开朗，逻辑性强，善于和各种背景的人合作"
+          ],
+        "job_skill":["react","node","HTML5/CSS3","Bootstrap"],
+        "team_info":{
+          "code":"1",
+          "team_msg":"以前Google团队共同成立，专注于大数据领域和互联网公司。愿景是建成一流的健康平台，用设计和数据科技提升人民的健康水平，目前有4个App，针对海外市场，用户超过800万，B轮融资5亿。"
+        },
+        "your_compare":{
+          "total_count":"540",
+          "you_count":"25"
+        },
+        "boss_online":"3小时前活跃",
+        "recommend_jobs":[
+          {
+            "need_job":"高级前端开发",
+            "comp_name":"美团点评",
+            "comp_nature":"D轮及以上",
+            "comp_place":"上海",
+            "comp_seniority":"3-5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_1.jpg"
+          },
+          {
+            "need_job":"HTML5前端",
+            "comp_name":"饿了么",
+            "comp_nature":"B轮",
+            "comp_place":"上海",
+            "comp_seniority":"2-3年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_4.jpg"
+          },
+          {
+            "need_job":"REACT资深前端",
+            "comp_name":"饿了么",
+            "comp_nature":"C轮",
+            "comp_place":"上海",
+            "comp_seniority":"5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_5.jpg"
+          }
+        ]
+      }
     },
     {
       "id":"4",
@@ -62,7 +292,65 @@
       "title":"CEO",
       "src":"/static/images/dehua.png",
       "seniority":"3-5年",
-      "education":"本科"
+      "education":"本科",
+      "detial":{
+        "good_tips":["股票期权","带薪年假","不打卡","免费零食","移动互联网","领导nice"],
+        "com_img":"/static/images/company3.jpg",
+        "com_msg":["移动互联网","A轮","100-999人"],
+        "com_address":{
+          "front_road":"嘉定区嘉定新城",
+          "front_detial":"嘉定区嘉定新城民生广场88号203"
+        },
+        "job_responsibility":["主要责任","*网站的前端架构与实现","*响应式设计与移动端优化"],
+        "job_requirements":[
+          "工作要求",
+          "*本科及以上学历，计算机、通讯等相关专业学历优先",
+          "*精通各种Web前端技术，包括HTML/CSS/Javascript等",
+          "*能根据设计稿独立完成网页的构建",
+          "*深刻理解Web标准，以及不同浏览器的代码兼容问题和解决方案",
+          "*熟悉一门非Web前端脚本的语言（如Java/PHP/C++）或Node.js，并有实践经验优先",
+          "*个性乐观开朗，逻辑性强，善于和各种背景的人合作"
+          ],
+        "job_skill":["react","node","HTML5/CSS3","Bootstrap"],
+        "team_info":{
+          "code":"1",
+          "team_msg":"以前Google团队共同成立，专注于大数据领域和互联网公司。愿景是建成一流的健康平台，用设计和数据科技提升人民的健康水平，目前有4个App，针对海外市场，用户超过800万，B轮融资5亿。"
+        },
+        "your_compare":{
+          "total_count":"540",
+          "you_count":"25"
+        },
+        "boss_online":"3小时前活跃",
+        "recommend_jobs":[
+          {
+            "need_job":"高级前端开发",
+            "comp_name":"美团点评",
+            "comp_nature":"D轮及以上",
+            "comp_place":"上海",
+            "comp_seniority":"3-5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_1.jpg"
+          },
+          {
+            "need_job":"HTML5前端",
+            "comp_name":"饿了么",
+            "comp_nature":"B轮",
+            "comp_place":"上海",
+            "comp_seniority":"2-3年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_4.jpg"
+          },
+          {
+            "need_job":"REACT资深前端",
+            "comp_name":"饿了么",
+            "comp_nature":"C轮",
+            "comp_place":"上海",
+            "comp_seniority":"5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_5.jpg"
+          }
+        ]
+      }
     },
     {
       "id":"5",
@@ -74,7 +362,65 @@
       "title":"CEO",
       "src":"/static/images/xingchi.png",
       "seniority":"3-5年",
-      "education":"本科"
+      "education":"本科",
+      "detial":{
+        "good_tips":["交通补贴","免费零食","股票期权","带薪年假","不打卡","移动互联网","领导nice"],
+        "com_img":"/static/images/company3.jpg",
+        "com_msg":["移动互联网","A轮","100-999人"],
+        "com_address":{
+          "front_road":"静安区长寿路",
+          "front_detial":"静安区长寿路民生广场88号203"
+        },
+        "job_responsibility":["主要责任","*网站的前端架构与实现","*响应式设计与移动端优化"],
+        "job_requirements":[
+          "工作要求",
+          "*本科及以上学历，计算机、通讯等相关专业学历优先",
+          "*精通各种Web前端技术，包括HTML/CSS/Javascript等",
+          "*能根据设计稿独立完成网页的构建",
+          "*深刻理解Web标准，以及不同浏览器的代码兼容问题和解决方案",
+          "*熟悉一门非Web前端脚本的语言（如Java/PHP/C++）或Node.js，并有实践经验优先",
+          "*个性乐观开朗，逻辑性强，善于和各种背景的人合作"
+          ],
+        "job_skill":["vue","node","HTML5/CSS3","webpack"],
+        "team_info":{
+          "code":"1",
+          "team_msg":"以前Google团队共同成立，专注于大数据领域和互联网公司。愿景是建成一流的健康平台，用设计和数据科技提升人民的健康水平，目前有4个App，针对海外市场，用户超过800万，B轮融资5亿。"
+        },
+        "your_compare":{
+          "total_count":"540",
+          "you_count":"25"
+        },
+        "boss_online":"3小时前活跃",
+        "recommend_jobs":[
+          {
+            "need_job":"大前端开发",
+            "comp_name":"美团点评",
+            "comp_nature":"D轮及以上",
+            "comp_place":"上海",
+            "comp_seniority":"3-5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_1.jpg"
+          },
+          {
+            "need_job":"HTML5前端",
+            "comp_name":"饿了么",
+            "comp_nature":"B轮",
+            "comp_place":"上海",
+            "comp_seniority":"2-3年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_4.jpg"
+          },
+          {
+            "need_job":"angular资深前端",
+            "comp_name":"饿了么",
+            "comp_nature":"C轮",
+            "comp_place":"上海",
+            "comp_seniority":"5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_5.jpg"
+          }
+        ]
+      }
     },
     {
       "id":"6",
@@ -86,7 +432,65 @@
       "title":"CTO",
       "src":"/static/images/xueyou.png",
       "seniority":"1-2年",
-      "education":"本科"
+      "education":"本科",
+      "detial":{
+        "good_tips":["交通补贴","免费零食","股票期权","带薪年假","不打卡","移动互联网","领导nice"],
+        "com_img":"/static/images/company3.jpg",
+        "com_msg":["移动互联网","A轮","100-999人"],
+        "com_address":{
+          "front_road":"静安区长寿路",
+          "front_detial":"静安区长寿路民生广场88号203"
+        },
+        "job_responsibility":["主要责任","*网站的前端架构与实现","*响应式设计与移动端优化"],
+        "job_requirements":[
+          "要求",
+          "*本科及以上学历，计算机、通讯等相关专业学历优先",
+          "*精通各种Web前端技术，包括HTML/CSS/Javascript等",
+          "*能根据设计稿独立完成网页的构建",
+          "*深刻理解Web标准，以及不同浏览器的代码兼容问题和解决方案",
+          "*熟悉一门非Web前端脚本的语言（如Java/PHP/C++）或Node.js，并有实践经验优先",
+          "*个性乐观开朗，逻辑性强，善于和各种背景的人合作"
+          ],
+        "job_skill":["vue","node","HTML5/CSS3","webpack"],
+        "team_info":{
+          "code":"1",
+          "team_msg":"以前Google团队共同成立，专注于大数据领域和互联网公司。愿景是建成一流的健康平台，用设计和数据科技提升人民的健康水平，目前有4个App，针对海外市场，用户超过800万，B轮融资5亿。"
+        },
+        "your_compare":{
+          "total_count":"540",
+          "you_count":"25"
+        },
+        "boss_online":"3小时前活跃",
+        "recommend_jobs":[
+          {
+            "need_job":"大前端开发",
+            "comp_name":"美团点评",
+            "comp_nature":"D轮及以上",
+            "comp_place":"上海",
+            "comp_seniority":"3-5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_1.jpg"
+          },
+          {
+            "need_job":"HTML5前端",
+            "comp_name":"饿了么",
+            "comp_nature":"B轮",
+            "comp_place":"上海",
+            "comp_seniority":"2-3年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_4.jpg"
+          },
+          {
+            "need_job":"angular资深前端",
+            "comp_name":"饿了么",
+            "comp_nature":"C轮",
+            "comp_place":"上海",
+            "comp_seniority":"5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_5.jpg"
+          }
+        ]
+      }
     },
     {
       "id":"7",
@@ -98,7 +502,65 @@
       "title":"CEO",
       "src":"/static/images/huateng.jpg",
       "seniority":"3-5年",
-      "education":"本科"
+      "education":"本科",
+      "detial":{
+        "good_tips":["交通补贴","免费零食","股票期权","带薪年假","不打卡","移动互联网","领导nice"],
+        "com_img":"/static/images/company3.jpg",
+        "com_msg":["移动互联网","A轮","100-999人"],
+        "com_address":{
+          "front_road":"陆家嘴",
+          "front_detial":"陆家嘴民生广场88号203"
+        },
+        "job_responsibility":["主要责任","*网站的前端架构与实现","*响应式设计与移动端优化"],
+        "job_requirements":[
+          "要求",
+          "*本科及以上学历，计算机、通讯等相关专业学历优先",
+          "*精通各种Web前端技术，包括HTML/CSS/Javascript等",
+          "*能根据设计稿独立完成网页的构建",
+          "*深刻理解Web标准，以及不同浏览器的代码兼容问题和解决方案",
+          "*熟悉一门非Web前端脚本的语言（如Java/PHP/C++）或Node.js，并有实践经验优先",
+          "*个性乐观开朗，逻辑性强，善于和各种背景的人合作"
+          ],
+        "job_skill":["vue","node","HTML5/CSS3","webpack"],
+        "team_info":{
+          "code":"1",
+          "team_msg":"以前Google团队共同成立，专注于大数据领域和互联网公司。愿景是建成一流的健康平台，用设计和数据科技提升人民的健康水平，目前有4个App，针对海外市场，用户超过800万，B轮融资5亿。"
+        },
+        "your_compare":{
+          "total_count":"540",
+          "you_count":"25"
+        },
+        "boss_online":"2天前活跃",
+        "recommend_jobs":[
+          {
+            "need_job":"大前端开发",
+            "comp_name":"美团点评",
+            "comp_nature":"D轮及以上",
+            "comp_place":"上海",
+            "comp_seniority":"3-5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_1.jpg"
+          },
+          {
+            "need_job":"HTML5前端",
+            "comp_name":"饿了么",
+            "comp_nature":"B轮",
+            "comp_place":"上海",
+            "comp_seniority":"2-3年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_4.jpg"
+          },
+          {
+            "need_job":"angular资深前端",
+            "comp_name":"饿了么",
+            "comp_nature":"C轮",
+            "comp_place":"上海",
+            "comp_seniority":"5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_5.jpg"
+          }
+        ]
+      }
     },
     {
       "id":"8",
@@ -110,7 +572,65 @@
       "title":"CEO",
       "src":"/static/images/dehua.png",
       "seniority":"3-5年",
-      "education":"本科"
+      "education":"本科",
+      "detial":{
+        "good_tips":["交通补贴","免费零食","股票期权","带薪年假","不打卡","移动互联网","领导nice"],
+        "com_img":"/static/images/company3.jpg",
+        "com_msg":["移动互联网","A轮","100-999人"],
+        "com_address":{
+          "front_road":"嘉定区太平路",
+          "front_detial":"嘉定区太平路民生广场88号203"
+        },
+        "job_responsibility":["主要责任","*网站的前端架构与实现","*响应式设计与移动端优化"],
+        "job_requirements":[
+          "要求",
+          "*本科及以上学历，计算机、通讯等相关专业学历优先",
+          "*精通各种Web前端技术，包括HTML/CSS/Javascript等",
+          "*能根据设计稿独立完成网页的构建",
+          "*深刻理解Web标准，以及不同浏览器的代码兼容问题和解决方案",
+          "*熟悉一门非Web前端脚本的语言（如Java/PHP/C++）或Node.js，并有实践经验优先",
+          "*个性乐观开朗，逻辑性强，善于和各种背景的人合作"
+          ],
+        "job_skill":["vue","node","HTML5/CSS3","webpack"],
+        "team_info":{
+          "code":"1",
+          "team_msg":"以前Google团队共同成立，专注于大数据领域和互联网公司。愿景是建成一流的健康平台，用设计和数据科技提升人民的健康水平，目前有4个App，针对海外市场，用户超过800万，B轮融资5亿。"
+        },
+        "your_compare":{
+          "total_count":"540",
+          "you_count":"25"
+        },
+        "boss_online":"3小时前活跃",
+        "recommend_jobs":[
+          {
+            "need_job":"大前端开发",
+            "comp_name":"美团点评",
+            "comp_nature":"D轮及以上",
+            "comp_place":"上海",
+            "comp_seniority":"3-5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_1.jpg"
+          },
+          {
+            "need_job":"HTML5前端",
+            "comp_name":"饿了么",
+            "comp_nature":"B轮",
+            "comp_place":"上海",
+            "comp_seniority":"2-3年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_4.jpg"
+          },
+          {
+            "need_job":"angular资深前端",
+            "comp_name":"饿了么",
+            "comp_nature":"C轮",
+            "comp_place":"上海",
+            "comp_seniority":"5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_5.jpg"
+          }
+        ]
+      }
     },
     {
       "id":"9",
@@ -122,7 +642,65 @@
       "title":"CEO",
       "src":"/static/images/xingchi.png",
       "seniority":"3-5年",
-      "education":"本科"
+      "education":"本科",
+      "detial":{
+        "good_tips":["交通补贴","免费零食","股票期权","带薪年假","不打卡","移动互联网","领导nice"],
+        "com_img":"/static/images/company3.jpg",
+        "com_msg":["移动互联网","A轮","100-999人"],
+        "com_address":{
+          "front_road":"静安区太平路",
+          "front_detial":"静安区太平路民生广场88号203"
+        },
+        "job_responsibility":["主要责任","*网站的前端架构与实现","*响应式设计与移动端优化"],
+        "job_requirements":[
+          "要求",
+          "*本科及以上学历，计算机、通讯等相关专业学历优先",
+          "*精通各种Web前端技术，包括HTML/CSS/Javascript等",
+          "*能根据设计稿独立完成网页的构建",
+          "*深刻理解Web标准，以及不同浏览器的代码兼容问题和解决方案",
+          "*熟悉一门非Web前端脚本的语言（如Java/PHP/C++）或Node.js，并有实践经验优先",
+          "*个性乐观开朗，逻辑性强，善于和各种背景的人合作"
+          ],
+        "job_skill":["vue","node","HTML5/CSS3","webpack"],
+        "team_info":{
+          "code":"1",
+          "team_msg":"以前Google团队共同成立，专注于大数据领域和互联网公司。愿景是建成一流的健康平台，用设计和数据科技提升人民的健康水平，目前有4个App，针对海外市场，用户超过800万，B轮融资5亿。"
+        },
+        "your_compare":{
+          "total_count":"540",
+          "you_count":"25"
+        },
+        "boss_online":"刚刚活跃",
+        "recommend_jobs":[
+          {
+            "need_job":"大前端开发",
+            "comp_name":"美团点评",
+            "comp_nature":"D轮及以上",
+            "comp_place":"上海",
+            "comp_seniority":"3-5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_1.jpg"
+          },
+          {
+            "need_job":"HTML5前端",
+            "comp_name":"饿了么",
+            "comp_nature":"B轮",
+            "comp_place":"上海",
+            "comp_seniority":"2-3年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_4.jpg"
+          },
+          {
+            "need_job":"angular资深前端",
+            "comp_name":"饿了么",
+            "comp_nature":"C轮",
+            "comp_place":"上海",
+            "comp_seniority":"5年",
+            "comp_edu":"本科",
+            "comp_img":"/static/images/logo_5.jpg"
+          }
+        ]
+      }
     }
   ],
   "company":[
