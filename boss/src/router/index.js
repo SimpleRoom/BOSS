@@ -11,6 +11,8 @@ const jobdetial = resolve => require(['@/components/job/jobdetial'], resolve)
 const company = resolve => require(['@/components/company/company'], resolve)
 const comDetail = resolve => require(['@/components/company/comDetail'], resolve)
 const message = resolve => require(['@/components/message/message'], resolve)
+const mesChat = resolve => require(['@/components/message/mesChat'], resolve)
+const mesInteract = resolve => require(['@/components/message/mesInteract'], resolve)
 const aboutme = resolve => require(['@/components/aboutme/myinfo'], resolve)
 
 
@@ -69,7 +71,19 @@ export default new Router({
             {
               path:"/message",
               name:"message",
-              component:message
+              component:message,
+              children:[
+                {
+                  path:'/mesChat',
+                  name:"mesChat",
+                  component:mesChat
+                },
+                {
+                  path:'/mesInteract',
+                  name:"mesInteract",
+                  component:mesInteract
+                }
+              ]
             },
             {
               path:"/aboutme",

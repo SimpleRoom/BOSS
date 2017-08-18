@@ -1,15 +1,33 @@
 <template>
   <div class="message-list">
-    <h3>沟通信息页面</h3>
+        <ul class="head_tab">
+            <router-link tag="li" to='/mesChat' v-for="(item,index) in messageNav" :key="item.index" :to="{path : item.route}">
+              {{item.title}}
+            </router-link>
+        </ul>
+        <div class="show_htab">
+            <router-view></router-view>
+        </div>
   </div>
 </template>
 
 <script>
+  import mesChat from './mesChat.vue'
+  import mesInteract from './mesInteract.vue'
 export default {
   name: 'hello',
+  components:{
+    mesChat,
+    mesInteract
+  },
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      messageData:'',
+      messageNav:[
+        {title:'聊天',route:'mesChat'},
+        {title:'互动',route:'mesInteract'}
+
+      ]
     }
   },
   watch:{
@@ -19,7 +37,15 @@ export default {
 
   },
   methods:{
-
+    fenchData(){
+      const _this=this;
+      this.$http.get('/static/data/message.json').then((res)=>{
+        if(res.data.code==0){
+          _this.messageData=res.data.chat;
+          console.log(_this.messageData)
+        }
+      })
+    },
   },
   // 創建后挂载到root之后调用该钩子函数
   mounted(){
@@ -33,6 +59,32 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-
+<style scoped>
+  .message-list .head_tab {
+    background: #53CAC3;
+    text-align: center;
+    padding: 0.25rem 0;
+  }
+  .message-list .head_tab li {
+    display: inline-block;
+    color: #fff;
+    font-size: 0.4rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid #fff;
+    border-radius: 0.125rem;
+    cursor: pointer;
+  }
+  .message-list .head_tab li:first-child {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .message-list .head_tab li:nth-child(2) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .message-list .head_tab li.router-link-active{
+    background: #fff;
+    color: #53CAC3;
+  }
 </style>
