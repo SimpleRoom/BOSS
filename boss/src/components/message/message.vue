@@ -1,7 +1,7 @@
 <template>
   <div class="message-list">
         <ul class="head_tab">
-            <router-link tag="li" to='/mesChat' v-for="(item,index) in messageNav" :key="item.index" :to="{path : item.route}">
+            <router-link tag="li" v-for="(item,index) in messageNav" :key="item.index" :to="{path : item.route}">
               {{item.title}}
             </router-link>
         </ul>
@@ -24,9 +24,8 @@ export default {
     return {
       messageData:'',
       messageNav:[
-        {title:'聊天',route:'mesChat'},
+        {title:'聊天',route:'message'},
         {title:'互动',route:'mesInteract'}
-
       ]
     }
   },
@@ -83,8 +82,9 @@ export default {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  .message-list .head_tab li.router-link-active{
+  .message-list .head_tab li.router-link-exact-active{
     background: #fff;
     color: #53CAC3;
   }
+
 </style>

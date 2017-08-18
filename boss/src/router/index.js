@@ -74,13 +74,13 @@ export default new Router({
               component:message,
               children:[
                 {
-                  path:'/mesChat',
+                  path:'',
                   name:"mesChat",
                   component:mesChat
                 },
                 {
                   path:'/mesInteract',
-                  name:"mesInteract",
+                  ame:"mesInteract",
                   component:mesInteract
                 }
               ]
