@@ -1,23 +1,26 @@
 <template>
     <div id="main">
-        <div class="job_header clear">
-            <div class="job_header_left">
-                <span>web前端</span>
-                <span>HTML5</span>
+        <!--固定的顶部-->
+        <div class="main_fixed_top">
+            <div class="job_header clear">
+                <div class="job_header_left">
+                    <span>web前端</span>
+                    <span>HTML5</span>
+                </div>
+                <div class="inforight job_header_icon">
+                    <span><i class="iconfont icon-jiahao"></i></span>
+                    <b></b>
+                    <span><i class="iconfont icon-sousuo"></i></span>
+                </div>
             </div>
-            <div class="inforight job_header_icon">
-                <span><i class="iconfont icon-jiahao"></i></span>
-                <b></b>
-                <span><i class="iconfont icon-sousuo"></i></span>
+            <div class="job_nav">
+                <ul class="flex_parent">
+                    <li class="flex_child">推荐<span class="icon-down"></span></li>
+                    <li class="flex_child">上海<span class="icon-down"></span></li>
+                    <li class="flex_child">公司<span class="icon-down"></span></li>
+                    <li class="flex_child">要求<span class="icon-down"></span></li>
+                </ul>
             </div>
-        </div>
-        <div class="job_nav">
-            <ul class="flex_parent">
-                <li class="flex_child">推荐<span class="icon-down"></span></li>
-                <li class="flex_child">上海<span class="icon-down"></span></li>
-                <li class="flex_child">公司<span class="icon-down"></span></li>
-                <li class="flex_child">要求<span class="icon-down"></span></li>
-            </ul>
         </div>
         <!--列表-->
         <div class="job_content" id="jobcontent" ref="wrapper">
@@ -56,7 +59,7 @@
                 willshow: false,
                 timer: null,
                 mainscroll: null,
-                apiurl: "/static/data/joblist.json",
+                apiUrl: "",
                 jobs: [],
                 temp:[],
                 jobId:"",
@@ -94,7 +97,7 @@
             },
             loadData(){
                 let _this=this;
-                this.$http.get('/static/data/joblist.json')
+                this.$http.get(_this.apiUrl)
                     .then(response => {
                         if(response.data.code=="0"){
                             _this.jobs=response.data.main;
@@ -115,6 +118,15 @@
                     this.loading = false;
                     // console.log(this.jobs);
                 }, 2500);
+            },
+            initApiUrl(){
+                // 线上
+                // let domain="https://"+window.location.host+"/";
+                // 本地
+                let domain="http://"+window.location.host+"/";
+                var str="static/data/joblist.json";
+                this.apiUrl=domain+str;
+                console.log(this.apiUrl);
             }
             
         },
@@ -124,6 +136,7 @@
             // console.log(this.$refs.wrapper.getBoundingClientRect().top);
         },
         created(){
+            this.initApiUrl();
             this.$nextTick(function () {
                 // this.getData();
                 this.loadData();
@@ -134,6 +147,5 @@
 </script>
 
 <style lang="scss" scoped>
-    @import "../../styles/main.scss";
-    
+    @import "../../styles/main.scss";  
 </style>

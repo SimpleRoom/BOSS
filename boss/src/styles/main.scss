@@ -1,9 +1,17 @@
 @import "../styles/mixin.scss";
 #main{
+  padding-top: 2.5rem;
   padding-bottom: 1.8rem;
   background: #E9EFEF;
+  position: relative;
 }
-
+.main_fixed_top{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
 .job_content{
   padding: 3% 3% 0 3%;
 }

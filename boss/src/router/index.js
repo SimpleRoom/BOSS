@@ -18,6 +18,32 @@ const aboutme = resolve => require(['@/components/aboutme/myinfo'], resolve)
 
 Vue.use(Router)
 
+// 路由返回定位滚动条位置，尝试不行！
+const scrollBehavior = (to, from, savedPosition) => {
+  if (savedPosition) {
+    // savedPosition is only available for popstate navigations.
+    return savedPosition
+  } else {
+    const position = {}
+    // new navigation.
+    // scroll to anchor by returning the selector
+    if (to.hash) {
+      position.selector = to.hash
+    }
+    // check if any matched route config has meta that requires scrolling to top
+    if (to.matched.some(m => m.meta.scrollToTop)) {
+      // cords will be used if no selector is provided,
+      // or if the selector didn't match any element.
+      position.x = 0
+      position.y = 0
+    }
+    // if the returned position is falsy or an empty object,
+    // will retain current scroll position.
+    // console.log(position)
+    return position
+  }
+}
+
 export default new Router({
   routes: [
       {
@@ -27,7 +53,7 @@ export default new Router({
       },
       {
           path:'/home',
-          name:"",
+          name:"home",
           component:home,
           children:[
             {
