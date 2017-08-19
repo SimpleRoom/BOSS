@@ -4,6 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+
+// 08-19.1
+// import store from './vuex/store'
+
 // rem
 import "./js/flexible"
 //导入字体样式
@@ -26,6 +30,8 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  // 0819.2
+  // store,
   template: '<App/>',
   components: { App }
 })

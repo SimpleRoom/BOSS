@@ -26,7 +26,7 @@
         <div class="job_content" id="jobcontent" ref="wrapper">
             <ul class="page-infinite-list job_lists" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="50">
                 <li v-for="job in jobs">
-                    <router-link @click="changeDetialId(job)" :to="{ name: 'detial', params: { jobId: job.id }}">
+                    <router-link @click="changeDetialId(job)" :to="{ name: 'detail', params: { jobId: job.id }}">
                         <h4 class="clear">{{job.need_job}}<span class="inforight">{{job.job_money}}</span>
                         </h4>
                         <p class="clear"><span></span>{{job.conmpany}}</p>
