@@ -47,7 +47,7 @@
 
 <script>
 export default {
-  name: 'hello',
+  name: 'detail',
   data () {
     return {
       apiurl: "/static/data/joblist.json",
@@ -96,11 +96,7 @@ export default {
   },
   methods:{
     toggleSelect(){
-      if(this.isSelected){
-        this.isSelected=false;
-      }else{
-        this.isSelected=true;
-      }
+      this.isSelected=!this.isSelected;
     },
     fecthIndex(){
       this.id=this.$route.params.jobId;

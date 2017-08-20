@@ -7,7 +7,7 @@ const test = resolve => require(['@/components/test'], resolve)
 //1 、组件异步加载，只有在组件被访问的时候才会加载，提高了性能
 const home = resolve => require(['@/components/common/home'], resolve)
 const joblist = resolve => require(['@/components/job/joblist'], resolve)
-const jobdetial = resolve => require(['@/components/job/jobdetial'], resolve)
+const jobdetail = resolve => require(['@/components/job/jobdetail'], resolve)
 const company = resolve => require(['@/components/company/company'], resolve)
 const comDetail = resolve => require(['@/components/company/comDetail'], resolve)
 const message = resolve => require(['@/components/message/message'], resolve)
@@ -55,7 +55,6 @@ export default new Router({
       },
       {
           path:'/home',
-          name:"home",
           component:home,
           children:[
             {
@@ -70,7 +69,6 @@ export default new Router({
             },
             {
               path:"/message",
-              name:"message",
               component:message,
               children:[
                 {
@@ -93,9 +91,9 @@ export default new Router({
           ]
       },
       {
-        path:"/detial/:jobId",
-        name:"detial",
-        component:jobdetial
+        path:"/detail/:jobId",
+        name:"detail",
+        component:jobdetail
       },
       {
       	path:"/comdetail/:id",
