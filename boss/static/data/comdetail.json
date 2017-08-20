@@ -14,9 +14,9 @@
       "comp_pic":"/static/images/logo_1.jpg",
       "detial":"这里是详细的信息列表！！！！！！！",
 	  "srclist":[
-	             { "src":"/static/com/company1.jpg"},
-	             { "src":"/static/com/company2.jpg"},
-	             { "src":"/static/com/company3.jpg"}
+	             { "src":"/static/images/com/company1.jpg"},
+	             { "src":"/static/images/com/company2.jpg"},
+	             { "src":"/static/images/com/company3.jpg"}
 	             ]
     },
     {
@@ -31,9 +31,9 @@
       "comp_pic":"/static/images/logo_2.jpg",
       "detial":"这里是详细的信息列表！！！！！！！",
 	  "srclist":[
-	             { "src":"/static/com/company12.jpg"},
-	             { "src":"/static/com/company9.jpg"},
-	             { "src":"/static/com/company10.jpg"}
+	             { "src":"/static/images/com/company12.jpg"},
+	             { "src":"/static/images/com/company9.jpg"},
+	             { "src":"/static/images/com/company10.jpg"}
 	             ]
     },
     {
@@ -48,9 +48,9 @@
       "comp_pic":"/static/images/logo_3.jpg",
       "detial":"这里是详细的信息列表！！！！！！！",
 	  "srclist":[
-	             { "src":"/static/com/company12.jpg"},
-	             { "src":"/static/com/company9.jpg"},
-	             { "src":"/static/com/company10.jpg"}
+	             { "src":"/static/images/com/company4.jpg"},
+	             { "src":"/static/images/com/company3.jpg"},
+	             { "src":"/static/images/com/company1.jpg"}
 	             ]
     },
     {
@@ -65,9 +65,9 @@
       "comp_pic":"/static/images/logo_4.jpg",
       "detial":"这里是详细的信息列表！！！！！！！",
 	  "srclist":[
-	             { "src":"/static/com/company2.jpg"},
-	             { "src":"/static/com/company3.jpg"},
-	             { "src":"/static/com/company4.jpg"}
+	             { "src":"/static/images/com/company8.jpg"},
+	             { "src":"/static/images/com/company3.jpg"},
+	             { "src":"/static/images/com/company4.jpg"}
 	             ]
     },
     {
@@ -82,9 +82,9 @@
       "comp_pic":"/static/images/logo_5.jpg",
       "detial":"这里是详细的信息列表！！！！！！！",
 	  "srclist":[
-	             { "src":"/static/com/company3.jpg"},
-	             { "src":"/static/com/company4.jpg"},
-	             { "src":"/static/com/company5.jpg"}
+	             { "src":"/static/images/com/company12.jpg"},
+	             { "src":"/static/images/com/company4.jpg"},
+	             { "src":"/static/images/com/company5.jpg"}
 	             ]
     },
     {
@@ -99,9 +99,9 @@
       "comp_pic":"/static/images/logo_1.jpg",
       "detial":"这里是详细的信息列表！！！！！！！",
 	  "srclist":[
-	             { "src":"/static/com/company8.jpg"},
-	             { "src":"/static/com/company7.jpg"},
-	             { "src":"/static/com/company10.jpg"}
+	             { "src":"/static/images/com/company8.jpg"},
+	             { "src":"/static/images/com/company7.jpg"},
+	             { "src":"/static/images/com/company10.jpg"}
 	             ]
     },
     {
@@ -116,9 +116,9 @@
       "comp_pic":"/static/images/logo_2.jpg",
       "detial":"这里是详细的信息列表！！！！！！！",
 	  "srclist":[
-	             { "src":"/static/com/company11.jpg"},
-	             { "src":"/static/com/company9.jpg"},
-	             { "src":"/static/com/company10.jpg"}
+	             { "src":"/static/images/com/company11.jpg"},
+	             { "src":"/static/images/com/company9.jpg"},
+	             { "src":"/static/images/com/company10.jpg"}
 	             ]
     },
     {
@@ -133,9 +133,9 @@
       "comp_pic":"/static/images/logo_3.jpg",
       "detial":"这里是详细的信息列表！！！！！！！",
 	  "srclist":[
-	             { "src":"/static/com/company12.jpg"},
-	             { "src":"/static/com/company9.jpg"},
-	             { "src":"/static/com/company10.jpg"}
+	             { "src":"/static/images/com/company12.jpg"},
+	             { "src":"/static/images/com/company9.jpg"},
+	             { "src":"/static/images/com/company10.jpg"}
 	             ]
     },
     {
@@ -150,9 +150,9 @@
       "comp_pic":"/static/images/logo_4.jpg",
       "detial":"这里是详细的信息列表！！！！！！！",
 	  "srclist":[
-	             { "src":"/static/com/company4.jpg"},
-	             { "src":"/static/com/company9.jpg"},
-	             { "src":"/static/com/company10.jpg"}
+	             { "src":"/static/images/com/company4.jpg"},
+	             { "src":"/static/images/com/company9.jpg"},
+	             { "src":"/static/images/com/company10.jpg"}
 	             ]
     },
     {
@@ -167,9 +167,9 @@
       "comp_pic":"/static/images/logo_5.jpg",
       "detial":"这里是详细的信息列表！！！！！！！",
 	  "srclist":[
-	             { "src":"/static/com/company9.jpg"},
-	             { "src":"/static/com/company9.jpg"},
-	             { "src":"/static/com/company10.jpg"}
+	             { "src":"/static/images/com/company9.jpg"},
+	             { "src":"/static/images/com/company9.jpg"},
+	             { "src":"/static/images/com/company10.jpg"}
 	             ]
     }
 ]

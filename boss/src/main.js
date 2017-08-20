@@ -19,6 +19,14 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
 
+//全局定义alert弹窗层
+window.alert=function(msg){
+	Vue.$toast({
+	  message: msg,
+//	  position: 'bottom',
+	  duration: 1000
+	})
+}
 
 Vue.config.productionTip = false
 

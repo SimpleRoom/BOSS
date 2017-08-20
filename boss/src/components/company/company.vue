@@ -10,7 +10,7 @@
 	    		<li v-for="(item,index) in titleData" @click="tabChange(index)">{{item.title}}<span class="icon-down"></span></li>
 	    	</ul>
 
-	    	 <tableView :tabData="tabData1" @hide="hide" v-if="showHide"></tableView>
+	    	 <tableView :tabData="tabData1" :tableIndex="tableIndex" :nowIndex="nowIndex" @hide="hide" @indexData="indexData" @btnSure="btnSure" v-if="showHide"></tableView>
 
 	    </div>
     </div>
@@ -42,6 +42,9 @@ export default {
   data () {
     return {
       InfoData:[],
+      nowIndex:[0],
+      indexSub:[[0],[0],[0]],
+      tableIndex:0,
       titleData:[
       	{"title":"融资"},
       	{"title":"规模"},
@@ -74,11 +77,33 @@ export default {
 			})
 		},
 		tabChange(index){
-//			this.showHide=true;
+			this.tableIndex=index;
+				console.log(this.tableIndex)
+			this.nowIndex=this.indexSub[this.tableIndex];
 			this.tabData1=this.tabData[index];
+			
+//			this.nowIndex=[0];
+			this.tableIndex=index;
 			this.showHide=true;
 		},
 		hide(){
+			this.showHide=false;
+		},
+		indexData(number){
+			this.nowIndex=[0];
+//			var title=this.titleData[this.tableIndex].title;
+//			this.titleData[this.tableIndex].title=title.replace(/[^\u4e00-\u9fa5]+/,"")+"("+number+")";
+		},
+		btnSure(number,indexData){
+			console.log(this.tableIndex)
+			this.indexSub[this.tableIndex]=indexData;
+			let title=this.titleData[this.tableIndex].title;
+			if(number!=0){
+				this.titleData[this.tableIndex].title=title.replace(/[^\u4e00-\u9fa5]+/,"")+"("+number+")";
+			}else{
+				this.titleData[this.tableIndex].title=title.replace(/[^\u4e00-\u9fa5]+/,"");
+			}
+			
 			this.showHide=false;
 		}
   },
