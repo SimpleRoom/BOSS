@@ -65,24 +65,48 @@
       <div class="team"><p class="team-info">{{team_info}}</p></div>
     </div>
     <!--竞争力分析-->
-    <div class="top_detial_bg">
+    <div class="top_detial_bg compare">
       <h3><i class="iconfont icon-gongsi"></i><span>您的竞争力分析</span><b>查看完整数据 <i class="icon-right"></i></b></h3>
+      <p>目前共有<span>***</span>个牛人沟通过该职位,您是第<span>***</span>个</p>
+      <p>您在当前竞聘者中综合竞争力排名第<span>***</span>名。</p>
     </div>
     <!--boss信息-->
     <div class="top_detial_bg">
       <h3><i class="icon-me"></i><span>BOSS</span></h3>
+      <div class="boss_info">
+        <div class="boss_img"><img :src="boss_img" alt=""></div>
+        <div class="boss_detail">
+          <p>{{boss_name}} <span>{{boss_online}}</span></p>
+          <p>{{boss_title}}</p>
+        </div>
+      </div>
     </div>
     <!--温馨提示-->
-    <div class="top_detial_bg">
+    <div class="top_detial_bg good_tips">
       <h3><i class="icon-message"></i><span>温馨提示</span></h3>
+      <p>该Boss承诺名下所有职位不向您收取费用，如有不实，请立即举报。</p>
     </div>
     <!--推荐职位-->
+    <h3 class="recommend">推荐职位</h3>
     <div class="top_detial_bg">
-      <h3><i class="iconfont icon-jianli"></i><span>职位详情</span></h3>
+      <ul class="recommend_list">
+        <li v-for="list in recommend_jobs">
+          <div class="reco_comp_img"><img :src="list.comp_img" alt=""></div>
+          <div class="reco_info">
+            <h3>{{list.need_job}}<span>{{job_money}}</span></h3>
+            <p><span>{{list.comp_name}}</span><span>{{list.comp_nature}}</span></p>
+            <p>
+              <span><i class="icon-position"></i>{{list.comp_place}}</span>
+              <span><i class="icon-seniority"></i>{{list.comp_seniority}}</span>
+              <span><i class="icon-education"></i>{{list.comp_edu}}</span>
+            </p>
+          </div>
+        </li>
+      </ul>
     </div>
     <!--立即沟通-->
-    <div class="top_detial_bg">
-      <h3><i class="iconfont icon-jianli"></i><span>职位详情</span></h3>
+    <div class="will_chat">
+      <router-link to="message" class="flex_child"><span>立即沟通</span></router-link>
     </div>
   </div>
 </template>
