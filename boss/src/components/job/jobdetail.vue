@@ -2,7 +2,7 @@
   <div class="job_detial">
     <div class="job_detial_header">
       <router-link to="/home" class="flex_child"><span class="icon-left"></span></router-link>
-      <h3>{{msg}}</h3>
+      <h3>{{scrollInfo}}</h3>
       <div class="job_detial_icon">
         <i class="iconfont icon-aixin" :class="{ selected: isSelected }" @click="toggleSelect"></i>
         <i class="iconfont icon-fenxiang1"></i>
@@ -116,8 +116,8 @@ export default {
   name: 'detail',
   data () {
     return {
+      scrollInfo:"职位详情",
       apiurl: "/static/data/joblist.json",
-      msg: '职位详情',
       tempInfo:"",
       id:"",
       isSelected:false,
@@ -163,6 +163,18 @@ export default {
 
   },
   methods:{
+    willscroll(){
+        //2.1 使用定时器，防止频繁滚动
+        if (window.scrollTime) {
+            window.clearTimeout(window.scrollTime);
+        }
+        //2.2 定时器
+        window.scrollTime = window.setTimeout(() => {
+            const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+            this.scrollInfo = (scrollTop > 80) ? this.need_job : "职位详情";
+            // console.log("滚动了");
+        }, 100);
+    },
     toggleMore(){
       this.isMore=!this.isMore;
     },
@@ -223,7 +235,7 @@ export default {
   },
   // 創建后挂载到root之后调用该钩子函数
   mounted(){
-
+    window.addEventListener("scroll", this.willscroll);
   },
   // 该实例被创建还没挂载root之前，ajax可以在这里
   created(){
