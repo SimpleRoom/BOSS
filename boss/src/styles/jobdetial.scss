@@ -1,11 +1,23 @@
 @import "../styles/mixin.scss";
 .job_detial{
     background: #E9EFEF;
+    position: relative;
+    padding-top: 1.3rem;
+    .job_detial_header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 1.6rem;
+        line-height: 1.6rem;
+        z-index: 50;
+    }
     // padding: .3rem 0 .4rem 0;
     .top_detial_bg{
         background: #fff;
+        padding:.25rem .4rem;
+        margin-top: .3rem;
         .top_detial{
-            padding: .3rem .4rem;
             h3{
                 span{
                     color: $red;
@@ -18,10 +30,8 @@
     font-size: .4rem;
 }
 .top_detial>p{
-    border-bottom: 1px solid #808080;
     margin-top: .3rem;
     overflow: hidden;
-    padding-bottom: .15rem;
 }
 .top_detial>p>span{
     float: left;
@@ -106,9 +116,7 @@
 }
 // 
 .job_detial_header{
-    padding: 0.4rem 0;
     background: $vuecolor;
-    position: relative;
     h3{
         text-align: center;
         @include sc(.48rem,#fff);
@@ -135,3 +143,94 @@
         }
     }
 }
+// goos_tips
+.goos_tips{
+    overflow: hidden;
+    border-bottom: 1px solid #808080;
+    padding: .2rem 0;
+    li{
+        float: left;
+        @include sc(.35rem,#999);
+        padding: 0 .15rem;
+        padding-right: .15rem;
+        position: relative;
+        height: .46rem;
+        line-height: .46rem;
+    }
+    li:after{
+        display: table;
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 80%;
+        background: #808080;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+    }
+}
+// top_detial_bg
+.top_detial_bg>h3{
+    @include sc(.55rem,$vuecolor);
+    font-weight: 100;
+    position: relative;
+    span{
+        color: #2F2F2F;
+        margin-left: .1rem;
+        font-size: .4rem;
+    }
+    b{
+        @include sc(.32rem,#999);
+        font-weight: 100;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.job_repon,
+.job_require{
+    overflow: hidden;
+}
+.job_repon>p,
+.job_require>p{
+    color: #999;
+    float: left;
+    width: 100%;
+}
+.toggle_more{
+    margin-top: .15rem;
+}
+.toggle_more p{
+    color: $vuecolor;
+    text-align: center;
+    font-weight: 100;
+}
+.toggle-up{
+    font-size: .2rem;
+    padding-top: .15rem;
+}
+.toggle-down{
+    font-size: .6rem;
+}
+.skills{
+    overflow:hidden;
+    li{
+        float: left;
+        color: #999;
+        margin-right: .15rem;
+    }
+}
+.team{
+    overflow: hidden;
+    p{
+        float: left;
+        color: #999;
+    }
+}
+.team-info{
+    // @include sc(.4rem,#999);
+}
+// .toggle_more p:nth-child(1){
+//     font-size: .4rem;
+// }

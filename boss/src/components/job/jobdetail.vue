@@ -17,6 +17,9 @@
           <span><i class="icon-seniority"></i>{{job_year}}</span>
           <span><i class="icon-education"></i>{{job_edu}}</span>
         </p>
+        <ul class="goos_tips">
+          <li v-for="tips in good_tips">{{tips}}</li>
+        </ul>
         <div class="comp_info">
           <div class="comp_img">
             <img :src="com_img" alt="">
@@ -36,12 +39,51 @@
       </div>
     </div>
     <!--职位详情-->
+    <div class="top_detial_bg">
+      <h3><i class="iconfont icon-jianli"></i><span>职位详情</span></h3>
+      <div class="job_repon">
+        <p v-for=" repon in job_respon">{{repon}}</p>
+      </div>
+      <div class="job_require" v-show="isMore">
+        <p v-for="requires in job_require">{{requires}}</p>
+      </div>
+      <div class="toggle_more">
+        <p v-if="isMore" class="toggle-up"><i class="icon-top" @click="toggleMore"></i></p>
+        <p v-else ="isMore" class="toggle-down"><i class="icon-down" @click="toggleMore"></i></p>
+      </div>
+    </div>
     <!--技能要求-->
+    <div class="top_detial_bg">
+      <h3><i class="iconfont icon-liwuhe"></i><span>技能要求</span></h3>
+      <ul class="skills">
+        <li v-for="skill in job_skills">{{skill}}</li>
+      </ul>
+    </div>
+    <!--团队信息-->
+    <div class="top_detial_bg" v-show="isTeam">
+      <h3><i class="icon-me"></i><span>团队介绍</span></h3>
+      <div class="team"><p class="team-info">{{team_info}}</p></div>
+    </div>
     <!--竞争力分析-->
+    <div class="top_detial_bg">
+      <h3><i class="iconfont icon-gongsi"></i><span>您的竞争力分析</span><b>查看完整数据 <i class="icon-right"></i></b></h3>
+    </div>
     <!--boss信息-->
+    <div class="top_detial_bg">
+      <h3><i class="icon-me"></i><span>BOSS</span></h3>
+    </div>
     <!--温馨提示-->
+    <div class="top_detial_bg">
+      <h3><i class="icon-message"></i><span>温馨提示</span></h3>
+    </div>
     <!--推荐职位-->
+    <div class="top_detial_bg">
+      <h3><i class="iconfont icon-jianli"></i><span>职位详情</span></h3>
+    </div>
     <!--立即沟通-->
+    <div class="top_detial_bg">
+      <h3><i class="iconfont icon-jianli"></i><span>职位详情</span></h3>
+    </div>
   </div>
 </template>
 
@@ -70,9 +112,11 @@ export default {
       com_msgarr:[],
       // 地址
       comp_address:"",
+      good_tips:[],
       // 工作职责
       job_respon:[],
       job_require:[],
+      isMore:false,
       job_skills:[],
       // 是否团队信息
       // team_info.code=0不显示
@@ -95,6 +139,9 @@ export default {
 
   },
   methods:{
+    toggleMore(){
+      this.isMore=!this.isMore;
+    },
     toggleSelect(){
       this.isSelected=!this.isSelected;
     },
@@ -123,6 +170,8 @@ export default {
                   _this.com_msgarr=_this.jobdetial.com_msg;
                   // 详细地址
                   _this.comp_address=_this.jobdetial.com_address;
+                  // 公司福利
+                  _this.good_tips=_this.jobdetial.good_tips;
                   // 职责
                   _this.job_respon=_this.jobdetial.job_responsibility;
                   _this.job_require=_this.jobdetial.job_requirements;

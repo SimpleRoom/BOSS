@@ -15,10 +15,11 @@
             </div>
             <div class="job_nav">
                 <ul class="flex_parent">
-                    <li class="flex_child">推荐<span class="icon-down"></span></li>
-                    <li class="flex_child">上海<span class="icon-down"></span></li>
-                    <li class="flex_child">公司<span class="icon-down"></span></li>
-                    <li class="flex_child">要求<span class="icon-down"></span></li>
+                    <li class="flex_child" v-for="(nav,index) in navlist"
+                     :class="{ selected: nav.isSelected }"
+                     @click="changeColor(nav)">
+                     {{nav.title}}<span class="icon-down"></span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -56,6 +57,24 @@
     export default {
         data () {
             return {
+                navlist:[
+                    {
+                        title:"推荐",
+                        isSelected:false,
+                    },
+                    {
+                        title:"上海",
+                        isSelected:false,
+                    },
+                    {
+                        title:"公司",
+                        isSelected:false,
+                    },
+                    {
+                        title:"要求",
+                        isSelected:false,
+                    }
+                ],
                 willshow: false,
                 timer: null,
                 mainscroll: null,
@@ -70,6 +89,17 @@
         },
         computed: {},
         methods: {
+            changeColor(nav){
+                let _this=this;
+                if(nav.isSelected){
+                    nav.isSelected=false;
+                }else{
+                    this.navlist.filter(value =>{
+                        value.isSelected=false;
+                    });
+                    nav.isSelected=true;
+                }
+            },
             willscroll(){
                 //2.1 使用定时器，防止频繁滚动
                 if (window.scrollTime) {
