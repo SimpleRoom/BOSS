@@ -3,8 +3,13 @@
 	<div class="head">
 		<a class="left" href="javascript:history.back(-1)" ><span class="icon-left"></span></a>
 		<mt-swipe :auto="2000" class="swiper">
+<<<<<<< HEAD
 		  <mt-swipe-item v-for="item in InfoData.srclist" :key="item.id"><img :src="item.src"/></mt-swipe-item>
 		</mt-swipe>
+=======
+		  <mt-swipe-item v-for="item in InfoData.srclist" ><img :src="item.src"/></mt-swipe-item>
+		</mt-swipe>
+>>>>>>> c930088cc129c5b86370ec2e394fb71f4ea8af5d
 	</div>
 	<div class="comInfo">
 		<div class="follow">

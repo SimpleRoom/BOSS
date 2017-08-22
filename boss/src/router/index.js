@@ -2,7 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import login from '@/components/login/login'
 // import defaultlogin from '@/components/login/defaultlogin'
-const test = resolve => require(['@/components/test'], resolve)
+
+// 测试滚动无限加载
+const test = resolve => require(['@/components/testInfiniteScroll'], resolve)
+// 测试vuex
+const testVuex = resolve => require(['@/components/testVuex/test'], resolve)
 
 //1 、组件异步加载，只有在组件被访问的时候才会加载，提高了性能
 const home = resolve => require(['@/components/common/home'], resolve)
@@ -19,8 +23,8 @@ const aboutme = resolve => require(['@/components/aboutme/myinfo'], resolve)
 
 
 Vue.use(Router)
-
-// 路由返回定位滚动条位置，尝试不行！
+// 3 如何保证在最顶部
+// 3.0 路由每次进入详情，默认滚动在最顶部
 const scrollBehavior = (to, from, savedPosition) => {
   if (savedPosition) {
     // savedPosition is only available for popstate navigations.
@@ -45,8 +49,13 @@ const scrollBehavior = (to, from, savedPosition) => {
     return position
   }
 }
+// 3.1 mode: 'history',
+// 3.2 scrollBehavior,
+// 3.3 meta: { scrollToTop: true }
 
 export default new Router({
+  mode: 'history',
+  scrollBehavior,
   routes: [
       {
           path:'/',
@@ -88,12 +97,18 @@ export default new Router({
               name:"me",
               component:aboutme
             },
+            {
+              path:"/testVuex",
+              name:"testVuex",
+              component:testVuex
+            },
           ]
       },
       {
         path:"/detail/:jobId",
         name:"detail",
-        component:jobdetail
+        component:jobdetail,
+        meta: { scrollToTop: true }
       },
       {
       	path:"/comdetail/:id",

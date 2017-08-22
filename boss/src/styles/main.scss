@@ -135,6 +135,9 @@
   color: #8D8D8D;
   border-right: 1px solid #E5E5E5;
 }
+.job_nav li.selected{
+  color: $vuecolor;
+}
 .page-infinite-loading{
    line-height:1rem;
    text-align:center;
