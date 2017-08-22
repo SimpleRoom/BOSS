@@ -191,7 +191,6 @@
         created(){
             this.initApiUrl();
             this.$nextTick(function () {
-                // this.getData();
                 this.loadData();
             });
         }

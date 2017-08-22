@@ -97,6 +97,11 @@ export default new Router({
               name:"me",
               component:aboutme
             },
+            {
+              path:"/testVuex",
+              name:"testVuex",
+              component:testVuex
+            },
           ]
       },
       {
