@@ -17,10 +17,16 @@
                 <ul class="flex_parent">
                     <li class="flex_child" v-for="(nav,index) in navlist"
                      :class="{ selected: nav.isSelected }"
-                     @click="changeColor(nav)">
+                     @click="changeColor(nav,index)">
                      {{nav.title}}<span class="icon-down"></span>
                     </li>
                 </ul>
+                <keep-alive>
+                    <slideTabComp v-if="slideIndex==0" :slideTemp="slideTemp"></slideTabComp>
+                    <selectCityComp v-else-if="slideIndex==1" :slideTemp="slideTemp"></selectCityComp>
+                    <compRequireComp v-else-if="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
+                    <compRequireComp v-else="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
+                </keep-alive>
             </div>
         </div>
         <!--列表-->
@@ -54,6 +60,9 @@
 </template>
 
 <script>
+    import slideTabComp from './slideTabComp.vue'
+    import selectCityComp from './selectCityComp.vue'
+    import compRequireComp from './compRequireComp.vue'
     export default {
         data () {
             return {
@@ -75,6 +84,14 @@
                         isSelected:false,
                     }
                 ],
+                slideIndex:"",
+                slideTemp:[],
+                slideData:[
+                    ["推荐","最新"],
+                    ["上海","北京","深圳"],
+                    ["公司","互联网","移动互联网"],
+                    ["本科","硕士","专科"]
+                ],
                 willshow: false,
                 timer: null,
                 mainscroll: null,
@@ -87,10 +104,15 @@
                 wrapperHeight: 0
             }
         },
+        components:{
+            slideTabComp,selectCityComp,compRequireComp
+        },
         computed: {},
         methods: {
-            changeColor(nav){
+            changeColor(nav,index){
                 let _this=this;
+                this.slideIndex=index;
+                this.slideTemp=this.slideData[index];
                 if(nav.isSelected){
                     nav.isSelected=false;
                 }else{
@@ -99,6 +121,7 @@
                     });
                     nav.isSelected=true;
                 }
+                // console.log(this.slideIndex);
             },
             willscroll(){
                 //2.1 使用定时器，防止频繁滚动
@@ -133,7 +156,7 @@
                             _this.jobs=response.data.main;
                             // 模擬每次下拉加載的10條假數據
                             _this.temp=response.data.main;
-                            console.log(response.data);
+                            // console.log(response.data);
                         }
                     })
                     .catch(error => {
@@ -156,7 +179,7 @@
                 let domain="http://"+window.location.host+"/";
                 var str="static/data/joblist.json";
                 this.apiUrl=domain+str;
-                console.log(this.apiUrl);
+                // console.log(this.apiUrl);
             }
             
         },

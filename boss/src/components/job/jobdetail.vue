@@ -163,6 +163,10 @@ export default {
 
   },
   methods:{
+    // 返回上一次路由
+    // goBack(){
+    //   this.$router.back();
+    // },
     willscroll(){
         //2.1 使用定时器，防止频繁滚动
         if (window.scrollTime) {
@@ -171,8 +175,8 @@ export default {
         //2.2 定时器
         window.scrollTime = window.setTimeout(() => {
             const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-            this.scrollInfo = (scrollTop > 80) ? this.need_job : "职位详情";
-            // console.log("滚动了");
+            this.scrollInfo = (scrollTop > 30) ? this.need_job : "职位详情";
+            // console.log(scrollTop);
         }, 100);
     },
     toggleMore(){
@@ -183,8 +187,8 @@ export default {
     },
     fecthIndex(){
       this.id=this.$route.params.jobId;
-      console.log(this.id);
       this.fetchData(this.id);
+      // console.log(this.id);
     },
     fetchData(index){
       let _this=this;
@@ -223,7 +227,7 @@ export default {
                   _this.boss_name=nowlist.ceo;
                   _this.boss_title=nowlist.title;
                   _this.boss_online=nowlist.detial.boss_online;
-                  console.log(_this.jobdetial);
+                  // console.log(_this.jobdetial);
                   // 推荐职位
                   _this.recommend_jobs=nowlist.detial.recommend_jobs;
               }
