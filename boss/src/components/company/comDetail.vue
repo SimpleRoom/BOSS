@@ -3,7 +3,7 @@
 	<div class="head">
 		<a class="left" href="javascript:history.back(-1)" ><span class="icon-left"></span></a>
 		<mt-swipe :auto="2000" class="swiper">
-		  <mt-swipe-item v-for="item in InfoData.srclist" ><img :src="item.src"/></mt-swipe-item>
+		  <mt-swipe-item v-for="item in InfoData.srclist" :key="item.id"><img :src="item.src"/></mt-swipe-item>
 		</mt-swipe>
 	</div>
 	<div class="comInfo">

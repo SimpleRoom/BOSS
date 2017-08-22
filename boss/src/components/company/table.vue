@@ -42,10 +42,25 @@
 		},
 		methods:{
 			hide(){
+				this.$emit("indexData");
 				this.$emit("hide");
 			},
 			checkActive(index){
 				return this.nowIndex.indexOf(index)!=-1;
+			},
+			judgeIndex(){
+				console.log(this.nowIndex)
+				this.btnsure="确认("+this.nowIndex.length+")";
+				let number=this.nowIndex.length;
+				if(number==1){
+					if(this.nowIndex[0]==0){
+						this.btnsure="确认";
+					}else{
+						this.btnsure="确认("+this.nowIndex.length+")";
+					}
+				}else{
+					this.btnsure="确认("+this.nowIndex.length+")";
+				}
 			},
 			addClass(index,ev){
 				if(index!=0){
@@ -83,12 +98,12 @@
 				
 			},
 			refesh(){
-				let number=this.nowIndex.length;
-				if(number=1){
-					if(this.nowIndex[0]==0){
-						number=0;
-					}
-				}
+//				let number=this.nowIndex.length;
+//				if(number=1){
+//					if(this.nowIndex[0]==0){
+//						number=0;
+//					}
+//				}
 				this.$emit("indexData");
 				this.btnsure="确认";
 			},

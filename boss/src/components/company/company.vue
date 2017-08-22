@@ -5,17 +5,17 @@
 	    	公司
 	    	<div class="right"><span class="icon-earth"></span></div>
 	    </div>
-	    <div class="head-tab">
+	    <div class="head-tab"  ref="wrapper">
 	    	<ul class="clear">
 	    		<li v-for="(item,index) in titleData" @click="tabChange(index)">{{item.title}}<span class="icon-down"></span></li>
 	    	</ul>
 
-	    	 <tableView :tabData="tabData1" :tableIndex="tableIndex" :nowIndex="nowIndex" @hide="hide" @indexData="indexData" @btnSure="btnSure" v-if="showHide"></tableView>
+	    	 <tableView ref="judge" :tabData="tabData1" :tableIndex="tableIndex" :nowIndex="nowIndex" @hide="hide" @indexData="indexData" @btnSure="btnSure" v-show="showHide"></tableView>
 
 	    </div>
     </div>
     <div class="content">
-    	<ul>
+    	<ul v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="50">
     		<router-link tag="li" class="clear" v-for="item in InfoData" :key="item.id" :to="{path : /comdetail/+item.id}">
     			<div class="right pull-left">
     				<img :src="item.comp_pic" alt="" />
@@ -28,6 +28,9 @@
     			</div>
     		</router-link>
     	</ul>
+    	<div v-show="loading" class="page-infinite-loading loadStyle">
+        		客官您滑慢点...
+    	</div>
     </div>
   </div>
 </template>
@@ -41,6 +44,8 @@ export default {
   },
   data () {
     return {
+    	loading:false,
+    	wrapperHeight:0,
       InfoData:[],
       nowIndex:[0],
       indexSub:[[0],[0],[0]],
@@ -67,35 +72,56 @@ export default {
 
   },
   methods:{
+  	//模拟无限下拉加载
+    loadMore() {
+        this.loading = true;
+        setTimeout(() => {
+            this.InfoData=this.InfoData.concat(this.InfoData);
+            this.loading = false;
+            // console.log(this.jobs);
+        }, 2500);
+    },
+    willscroll(){
+        //2.1 使用定时器，防止频繁滚动
+        if (window.scrollTime) {
+            window.clearTimeout(window.scrollTime);
+        }
+        //2.2 定时器
+        window.scrollTime = window.setTimeout(() => {
+            const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+            this.willshow = (scrollTop > 300) ? true : false;
+            // console.log("滚动了");
+        }, 100);
+    },
 		fenchData(){
 			const _this=this;
 			this.$http.get('/static/data/joblist.json').then((res)=>{
 				if(res.data.code==0){
 					_this.InfoData=res.data.company;
-					console.log(_this.InfoData)
 				}
 			})
 		},
 		tabChange(index){
-			this.tableIndex=index;
-				console.log(this.tableIndex)
-			this.nowIndex=this.indexSub[this.tableIndex];
-			this.tabData1=this.tabData[index];
-			
-//			this.nowIndex=[0];
-			this.tableIndex=index;
+			console.log(index)
+			console.log(this.indexSub)
 			this.showHide=true;
+			this.tableIndex=index;
+			this.tabData1=this.tabData[index];
+			this.nowIndex=this.indexSub[index];
+			
+			console.log(this.nowIndex)
+			//调用子组件的方法
+			this.$refs.judge.judgeIndex();
 		},
 		hide(){
 			this.showHide=false;
 		},
-		indexData(number){
+		indexData(){
 			this.nowIndex=[0];
 //			var title=this.titleData[this.tableIndex].title;
 //			this.titleData[this.tableIndex].title=title.replace(/[^\u4e00-\u9fa5]+/,"")+"("+number+")";
 		},
 		btnSure(number,indexData){
-			console.log(this.tableIndex)
 			this.indexSub[this.tableIndex]=indexData;
 			let title=this.titleData[this.tableIndex].title;
 			if(number!=0){
@@ -109,19 +135,26 @@ export default {
   },
   // 創建后挂载到root之后调用该钩子函数
   mounted(){
-		this.fenchData();
+		window.addEventListener("scroll", this.willscroll);
+    this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top;
   },
   // 该实例被创建还没挂载root之前，ajax可以在这里
   created(){
-
+  	this.fenchData();
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+		.loadStyle{
+			text-align: center;
+			color: rgb(118, 213, 207);
+			font-size: 0.48rem;
+		}
 	.company-list{
 		background: #E9EFEF;
+   /* padding-bottom: 1.8rem; */
 	}
 	.top{
 		position: fixed;
@@ -162,7 +195,7 @@ export default {
 		}
 	}
 	.content{
-		padding: 2.705rem 0.185185rem 0 0.185185rem;
+		padding: 2.9rem 0.185185rem 1.8rem 0.185185rem;
 		ul{
 			list-style: none;
 			li{
