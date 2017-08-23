@@ -1,0 +1,34 @@
+@import "../styles/mixin.scss";
+.slide_one{
+    background: #E9EFEF;
+    padding: .4rem .6rem;
+    li{
+        line-height: .65rem;
+        color: #8D8D8D;
+        overflow: hidden;
+        i{
+            margin-left: .15rem;
+        }
+    }
+    .selected{
+        color: $vuecolor;
+    }
+}
+.slide_one li span,
+.slide_one li i{
+    float: left;
+    line-height: .65rem;
+}
+.slide_one li i{
+    display: none;
+}
+.slide_one li.selected i{
+    display: block;
+}
+.mask{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+}

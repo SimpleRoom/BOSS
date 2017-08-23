@@ -22,10 +22,10 @@
                     </li>
                 </ul>
                 <keep-alive>
-                    <slideTabComp v-if="slideIndex==0" :slideTemp="slideTemp"></slideTabComp>
-                    <selectCityComp v-else-if="slideIndex==1" :slideTemp="slideTemp"></selectCityComp>
-                    <compRequireComp v-else-if="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
-                    <compRequireComp v-else="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
+                    <slideTabComp v-show="isShowSlide" @toParent="toParent" @hide="hide" v-if="slideIndex==0" :slideTemp="slideTemp"></slideTabComp>
+                    <selectCityComp v-show="isShowSlide" @hide="hide" v-else-if="slideIndex==1" :slideTemp="slideTemp"></selectCityComp>
+                    <compRequireComp v-show="isShowSlide" @hide="hide" v-else-if="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
+                    <compRequireComp v-show="isShowSlide" @hide="hide" v-else="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
                 </keep-alive>
             </div>
         </div>
@@ -85,9 +85,19 @@
                     }
                 ],
                 slideIndex:"",
+                isShowSlide:false,
                 slideTemp:[],
                 slideData:[
-                    ["推荐","最新"],
+                    [
+                        {
+                            "name":"推荐",
+                            "hadSelested":true
+                        },
+                        {
+                            "name":"公司",
+                            "hadSelested":false
+                        }
+                    ],
                     ["上海","北京","深圳"],
                     ["公司","互联网","移动互联网"],
                     ["本科","硕士","专科"]
@@ -109,16 +119,34 @@
         },
         computed: {},
         methods: {
+            // 接收子传来的选项
+            toParent(msg){
+                this.navlist[0].title=msg;
+                console.log(msg);
+            },
+            // 接收子传来的是否隐藏
+            hide(){
+                this.isShowSlide=false;
+            },
             changeColor(nav,index){
                 let _this=this;
                 this.slideIndex=index;
                 this.slideTemp=this.slideData[index];
+                // 切换是否显示下拉组件
+                this.isShowSlide=!this.isShowSlide;
+                // if(this.isShowSlide){
+                //     window.addEventListener("touchmove",function(event){
+                //         event.preventDefault();
+                //     });
+                // }
                 if(nav.isSelected){
                     nav.isSelected=false;
                 }else{
+                    // 先清空所有选中效果
                     this.navlist.filter(value =>{
                         value.isSelected=false;
                     });
+                    // 设置当前选中效果
                     nav.isSelected=true;
                 }
                 // console.log(this.slideIndex);
