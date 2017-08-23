@@ -59,6 +59,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .message-list {
+    background: #e9efef;
+    min-height: 16.667rem;
+  }
   .message-list .head_tab {
     background: #53CAC3;
     text-align: center;

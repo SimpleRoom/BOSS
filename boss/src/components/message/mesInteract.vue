@@ -1,5 +1,5 @@
 <template>
-  <div class="comdetail">
+  <div class="mesInteract">
     <h1>我是互动页面</h1>
   </div>
 </template>
