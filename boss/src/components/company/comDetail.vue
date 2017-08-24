@@ -27,7 +27,18 @@
 			</li>
 		</ol>
 		<div class="content">
-			
+			<div v-show="nowIndex==0">
+				11111111
+				1111
+				
+				11111111
+				1111
+				1111
+				
+			</div>
+			<div v-show="nowIndex==1">
+				22222
+			</div>
 		</div>
 	</div>
 </div>
@@ -184,6 +195,12 @@
 		.content{
 			padding: 0.266666rem;
 			background: #E9EFEF;
+			/*.hide{
+				display: none;
+			}
+			.show{
+				display: block;
+			}*/
 		}
 	}
 </style>

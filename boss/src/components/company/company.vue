@@ -10,7 +10,7 @@
 	    		<li v-for="(item,index) in titleData" @click="tabChange(index)">{{item.title}}<span class="icon-down"></span></li>
 	    	</ul>
 
-	    	 <tableView ref="judge" :tabData="tabData1" :tableIndex="tableIndex" :nowIndex="nowIndex" @hide="hide" @indexData="indexData" @btnSure="btnSure" v-show="showHide"></tableView>
+	    	 <tableView ref="judge" :tabData="tabData1" :nowIndex="nowIndex" @hide="hide" @indexData="indexData" @btnSure="btnSure" v-show="showHide"></tableView>
 
 	    </div>
     </div>
@@ -102,17 +102,14 @@ export default {
 			})
 		},
 		tabChange(index){
-			console.log(index)
-			console.log(this.indexSub)
-			this.showHide=true;
 			this.tableIndex=index;
 			this.tabData1=this.tabData[index];
 			this.nowIndex=this.indexSub[index];
-			
-			console.log(this.nowIndex)
+			this.showHide=true;
+			this.$refs.judge.judgeIndex(this.nowIndex);
 			//调用子组件的方法
-			this.$refs.judge.judgeIndex();
-		},
+			
+			},
 		hide(){
 			this.showHide=false;
 		},

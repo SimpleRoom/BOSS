@@ -27,12 +27,7 @@
 				default:[]
 			},
 			nowIndex:{
-				type:Array,
-				default:[0]
-			},
-			tableIndex:{
-				type:Number,
-				default:0
+				type:Array
 			}
 		},
 		data(){
@@ -48,19 +43,18 @@
 			checkActive(index){
 				return this.nowIndex.indexOf(index)!=-1;
 			},
-			judgeIndex(){
-				console.log(this.nowIndex)
-				this.btnsure="确认("+this.nowIndex.length+")";
-				let number=this.nowIndex.length;
+			judgeIndex(idx){
+				let number=idx.length;
 				if(number==1){
-					if(this.nowIndex[0]==0){
+					if(idx[0]==0){
 						this.btnsure="确认";
 					}else{
-						this.btnsure="确认("+this.nowIndex.length+")";
+						this.btnsure="确认("+idx.length+")";
 					}
 				}else{
-					this.btnsure="确认("+this.nowIndex.length+")";
+					this.btnsure="确认("+idx.length+")";
 				}
+				return true;
 			},
 			addClass(index,ev){
 				if(index!=0){
