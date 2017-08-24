@@ -22,10 +22,10 @@
                     </li>
                 </ul>
                 <keep-alive>
-                    <slideTabComp v-show="isShowSlide" @toParent="toParent" @hide="hide" v-if="slideIndex==0" :slideTemp="slideTemp"></slideTabComp>
-                    <selectCityComp v-show="isShowSlide" @hide="hide" v-else-if="slideIndex==1" :slideTemp="slideTemp"></selectCityComp>
-                    <compRequireComp v-show="isShowSlide" @hide="hide" v-else-if="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
-                    <compRequireComp v-show="isShowSlide" @hide="hide" v-else="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
+                    <slideTabComp v-show="navlist[0].isSelected" @toParent="toParent" @hide="hide" v-if="slideIndex==0" :slideTemp="slideTemp"></slideTabComp>
+                    <selectCityComp v-show="navlist[1].isSelected" @hide="hide" v-else-if="slideIndex==1" :slideTemp="slideTemp"></selectCityComp>
+                    <compRequireComp v-show="navlist[2].isSelected" @hide="hide" v-else-if="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
+                    <compRequireComp v-show="navlist[3].isSelected" @hide="hide" v-else="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
                 </keep-alive>
             </div>
         </div>
@@ -94,7 +94,7 @@
                             "hadSelested":true
                         },
                         {
-                            "name":"公司",
+                            "name":"最新",
                             "hadSelested":false
                         }
                     ],
@@ -126,19 +126,15 @@
             },
             // 接收子传来的是否隐藏
             hide(){
-                this.isShowSlide=false;
+                // this.isShowSlide=false;
+                this.navlist.filter(value =>{
+                    value.isSelected=false;
+                });
             },
             changeColor(nav,index){
                 let _this=this;
                 this.slideIndex=index;
                 this.slideTemp=this.slideData[index];
-                // 切换是否显示下拉组件
-                this.isShowSlide=!this.isShowSlide;
-                // if(this.isShowSlide){
-                //     window.addEventListener("touchmove",function(event){
-                //         event.preventDefault();
-                //     });
-                // }
                 if(nav.isSelected){
                     nav.isSelected=false;
                 }else{

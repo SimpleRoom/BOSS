@@ -32,3 +32,16 @@
     background: rgba(0,0,0,0.5);
     z-index: 99;
 }
+
+// tab_bar
+.tab_bar li{
+    line-height: .8rem;
+    text-align: center;
+    @include sc(.4rem,#999);
+    i{
+        margin-right: .15rem;
+    }
+}
+.tab_bar li.on{
+    color: $vuecolor;
+}
