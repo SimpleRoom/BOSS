@@ -32,20 +32,8 @@ export default {
   },
   data () {
     return {
-      tabbar:[
-        {
-          title:"商圈",
-          isSelected:true,
-          iconClass:"icon-shangquanguimo",
-          detail:["上海","黄埔","浦东"]
-        },
-        {
-          title:"地铁",
-          isSelected:false,
-          iconClass:"icon-ditie",
-          detail:["1","2","3","4"]
-        }
-      ],
+      apiUrl:"",
+      tabbar:[],
     }
   },
   watch:{
@@ -74,6 +62,27 @@ export default {
         event.preventDefault();
       })
       // console.log(mask);
+    },
+    initApiUrl(){
+        // let domain="https://"+window.location.host+"/";
+        // 本地
+        let domain="http://"+window.location.host+"/";
+        let str="static/data/city.json";
+        this.apiUrl=domain+str;
+        // console.log(this.apiUrl);
+    },
+    getData(){
+      let _this=this;
+      // console.log("aa");
+      _this.$http.get(_this.apiUrl)
+        .then( respon=>{
+          if(respon.data.code=="0"){
+            _this.tabbar=respon.data.data;
+          }
+        })
+        .catch( err=>{
+          console.log(err);
+        });
     }
   },
   // 創建后挂载到root之后调用该钩子函数
@@ -82,7 +91,8 @@ export default {
   },
   // 该实例被创建还没挂载root之前，ajax可以在这里
   created(){
-
+    this.initApiUrl();
+    this.getData();
   }
 }
 </script>

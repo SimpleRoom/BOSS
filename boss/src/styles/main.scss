@@ -137,7 +137,18 @@
 .job_nav li{
   text-align: center;
   color: #8D8D8D;
+  position: relative;
+  // border-right: 1px solid #E5E5E5;
+}
+.job_nav li:after{
+  display: table;
+  content: "";
+  height: 60%;
   border-right: 1px solid #E5E5E5;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .job_nav li.selected{
   color: $vuecolor;

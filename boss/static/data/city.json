@@ -1,0 +1,17 @@
+{
+    "code":"0",
+    "data":[
+        {
+            "title":"商圈",
+            "isSelected":true,
+            "iconClass":"icon-shangquanguimo",
+            "detail":["上海","黄埔","浦东"]
+        },
+        {
+            "title":"地铁",
+            "isSelected":false,
+            "iconClass":"icon-ditie",
+            "detail":["1号线","2","3","4"]
+        }
+    ]
+}
