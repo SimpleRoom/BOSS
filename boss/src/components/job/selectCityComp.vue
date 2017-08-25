@@ -1,6 +1,5 @@
 <template>
   <div class="slide_tab">
-    <p v-for="(list,index) in slideTemp">{{list}}</p>
     <!-- -->
     <div class="tab_box">
       <ul class="tab_bar flex_parent">
@@ -11,7 +10,13 @@
       </ul>
       <div class="tab_list_box">
         <div class="tab_list" v-for="(nav,index) in tabbar" v-show="nav.isSelected">
-          <p v-for="(position,index) in nav.detail">{{ position }}</p>
+          <div class="tab_position">
+            <!--左边区县-->
+            <div class="tab_position_left">
+              <p v-for="(position,index) in nav.places" :class="{on:position.isOn}">{{ position.name }}</p>
+            </div>
+            <div class="tab_position_right"></div>
+          </div>
         </div>
       </div>
     </div>
