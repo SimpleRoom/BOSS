@@ -1,7 +1,7 @@
 <template>
   <div class="message-list">
         <ul class="head_tab">
-            <router-link tag="li" v-for="(item,index) in messageNav" :key="item.index" :to="{path : item.route}">
+            <router-link tag="li" v-for="(item,index) in messageNav" :key="index" :to="{path : item.route}">
               {{item.title}}
             </router-link>
         </ul>
@@ -22,29 +22,13 @@ export default {
   },
   data () {
     return {
-      messageData:'',
       messageNav:[
         {title:'聊天',route:'message'},
         {title:'互动',route:'mesInteract'}
       ]
     }
   },
-  watch:{
-
-  },
-  computed:{
-
-  },
   methods:{
-    fenchData(){
-      const _this=this;
-      this.$http.get('/static/data/message.json').then((res)=>{
-        if(res.data.code==0){
-          _this.messageData=res.data.chat;
-          console.log(_this.messageData)
-        }
-      })
-    },
   },
   // 創建后挂载到root之后调用该钩子函数
   mounted(){

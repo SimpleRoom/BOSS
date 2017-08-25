@@ -17,6 +17,7 @@ const comDetail = resolve => require(['@/components/company/comDetail'], resolve
 const message = resolve => require(['@/components/message/message'], resolve)
 const mesChat = resolve => require(['@/components/message/mesChat'], resolve)
 const mesInteract = resolve => require(['@/components/message/mesInteract'], resolve)
+const meschatDetail = resolve => require(['@/components/message/meschatDetail'], resolve)
 const aboutme = resolve => require(['@/components/aboutme/myinfo'], resolve)
 
 
@@ -83,7 +84,14 @@ export default new Router({
                 {
                   path:'',
                   name:"mesChat",
-                  component:mesChat
+                  component:mesChat,
+                  children:[
+                    {
+                      path:'',
+                      name:"meschatDetail",
+                      component:meschatDetail
+                    }
+                  ]
                 },
                 {
                   path:'/mesInteract',
