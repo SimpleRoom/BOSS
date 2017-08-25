@@ -81,18 +81,18 @@ export default {
             // console.log(this.jobs);
         }, 2500);
     },
-    willscroll(){
-        //2.1 使用定时器，防止频繁滚动
-        if (window.scrollTime) {
-            window.clearTimeout(window.scrollTime);
-        }
-        //2.2 定时器
-        window.scrollTime = window.setTimeout(() => {
-            const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-            this.willshow = (scrollTop > 300) ? true : false;
-            // console.log("滚动了");
-        }, 100);
-    },
+//  willscroll(){
+//      //2.1 使用定时器，防止频繁滚动
+//      if (window.scrollTime) {
+//          window.clearTimeout(window.scrollTime);
+//      }
+//      //2.2 定时器
+//      window.scrollTime = window.setTimeout(() => {
+//          const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+//          this.willshow = (scrollTop > 300) ? true : false;
+//          // console.log("滚动了");
+//      }, 100);
+//  },
 		fenchData(){
 			const _this=this;
 			this.$http.get('/static/data/joblist.json').then((res)=>{
@@ -132,8 +132,8 @@ export default {
   },
   // 創建后挂载到root之后调用该钩子函数
   mounted(){
-		window.addEventListener("scroll", this.willscroll);
-    this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top;
+//		window.addEventListener("scroll", this.willscroll);
+//  this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top;
   },
   // 该实例被创建还没挂载root之前，ajax可以在这里
   created(){

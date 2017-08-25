@@ -3,7 +3,7 @@
 	<div class="head">
 		<a class="left" href="javascript:history.back(-1)" ><span class="icon-left"></span></a>
 		<mt-swipe :auto="2000" class="swiper">
-		  <mt-swipe-item v-for="item in InfoData.srclist" :key="item.id"><img :src="item.src"/></mt-swipe-item>
+		  <mt-swipe-item v-for="(item,index) in InfoData.srclist" :key="index"><img :src="item.src"/></mt-swipe-item>
 		</mt-swipe>
 	</div>
 	<div class="comInfo">
@@ -28,16 +28,31 @@
 		</ol>
 		<div class="content">
 			<div v-show="nowIndex==0">
-				11111111
-				1111
-				
-				11111111
-				1111
-				1111
-				
+				<div class="info">
+					<h3>公司介绍</h3>
+					<p :class="{showMore:this.isMore}">{{InfoData.detial}}</p>	
+				</div>
+				<div class="loadMore">
+					<span v-if="isMore"  @click="loadMore" class="icon-down"></span>
+					<span v-else  @click="loadMore" class="icon-top"></span>
+				</div>
+				<div class="intro">
+					<h3>产品介绍</h3>
+					<div class="clear">
+						<div class="pull-left">
+							<img src="../../../static/images/xueyou.png"/>
+						</div>
+						<div class="pull-left left">
+							<p>{{InfoData.comp_name}}</p>
+							<p>XXXXXXXX</p>
+							<p>XXXXXXXXX</p>
+							
+						</div>
+					</div>
+				</div>
 			</div>
-			<div v-show="nowIndex==1">
-				22222
+			<div class=" job" v-show="nowIndex==1">
+				<span v-for="(item,index) in jobData" @click="checkAc(index)" :class="{tive:index==nowIndex1}">{{item}}</span>
 			</div>
 		</div>
 	</div>
@@ -47,7 +62,7 @@
 <script>
 	export default{
 		mounted(){
-			this.fenchData()
+			this.fetchData();
 		},
 		data(){
 			return {
@@ -55,13 +70,17 @@
 				followData:"关注",
 				hotNum:"",
 				tabData:[{'title':'公司概况'},{'title':'热门职位'}],
-				nowIndex:0
+				nowIndex:0,
+				isMore:true,//控制三行省略号
+				jobData:["全部","前端","java","设计","产品","技术经理","游戏开发","C#开发","php开发","Node开发","Vue开发"],
+				nowIndex1:0//单选
 			}
 		},
 		methods:{
-			fenchData(){
+			fetchData(){
 				const _this=this;
 				const id=parseInt(this.$route.params.id)-1;
+				console.log(id)
 				this.$http.get('/static/data/comdetail.json').then((res)=>{
 					if(res.data.code==200){
 						_this.InfoData=res.data.company[id];
@@ -74,7 +93,6 @@
 			follow(ev){
 				const el=ev.target;
 				let   flag=el.getAttribute("flag");
-				console.log(flag)
 				if(flag=="true"){
 					alert("关注成功");
 					this.followData="已关注";
@@ -88,6 +106,12 @@
 			},
 			change(index){
 				this.nowIndex=index;
+			},
+			loadMore(){
+				this.isMore=!this.isMore;
+			},
+			checkAc(index){
+				this.nowIndex1=index;
 			}
 		}
 	}
@@ -195,12 +219,59 @@
 		.content{
 			padding: 0.266666rem;
 			background: #E9EFEF;
-			/*.hide{
-				display: none;
+			.showMore{
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp:3;
+				-webkit-box-orient: vertical;
+				overflow : hidden;
 			}
-			.show{
-				display: block;
-			}*/
+			.info{
+				padding:0.4rem 0.213333rem;
+				background: #fff;
+				p{
+					/*font-size: 0.213333rem;*/
+					/*font-size: 0.32rem;*/
+					text-indent: 2em;
+				}
+			}
+			.loadMore{
+				text-align: center;
+				padding: 0.133333rem 0;
+				background: #fff;
+				color: #60CEC7;
+				font-size: 0.6rem;
+				span{
+					display: inline-block;
+					width: 100%;
+				}
+				.icon-top{
+					font-size: 0.15rem;
+				}
+			}
+			.intro{
+				margin-top: 0.213333rem;
+				padding:0.4rem 0.213333rem;
+				background: #fff;
+				.clear{
+					margin-top:0.4rem;
+					.left{
+						text-indent: 2em;
+					}
+				}
+			}
+			.job{
+				span{
+					display: inline-block;
+					padding: 0.133333rem 0.266666rem;
+					background: #fff;
+					margin: 0 0.133333rem 0.266666rem 0;
+				}
+				.tive{
+					background: #60CEC7;
+					color: #fff;
+				}
+			}
 		}
 	}
 </style>
