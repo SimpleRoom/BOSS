@@ -35,13 +35,41 @@
 
 // tab_bar
 .tab_bar li{
-    line-height: .8rem;
+    line-height: 1.2rem;
     text-align: center;
     @include sc(.4rem,#999);
     i{
         margin-right: .15rem;
     }
+    border-bottom: 2px solid transparent;
 }
 .tab_bar li.on{
+    color: $vuecolor;
+    border-bottom: 2px solid $vuecolor;
+}
+// .tab_list{
+//     height: 10rem;
+//     overflow: auto;
+// }
+.tab_position{
+    overflow: hidden;
+}
+.tab_position_left,
+.tab_position_right{
+    float: left;
+    height: 10rem;
+    width: 50%;
+    overflow: auto;
+}
+.tab_position_right{
+    background: #F8F8F8;
+}
+.tab_position_left p{
+    text-align: center;
+    @include sc(.35rem,#999);
+    line-height: 1rem;
+}
+.tab_position_left p.on{
+    background: #F2F2F2;
     color: $vuecolor;
 }
