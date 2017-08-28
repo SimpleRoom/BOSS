@@ -1,7 +1,9 @@
 <template>
     <div id="home">
       <transition name="fade" mode="out-in">
-        <router-view></router-view>
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
       </transition>
       <!--组件的应用-->
       <div class="navbar flex_parent">

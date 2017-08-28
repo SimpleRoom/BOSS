@@ -66,6 +66,7 @@ export default new Router({
       {
           path:'/home',
           component:home,
+          mate: { keepAlive: true },
           children:[
             {
               path:'/',
