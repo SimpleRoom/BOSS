@@ -79,10 +79,10 @@
    	<div class="bottom">
    		<ul>
    			<li>
-   				<span></span>
+   				<a href="javascript:;" class="icon-"><i class="iconfont icon-tongzhi icon"></i>通知</a>
    			</li>
    			<li>
-   				
+   				<a href="javascript:;" class="icon-"><i class="iconfont icon-yinsi icon"></i>私密设置</a>
    			</li>
    		</ul>
    	</div>
@@ -217,6 +217,39 @@ export default {
 			li:nth-child(4n+0){
 				border-right: none;
 			}
+		}
+	}
+	.bottom{
+		a{color: #333;display: block;position: relative;}
+		a:after{
+			content: "\e90a";
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		margin-top: 0.24rem;
+		ul{
+			list-style: none;
+			background: #fff;
+			
+			li{
+				padding: 0.4rem 0.266666rem;
+				border-bottom: 1px solid #F4F4F4;
+			}
+			.icon{
+				font-family:"iconfont" !important;
+			  font-size:0.506666rem;
+			  font-style:normal;
+			  -webkit-font-smoothing: antialiased;
+			  -moz-osx-font-smoothing: grayscale;
+			  padding: 0.453333rem;
+			}
+			/*.icon1:before{
+				content: "\e60e";
+			}
+			.icon2:before{
+				content: "\e62a";
+			}*/
 		}
 	}
 </style>
