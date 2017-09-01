@@ -71,11 +71,24 @@
     text-align: center;
     @include sc(.35rem,#999);
     line-height: 1.2rem;
+    overflow: hidden;
 }
 .tab_position_left p.on{
     background: #F2F2F2;
     color: $vuecolor;
 }
+// .tab_position_right p span,
+// .tab_position_right p i{
+//     float: left;
+// }
+.tab_position_right p i{
+    margin-left: .15rem;
+    width: .4rem;
+    visibility: hidden;
+}
 .tab_position_right p.ishad{
     color: $vuecolor;
+}
+.tab_position_right p.ishad i{
+    visibility: visible;
 }

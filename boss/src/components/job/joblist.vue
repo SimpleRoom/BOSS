@@ -213,6 +213,21 @@
                 var str="static/data/joblist.json";
                 this.apiUrl=domain+str;
                 // console.log(this.apiUrl);
+            },
+            // 4.1、阻止局部滚动到达边界后会造成页面继续滚动(不合适)
+            stopScroll(){
+                let container=document.getElementById("jobcontent");
+                // console.log(container);
+                container.addEventListener("touchmove",function(event){
+                    event.preventDefault();
+                },false);
+            },
+            // 4、2把阻止事件remove
+            removeStopScroll(){
+                let container=document.getElementById("jobcontent");
+                container.removeEventListener("touchmove",function(event){
+                    event.preventDefault();
+                },false);
             }
             
         },

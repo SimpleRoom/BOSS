@@ -21,7 +21,7 @@
               <p v-for="(text,num) in tempList"
               :class="{ishad:text.isHad}"
               :data-id="text.pfid"
-              @click="toggleChange(text,num)">{{text.road}}</p>
+              @click="toggleChange(text,num)"><span>{{text.road}}</span><i class="iconfont icon-correct"></i></p>
             </div>
           </div>
         </div>
