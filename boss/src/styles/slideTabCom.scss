@@ -60,6 +60,8 @@
     height: 10rem;
     width: 50%;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;  
 }
 .tab_position_right{
     background: #F8F8F8;
@@ -67,7 +69,7 @@
 .tab_position_left p{
     text-align: center;
     @include sc(.35rem,#999);
-    line-height: 1rem;
+    line-height: 1.2rem;
 }
 .tab_position_left p.on{
     background: #F2F2F2;

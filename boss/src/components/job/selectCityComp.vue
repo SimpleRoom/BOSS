@@ -13,7 +13,9 @@
           <div class="tab_position">
             <!--左边区县-->
             <div class="tab_position_left">
-              <p v-for="(position,index) in nav.places" :class="{on:position.isOn}">{{ position.name }}</p>
+              <p v-for="(position,innerIndex) in nav.places" 
+              :class="{on:position.isOn}"
+              @click="toggleClass(position,index)">{{ position.name }}</p>
             </div>
             <div class="tab_position_right"></div>
           </div>
@@ -48,15 +50,6 @@ export default {
 
   },
   methods:{
-    // toggleSelect
-    toggleSelect(item,index){
-      if(!item.isSelected){
-        this.tabbar.filter(value=>{
-          value.isSelected=false;
-        });
-        item.isSelected=true;
-      }
-    },
     // 传递到父组件，告知要隐藏
     hide(){
       this.$emit("hide");
@@ -88,6 +81,26 @@ export default {
         .catch( err=>{
           console.log(err);
         });
+    },
+    // 商圈和地铁选中样式的切换
+    toggleSelect(item,index){
+      if(!item.isSelected){
+        this.tabbar.filter(value=>{
+          value.isSelected=false;
+        });
+        item.isSelected=true;
+      }
+    },
+    // 区县的选中切换
+    toggleClass(position,index){
+      let _this=this;
+      let lists=_this.tabbar[index].places;
+      if(!position.isOn){
+        lists.filter(value=>{
+          value.isOn=false;
+        });
+        position.isOn=true;
+      }
     }
   },
   // 創建后挂载到root之后调用该钩子函数

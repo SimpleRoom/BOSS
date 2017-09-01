@@ -86,17 +86,17 @@ export default new Router({
                   path:'',
                   name:"mesChat",
                   component:mesChat,
-                  children:[
-                    {
-                      path:'',
-                      name:"meschatDetail",
-                      component:meschatDetail
-                    }
-                  ]
+                  // children:[
+                  //   {
+                  //     path:'',
+                  //     name:"meschatDetail",
+                  //     component:meschatDetail
+                  //   }
+                  // ]
                 },
                 {
                   path:'/mesInteract',
-                  ame:"mesInteract",
+                  name:"mesInteract",
                   component:mesInteract
                 }
               ]
@@ -123,6 +123,12 @@ export default new Router({
       	path:"/comdetail/:id",
       	name:"comDetail",
       	component:comDetail
+      },
+      // 消息詳情路由
+      {
+        path:'/meschatDetail',
+        name:"meschatDetail",
+        component:meschatDetail
       },
       {
         path:"/test",
