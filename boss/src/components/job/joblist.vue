@@ -22,8 +22,8 @@
                     </li>
                 </ul>
                 <keep-alive>
-                    <slideTabComp v-show="navlist[0].isSelected" @toParent="toParent" @hide="hide" v-if="slideIndex==0" :slideTemp="slideTemp"></slideTabComp>
-                    <selectCityComp v-show="navlist[1].isSelected" @hide="hide" v-else-if="slideIndex==1" :slideTemp="slideTemp"></selectCityComp>
+                    <slideTabComp v-show="navlist[0].isSelected" @toParent="fromChild" @hide="hide" v-if="slideIndex==0" :slideTemp="slideTemp"></slideTabComp>
+                    <selectCityComp v-show="navlist[1].isSelected" @hide="hide" v-else-if="slideIndex==1"></selectCityComp>
                     <compRequireComp v-show="navlist[2].isSelected" @hide="hide" v-else-if="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
                     <compRequireComp v-show="navlist[3].isSelected" @hide="hide" v-else="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
                 </keep-alive>
@@ -60,6 +60,15 @@
 </template>
 
 <script>
+    /*
+    * 注=> : somename 向子组件传递数据
+    *      @ some 接收子组件传递过来的自定义事件
+    *说明：1、keep-alive子组件里的v-show为了点击自己切换自己下组件的显示和隐藏，v-if-else 是为了切换4个切换按钮 对应子组件的显示和隐藏
+    * 2、组件内的 slideTemp是传到子组件的 数组数据(切换回变化)，selectCityComp内数据太多没向子组件传递
+    * 3、@toParent是子组件传递给父组件的数据的自定义方法,在父组件自定义为：fromChild 方法
+    * 4、@hide 子组件传递过来的自定义事件,在父组件自定义为：hide 方法
+    *
+    **/
     import slideTabComp from './slideTabComp.vue'
     import selectCityComp from './selectCityComp.vue'
     import compRequireComp from './compRequireComp.vue'
@@ -119,12 +128,12 @@
         },
         computed: {},
         methods: {
-            // 接收子传来的选项
-            toParent(msg){
+            // 3、接收子传来的选项
+            fromChild(msg){
                 this.navlist[0].title=msg;
-                console.log(msg);
+                // console.log(msg);
             },
-            // 接收子传来的是否隐藏
+            ///4、接收子传来的是否隐藏
             hide(){
                 // this.isShowSlide=false;
                 this.navlist.filter(value =>{

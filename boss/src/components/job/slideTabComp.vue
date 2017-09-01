@@ -12,6 +12,7 @@
 <script>
 export default {
   name: 'slide',
+  // props下的slideTemp是父组件传来的数组数据
   props:{
     slideTemp:{
 				type:Array,
@@ -38,12 +39,13 @@ export default {
             value.hadSelested=false;
         });
         list.hadSelested=true;
+        // 1、向父组件注入一个toParent自定义方法传递当前选中的 内容
         this.$emit("toParent",list.name);
       }
       // this.$emit("toParent",list.name);
       // console.log(list.name);
     },
-    // 子传父的通信桥梁
+    // 1、向父组件传递自定义事件，告知要隐藏
     hide(){
       this.$emit("hide");
     },

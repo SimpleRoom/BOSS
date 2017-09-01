@@ -15,9 +15,14 @@
             <div class="tab_position_left">
               <p v-for="(position,innerIndex) in nav.places" 
               :class="{on:position.isOn}"
-              @click="toggleClass(position,index)">{{ position.name }}</p>
+              @click="toggleClass(position,index,innerIndex)">{{ position.name }}</p>
             </div>
-            <div class="tab_position_right"></div>
+            <div class="tab_position_right">
+              <p v-for="(text,num) in tempList"
+              :class="{ishad:text.isHad}"
+              :data-id="text.pfid"
+              @click="toggleChange(text,num)">{{text.road}}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -30,17 +35,33 @@
 <script>
 export default {
   name: 'slide',
-  props:{
-    
-    slideTemp:{
-				type:Array,
-				default:[]
-    },
-  },
+  // 该子组件数据太多没从父组件传递
+  // props:{
+  //   slideTemp:{
+	// 			type:Array,
+	// 			default:[]
+  //   },
+  // },
   data () {
     return {
       apiUrl:"",
       tabbar:[],
+      // 右边动态列表数据
+      tempList:[
+        {
+          "pfid":"1",
+          "road":"全上海",
+          "isHad":true
+        }
+      ],
+      tempOne:{
+        "0":{
+          index:""
+        },
+        "1":{
+          index:""
+        }
+      }
     }
   },
   watch:{
@@ -50,7 +71,7 @@ export default {
 
   },
   methods:{
-    // 传递到父组件，告知要隐藏
+    // 1、向父组件传递自定义事件，告知要隐藏
     hide(){
       this.$emit("hide");
     },
@@ -84,15 +105,27 @@ export default {
     },
     // 商圈和地铁选中样式的切换
     toggleSelect(item,index){
+      let _this=this;
+      // 简单记录下选中的下标
+      let tempNum=_this.tempOne[index].index;
+      let lists=_this.tabbar[index].places;
       if(!item.isSelected){
         this.tabbar.filter(value=>{
           value.isSelected=false;
         });
         item.isSelected=true;
+        // 如果存在
+        if(tempNum){
+          _this.tempList=lists[tempNum].list;
+          // console.log("存在");
+        }else{
+          _this.tempList=lists[0].list;
+          // console.log("不");
+        }
       }
     },
     // 区县的选中切换
-    toggleClass(position,index){
+    toggleClass(position,index,innerIndex){
       let _this=this;
       let lists=_this.tabbar[index].places;
       if(!position.isOn){
@@ -100,6 +133,29 @@ export default {
           value.isOn=false;
         });
         position.isOn=true;
+        // 重新匹配右邊的
+        _this.tempList=lists[innerIndex].list;
+        // 动态付给下标记录
+        _this.tempOne[index].index=innerIndex;
+      }
+    },
+    // 右边除了0 位置可以多选
+    toggleChange(text,num){
+      // _this.tempList 右边动态的数据列表
+      // console.log(text,num);
+      let _this=this;
+      if(num!==0){
+        // 清除第一个选中的样式
+        _this.tempList[0].isHad=false;
+        // 下面切换
+        text.isHad=!text.isHad;
+      }else{
+        // 清除所有的选中样式
+        _this.tempList.filter(list=>{
+          list.isHad=false;
+        });
+        // 只要0位置被点击一次，0 位置只能是选中
+        text.isHad=!text.isHad;
       }
     }
   },

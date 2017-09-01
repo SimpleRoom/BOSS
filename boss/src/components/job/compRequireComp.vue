@@ -26,6 +26,7 @@ export default {
 
   },
   methods:{
+    // 1、向父组件传递自定义事件，告知要隐藏
     hide(){
       this.$emit("hide");
     },
