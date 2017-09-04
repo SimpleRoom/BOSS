@@ -24,8 +24,8 @@
                 <keep-alive>
                     <slideTabComp v-show="navlist[0].isSelected" @toParent="fromChild" @hide="hide" v-if="slideIndex==0" :slideTemp="slideTemp"></slideTabComp>
                     <selectCityComp v-show="navlist[1].isSelected" @hide="hide" v-else-if="slideIndex==1"></selectCityComp>
-                    <compRequireComp v-show="navlist[2].isSelected" @hide="hide" v-else-if="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
-                    <compRequireComp v-show="navlist[3].isSelected" @hide="hide" v-else="slideIndex==2" :slideTemp="slideTemp"></compRequireComp>
+                    <compRequireComp v-show="navlist[2].isSelected" @hide="hide" v-else-if="slideIndex==2" :indexArr="indexArr[0]" :slideTemp="slideTemp"></compRequireComp>
+                    <compRequireComp v-show="navlist[3].isSelected" @hide="hide" v-else="slideIndex==2" :indexArr="indexArr[1]" :slideTemp="slideTemp"></compRequireComp>
                 </keep-alive>
             </div>
         </div>
@@ -67,10 +67,13 @@
     * 2、组件内的 slideTemp是传到子组件的 数组数据(切换回变化)，selectCityComp内数据太多没向子组件传递
     * 3、@toParent是子组件传递给父组件的数据的自定义方法,在父组件自定义为：fromChild 方法
     * 4、@hide 子组件传递过来的自定义事件,在父组件自定义为：hide 方法
-    *
+    * v-show只是单纯的切换css属性display的none和block，v-if 会移除和新建DO树！
     **/
+    // 推荐子组件
     import slideTabComp from './slideTabComp.vue'
+    // 城市选择组件
     import selectCityComp from './selectCityComp.vue'
+    // 公司和要求公用一个子组件
     import compRequireComp from './compRequireComp.vue'
     export default {
         data () {
@@ -96,6 +99,7 @@
                 slideIndex:"",
                 isShowSlide:false,
                 slideTemp:[],
+                indexArr:[[[0],[0],[0]],[[0],[0],[0]]],
                 slideData:[
                     [
                         {
@@ -107,9 +111,43 @@
                             "hadSelested":false
                         }
                     ],
-                    ["上海","北京","深圳"],
-                    ["公司","互联网","移动互联网"],
-                    ["本科","硕士","专科"]
+                    // 城市选择这项没用父子通信传递数据
+                    [0,1],
+                    [
+                        {
+                            title:"融资规模",
+                            isCheckbox:true,
+                            list:["全部","未融资","天使轮","A轮","B轮","C轮","D轮及以上","已上市","不需要融资"]
+                        },
+                        {
+                            title:"团队规模",
+                            isCheckbox:true,
+                            list:["全部","0-20人","20-99人","100-499人","500-999人","1000-9999人","10000人以上"]
+                        },
+                        {
+                            title:"行业",
+                            isCheckbox:true,
+                            list:["全部","非互联网行业","健康医疗","生活服务","旅游","金融","信息安全","广告营销","数据服务","智能硬件","文化娱乐","网络招聘",
+                                "分类信息","电子商务","移动互联网","企业服务","社交网络","教育培训","O2O","游戏","互联网","媒体","IT软件"]
+                        }
+                    ],
+                    [
+                        {
+                            title:"最低学历",
+                            isCheckbox:true,
+                            list:["全部","中专及以下","高中","大专","本科","硕士","博士"]
+                        },
+                        {
+                            title:"经验",
+                            isCheckbox:true,
+                            list:["全部","应届生","1年以内","1-3年","3-5年","5-10年","10年以上"]
+                        },
+                        {
+                            title:"薪资(单选)",
+                            isCheckbox:false,
+                            list:["全部","3k以下","3k-5k","5k-10k","10k-20k","20k-50k","50k以上"]
+                        },
+                    ]
                 ],
                 willshow: false,
                 timer: null,
@@ -140,6 +178,7 @@
                     value.isSelected=false;
                 });
             },
+            // 5、切换的时候动态改变要传递到子组件的数据：this.slideTemp
             changeColor(nav,index){
                 let _this=this;
                 this.slideIndex=index;

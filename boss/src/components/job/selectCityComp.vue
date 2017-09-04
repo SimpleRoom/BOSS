@@ -31,7 +31,7 @@
       <!-- 重置和确定按钮-->
       <ul class="reset_city flex_parent">
         <li class="flex_child" @click="resetSelect">重置</li>
-        <li class="flex_child on" @click="hide">确定</li>
+        <li class="flex_child on" @click="hide">确定{{count}}</li>
       </ul>
       <!-- 切换城市 -->
       <div class="toggle_cities"><p><i class="icon-position"></i>切换城市</p></div>
@@ -71,7 +71,8 @@ export default {
         "1":{
           index:""
         }
-      }
+      },
+      count:""
     }
   },
   watch:{
@@ -178,6 +179,7 @@ export default {
       // _this.tempList 右边动态的数据列表
       // console.log(text,num);
       let _this=this;
+      // this.count++;
       if(num!==0){
         // 清除第一个选中的样式
         _this.tempList[0].isHad=false;
