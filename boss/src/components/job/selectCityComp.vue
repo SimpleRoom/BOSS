@@ -2,12 +2,14 @@
   <div class="slide_tab">
     <!-- -->
     <div class="tab_box">
+      <!-- 2个导航 -->
       <ul class="tab_bar flex_parent">
         <li class="flex_child" v-for="(item,index) in tabbar" :class="{on:item.isSelected}"
         @click="toggleSelect(item,index)">
           <i class="iconfont" :class="item.iconClass"></i>{{ item.title }}
         </li>
       </ul>
+      <!--商圈和地铁的切换 -->
       <div class="tab_list_box">
         <div class="tab_list" v-for="(nav,index) in tabbar" v-show="nav.isSelected">
           <div class="tab_position">
@@ -26,6 +28,13 @@
           </div>
         </div>
       </div>
+      <!-- 重置和确定按钮-->
+      <ul class="reset_city flex_parent">
+        <li class="flex_child" @click="resetSelect">重置</li>
+        <li class="flex_child on" @click="hide">确定</li>
+      </ul>
+      <!-- 切换城市 -->
+      <div class="toggle_cities"><p><i class="icon-position"></i>切换城市</p></div>
     </div>
     <!--遮罩-->
     <div id="mask" class="mask" @click="hide"></div>
@@ -51,9 +60,10 @@ export default {
         {
           "pfid":"1",
           "road":"全上海",
-          "isHad":true
+          "isHad":false
         }
       ],
+      // 分别记录商圈和地铁的选中下标
       tempOne:{
         "0":{
           index:""
@@ -71,6 +81,30 @@ export default {
 
   },
   methods:{
+    // 3层循环，不太好！！
+    resetSelect(){
+      let arr=this.tabbar;
+      for(let i=0;i<arr.length;i++){
+        let places=arr[i].places;
+        for(let j=0;j<places.length;j++){
+          places[j].isOn=false;
+          let list=places[j].list;
+          for(let k=0;k<list.length;k++){
+            list[k].isHad=false;
+          } 
+        }
+        // 都清空后，需要默认显示第一个选项
+        places[0].isOn=true;
+        this.tempOne[i].index="";
+        this.tempList=[
+          {
+            "pfid":"1",
+            "road":"全上海",
+            "isHad":false
+          }
+        ];
+      }
+    },
     // 1、向父组件传递自定义事件，告知要隐藏
     hide(){
       this.$emit("hide");
