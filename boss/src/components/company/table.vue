@@ -144,7 +144,6 @@
 				display: inline-block;
 				min-width: 1.7rem;
 				padding:0.213333rem 0.133333rem;
-				font-size: 24px;
 				margin-bottom: 0.32rem;
 				text-align: center;
 				border: 1px solid #CECECE;

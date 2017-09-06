@@ -211,7 +211,7 @@ export default {
 				}
 				span:nth-child(1){
 					margin-bottom:0.266666rem;
-					font-size: 0.8rem;
+					font-size: 0.7rem;
 				}
 			}
 			li:nth-child(4n+0){
@@ -231,18 +231,19 @@ export default {
 		ul{
 			list-style: none;
 			background: #fff;
-			
 			li{
 				padding: 0.4rem 0.266666rem;
 				border-bottom: 1px solid #F4F4F4;
+				font-size: 0.48rem;
 			}
 			.icon{
 				font-family:"iconfont" !important;
-			  font-size:0.506666rem;
 			  font-style:normal;
+			  font-size:0.506666rem;
 			  -webkit-font-smoothing: antialiased;
 			  -moz-osx-font-smoothing: grayscale;
 			  padding: 0.453333rem;
+			  /*vertical-align: middle;*/
 			}
 			/*.icon1:before{
 				content: "\e60e";
