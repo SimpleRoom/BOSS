@@ -43,9 +43,9 @@ export default {
     },
     addClass(outList,index,innerIndex){
       let isCheckbox=outList.isCheckbox;
-      //1、 如果是多选且不是点的 全部
+      //2、 如果是多选且不是点的 全部
       if(isCheckbox){
-        //1.1 不是0位置其他可以多选
+        //2.1 不是0位置其他可以多选
         if(innerIndex!=0){
             // 清除0位置的
           if(this.indexArr[index].indexOf(0)!=-1){
@@ -60,13 +60,13 @@ export default {
           }else{
             this.indexArr[index].push(innerIndex);
           }
-        // 1.2 如果是0位置先清空
+        // 2.2 如果是0位置先清空
         }else{
           let leng=this.indexArr[index].length;
           this.indexArr[index].splice(0,leng);
           this.indexArr[index].push(innerIndex);
         }
-      //2、如果是单选
+      //3、如果是单选
       }else{
          // 清除0位置的
          let leng=this.indexArr[index].length;
@@ -82,6 +82,7 @@ export default {
     hide(){
       this.$emit("hide");
     },
+    // 4、半透明移动端禁止滚动
     cantScroll(){
       let mask=document.getElementById("mask");
       mask.addEventListener("touchmove",function(event){
