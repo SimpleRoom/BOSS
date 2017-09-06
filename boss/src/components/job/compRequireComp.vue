@@ -43,8 +43,9 @@ export default {
     },
     addClass(outList,index,innerIndex){
       let isCheckbox=outList.isCheckbox;
-      // 如果是多选且不是点的 全部
+      //1、 如果是多选且不是点的 全部
       if(isCheckbox){
+        //1.1 不是0位置其他可以多选
         if(innerIndex!=0){
             // 清除0位置的
           if(this.indexArr[index].indexOf(0)!=-1){
@@ -59,16 +60,23 @@ export default {
           }else{
             this.indexArr[index].push(innerIndex);
           }
-        }
-      //如果是单选
-      }else{
-          // this.indexArr[index]=[];
+        // 1.2 如果是0位置先清空
+        }else{
+          let leng=this.indexArr[index].length;
+          this.indexArr[index].splice(0,leng);
           this.indexArr[index].push(innerIndex);
+        }
+      //2、如果是单选
+      }else{
+         // 清除0位置的
+         let leng=this.indexArr[index].length;
+         if(this.indexArr[index].indexOf(innerIndex)==-1){
+          //  如果是单选清空数组，重新添加一个
+           this.indexArr[index].splice(0,leng);
+           this.indexArr[index].push(innerIndex);
+          //  console.log(this.indexArr[index]);
+         }
       }
-      // if(!isCheckbox&&innerIndex!=0){
-      //   console.log("单选");
-      
-      // }
     },
     // 1、向父组件传递自定义事件，告知要隐藏
     hide(){

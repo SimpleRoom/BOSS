@@ -25,7 +25,7 @@
                     <slideTabComp v-show="navlist[0].isSelected" @toParent="fromChild" @hide="hide" v-if="slideIndex==0" :slideTemp="slideTemp"></slideTabComp>
                     <selectCityComp v-show="navlist[1].isSelected" @hide="hide" v-else-if="slideIndex==1"></selectCityComp>
                     <compRequireComp v-show="navlist[2].isSelected" @hide="hide" v-else-if="slideIndex==2" :indexArr="indexArr[0]" :slideTemp="slideTemp"></compRequireComp>
-                    <compRequireComp v-show="navlist[3].isSelected" @hide="hide" v-else="slideIndex==2" :indexArr="indexArr[1]" :slideTemp="slideTemp"></compRequireComp>
+                    <compRequireComp v-show="navlist[3].isSelected" @hide="hide" v-else="slideIndex==3" :indexArr="indexArr[1]" :slideTemp="slideTemp"></compRequireComp>
                 </keep-alive>
             </div>
         </div>
@@ -68,6 +68,11 @@
     * 3、@toParent是子组件传递给父组件的数据的自定义方法,在父组件自定义为：fromChild 方法
     * 4、@hide 子组件传递过来的自定义事件,在父组件自定义为：hide 方法
     * v-show只是单纯的切换css属性display的none和block，v-if 会移除和新建DO树！
+    * 5、:indexArr 为了传递到子组件记录是否选中的状态
+    *
+    *
+    *
+    *
     **/
     // 推荐子组件
     import slideTabComp from './slideTabComp.vue'
@@ -99,6 +104,7 @@
                 slideIndex:"",
                 isShowSlide:false,
                 slideTemp:[],
+                // 传递到 公司和 要求子组件 记录是否选中的状态
                 indexArr:[[[0],[0],[0]],[[0],[0],[0]]],
                 slideData:[
                     [
@@ -111,7 +117,7 @@
                             "hadSelested":false
                         }
                     ],
-                    // 城市选择这项没用父子通信传递数据
+                    // 城市选择这项数据太多没用父子通信传递数据
                     [0,1],
                     [
                         {
