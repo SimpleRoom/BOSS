@@ -40,6 +40,8 @@ export default {
   },
   data () {
     return {
+      // 6 添加选中个数
+      viewNum:[0,0],
       viewCount:0
     }
   },
@@ -58,15 +60,22 @@ export default {
   methods:{
     // 2 重置所有选中状态
     resetSelect(){
-
+      // 由于是传递进来的数组不能重新赋值对应的数组，只能操作！
+      for(let i=0;i<this.indexArr.length;i++){
+        // 之前只要有改动才清空数组
+        if(this.indexArr[i].indexOf(0)==-1){
+          this.indexArr[i].splice(0,this.indexArr[i].length);
+          this.indexArr[i].push(0);
+        }
+        // 恢复0位置
+      }
     },
     // 3 匹配是否有选中状态
     checkOut(index,innerIndex){
       return this.indexArr[index].indexOf(innerIndex)!=-1;
     },
     // 4、点击切换选中状态
-    addClass(outList,index,innerIndex){
-      
+    addClass(outList,index,innerIndex){ 
       let isCheckbox=outList.isCheckbox;
       //2、 如果是多选且不是点的 全部
       if(isCheckbox){
@@ -81,9 +90,13 @@ export default {
             // 获得当前下边并且移除
             let now=this.indexArr[index].indexOf(innerIndex);
             this.indexArr[index].splice(now,1);
+            // 6.1 选中总数--
+            // this.viewCount--;
             // 否则就继续追加
           }else{
             this.indexArr[index].push(innerIndex);
+            // 6.1 选中总数++
+            // this.viewCount++;
           }
           // 5、获取当前数组的length,以备非 0位置都取消选中后恢复0位置选中
           let len=this.indexArr[index].length;
@@ -97,6 +110,8 @@ export default {
           let leng=this.indexArr[index].length;
           this.indexArr[index].splice(0,leng);
           this.indexArr[index].push(innerIndex);
+          // 6.1 选中0
+          // this.viewCount=0;
         }
       //3、如果是单选
       }else{
@@ -106,7 +121,8 @@ export default {
           //  如果是单选清空数组，重新添加一个
            this.indexArr[index].splice(0,leng);
            this.indexArr[index].push(innerIndex);
-          //  console.log(this.indexArr[index]);
+          // 6.1 选中总数++
+          //  this.viewCount++;
          }
       }
     },
