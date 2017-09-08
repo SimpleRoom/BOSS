@@ -2,23 +2,24 @@
   <div class="slide_tab">
     <!-- -->
     <div class="tab_box">
-      <!-- 2个导航 -->
+      <!--商圈和地铁的按钮切换 -->
       <ul class="tab_bar flex_parent">
         <li class="flex_child" v-for="(item,index) in tabbar" :class="{on:item.isSelected}"
         @click="toggleSelect(item,index)">
           <i class="iconfont" :class="item.iconClass"></i>{{ item.title }}
         </li>
       </ul>
-      <!--商圈和地铁的切换 -->
+      <!--商圈和地铁的列表切换 -->
       <div class="tab_list_box">
         <div class="tab_list" v-for="(nav,index) in tabbar" v-show="nav.isSelected">
           <div class="tab_position">
-            <!--左边区县-->
+            <!--左边区县或者地铁-->
             <div class="tab_position_left">
               <p v-for="(position,innerIndex) in nav.places" 
               :class="{on:position.isOn}"
               @click="toggleClass(position,index,innerIndex)">{{ position.name }}</p>
             </div>
+            <!-- 右边具体路或者位置 -->
             <div class="tab_position_right">
               <p v-for="(text,num) in tempList"
               :class="{ishad:text.isHad}"
@@ -31,7 +32,7 @@
       <!-- 重置和确定按钮-->
       <ul class="reset_city flex_parent">
         <li class="flex_child" @click="resetSelect">重置</li>
-        <li class="flex_child on" @click="hide">确定{{count}}</li>
+        <li class="flex_child on" @click="hide">确定&nbsp;{{viewCount | filterZero}}</li>
       </ul>
       <!-- 切换城市 -->
       <div class="toggle_cities"><p><i class="icon-position"></i>切换城市</p></div>
@@ -51,6 +52,15 @@ export default {
 	// 			default:[]
   //   },
   // },
+  /*
+  *3、点击重置如何让 局部对应 DIV：tab_position_left 默认滚动到顶部
+  *
+  *
+  *
+  *
+  *
+  *
+  */
   data () {
     return {
       apiUrl:"",
@@ -64,15 +74,22 @@ export default {
         }
       ],
       // 分别记录商圈和地铁的选中下标
-      tempOne:{
-        "0":{
-          index:""
+      tempOne:[
+        {
+          index:"",
+          // 7 记录选中的个数
+          count:0
         },
-        "1":{
-          index:""
+        {
+          index:"",
+          // 7 记录选中的个数
+          count:0
         }
-      },
-      count:""
+      ],
+      // 3.1记录div下标，以便重置默认滚到顶部
+      domIndex:0,
+      // 7 记录选中的个数要显示出来的
+      viewCount:""
     }
   },
   watch:{
@@ -81,9 +98,16 @@ export default {
   computed:{
 
   },
+  // 7.4 过滤为0的显示为 空
+  filters:{
+    filterZero(value){
+      return value==0?"":value;
+    }
+  },
   methods:{
-    // 3层循环，不太好！！
+    // 3.2层循环，不太好！！
     resetSelect(){
+      let _this=this;
       let arr=this.tabbar;
       for(let i=0;i<arr.length;i++){
         let places=arr[i].places;
@@ -97,6 +121,7 @@ export default {
         // 都清空后，需要默认显示第一个选项
         places[0].isOn=true;
         this.tempOne[i].index="";
+        // 6.0 右边具体路的暂存区
         this.tempList=[
           {
             "pfid":"1",
@@ -105,11 +130,21 @@ export default {
           }
         ];
       }
+      // 3.3 让 DIV默认滚动到顶部
+      let defaultDivs=document.getElementsByClassName("tab_position_left");
+      defaultDivs[this.domIndex].scrollTop=0;
+      // console.log(this.domIndex);
+      // 7.3 重置所有的选中个数
+      _this.tempOne.filter(every =>{
+        every.count=0;
+      });
+      _this.viewCount=0;
     },
     // 1、向父组件传递自定义事件，告知要隐藏
     hide(){
       this.$emit("hide");
     },
+    // 阻止半透明滚动事件
     cantScroll(){
       let mask=document.getElementById("mask");
       mask.addEventListener("touchmove",function(event){
@@ -117,6 +152,7 @@ export default {
       })
       // console.log(mask);
     },
+    // 初始化请求接口
     initApiUrl(){
         // let domain="https://"+window.location.host+"/";
         // 本地
@@ -125,6 +161,7 @@ export default {
         this.apiUrl=domain+str;
         // console.log(this.apiUrl);
     },
+    // 请求数据
     getData(){
       let _this=this;
       // console.log("aa");
@@ -138,9 +175,12 @@ export default {
           console.log(err);
         });
     },
-    // 商圈和地铁选中样式的切换
+    // 4 商圈和地铁按钮选中样式的切换
     toggleSelect(item,index){
       let _this=this;
+      // 7.0 切换到上次选中的个数
+      _this.viewCount=_this.tempOne[index].count;
+      _this.domIndex=index;
       // 简单记录下选中的下标
       let tempNum=_this.tempOne[index].index;
       let lists=_this.tabbar[index].places;
@@ -159,9 +199,17 @@ export default {
         }
       }
     },
-    // 区县的选中切换
+    // 5 左边区县和地铁的选中切换
     toggleClass(position,index,innerIndex){
       let _this=this;
+      // 5.1 先清除上一次所有的选中样式
+      _this.tempList.filter(list=>{
+        list.isHad=false;
+      });
+      // 7.1 清除之前选中的个数
+      _this.tempOne[_this.domIndex].count=0;
+      _this.viewCount=0;
+      // 5.2 获取对应列表
       let lists=_this.tabbar[index].places;
       if(!position.isOn){
         lists.filter(value=>{
@@ -174,17 +222,23 @@ export default {
         _this.tempOne[index].index=innerIndex;
       }
     },
-    // 右边除了0 位置可以多选
+    // 6 右边 详细路切换 除了0 位置可以多选
     toggleChange(text,num){
-      // _this.tempList 右边动态的数据列表
-      // console.log(text,num);
       let _this=this;
-      // this.count++;
+      // 6.1 这次选中的操作
+      // _this.tempList 右边动态的数据列表
       if(num!==0){
         // 清除第一个选中的样式
         _this.tempList[0].isHad=false;
         // 下面切换
         text.isHad=!text.isHad;
+        // 7.2 重新计算选中的个数
+        if(text.isHad){
+          _this.tempOne[_this.domIndex].count++;
+        }else{
+          _this.tempOne[_this.domIndex].count--;
+        }
+        _this.viewCount=_this.tempOne[_this.domIndex].count;
       }else{
         // 清除所有的选中样式
         _this.tempList.filter(list=>{
@@ -192,6 +246,11 @@ export default {
         });
         // 只要0位置被点击一次，0 位置只能是选中
         text.isHad=!text.isHad;
+        // 7.5 重置所有的选中个数
+        _this.tempOne.filter(every =>{
+          every.count=0;
+        });
+        _this.viewCount=0;
       }
     }
   },
