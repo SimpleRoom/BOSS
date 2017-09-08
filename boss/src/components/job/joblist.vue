@@ -54,8 +54,8 @@
                 <mt-spinner type="fading-circle"></mt-spinner>客官您滑慢点...
             </div>
         </div>
-        <!--上拉加載-->
-        <img v-show="willshow" @click="gotop" src="/static/images/backTop.png" class="backTop" alt="">
+        <!--返回顶部-->
+        <!-- <img v-show="willshow" @click="gotop" src="/static/images/backTop.png" class="backTop" alt=""> -->
     </div>
 </template>
 
@@ -277,7 +277,8 @@
             
         },
         mounted(){
-            window.addEventListener("scroll", this.willscroll);
+            // 去掉范湖底部事件监听
+            // window.addEventListener("scroll", this.willscroll);
             this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top;
             // console.log(this.$refs.wrapper.getBoundingClientRect().top);
         },

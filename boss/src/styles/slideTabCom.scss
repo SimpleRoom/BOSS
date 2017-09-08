@@ -47,10 +47,7 @@
     color: $vuecolor;
     border-bottom: 2px solid $vuecolor;
 }
-// .tab_list{
-//     height: 10rem;
-//     overflow: auto;
-// }
+
 .tab_position{
     overflow: hidden;
 }
@@ -92,6 +89,7 @@
 // reset_city
 .reset_city{
     position: relative;
+    background: #fff;
 }
 /*reset_city 移动端1px*/
 .reset_city:before,
@@ -99,7 +97,7 @@
     display: table;
     content: '';
     position: absolute;
-    background: #808080;
+    background: #E5E5E5;
     width: 100%;
     height: 1px;
     -webkit-transform: scaleY(0.3);
@@ -126,7 +124,7 @@
     display: table;
     content: '';
     position: absolute;
-    background: #808080;
+    background: #E5E5E5;
     width: 1px;
     height: 100%;
     // -webkit-transform: scaleY(0.3);
@@ -154,6 +152,7 @@
 }
 .slide_sametab{
     padding: 0 .35rem;
+    padding-bottom: .3rem;
     height: 10rem;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
