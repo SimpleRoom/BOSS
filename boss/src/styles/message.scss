@@ -1,0 +1,67 @@
+@import "../styles/mixin.scss";
+.message-list{
+    position: relative;
+}
+.messge_bar{
+    width: 100%;
+    height: 1.28rem;
+    background: $vuecolor;
+    text-align: center;
+    position: fixed;
+    z-index: 50;
+    a{
+        float: left;
+        width: 1.8rem;
+        text-align: center;
+        padding: .1rem 0;
+        @include sc(.4rem,#fff);
+        display: inline-block;
+    }
+}
+.message_box{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #fff;
+    border-radius: .1rem;
+}
+.messge_bar a.router-link-exact-active{
+    background: #fff;
+    color: $vuecolor;
+}
+.border_left{
+    border-top-left-radius: .1rem;
+    border-bottom-left-radius: .1rem;
+}
+.border_right{
+    border-top-right-radius: .1rem;
+    border-bottom-right-radius: .1rem;
+}
+
+
+// message_show
+.message_show{
+    padding-top: 1.2rem;
+    padding-bottom: 1.4rem;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+// inter_header
+.inter_header{
+    height: 1rem;
+    line-height: 1rem;
+    border-bottom: 0.013rem solid #e9efef;
+}
+.inter_bar{
+    width: 8rem;
+    margin: 0 auto;
+}
+.inter_bar li{
+    text-align: center;
+    color: #CBCBCB;
+}
+.inter_bar li.isHad{
+    border-bottom: 2px solid $vuecolor;
+    color: #979797;
+}

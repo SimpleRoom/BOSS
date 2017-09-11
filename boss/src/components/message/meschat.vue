@@ -4,13 +4,13 @@
       <div class="chatlist">
         <ul class="code">
             <router-link class="clear" tag="li" v-for="(item,index) in meschatData" :key="index" :to="{path : 'meschatDetail'}">
-              <div class="left">
+              <div class="infoleft">
                 <img :src="item.chat_img">
               </div>
-              <div class="right pull_right">
-                <p class="clear"><span class="name">{{item.chat_name}}</span><span class="right">{{item.chat_time}}</span></p>
+              <div class="inforight pull_right">
+                <p class="clear"><span class="name">{{item.chat_name}}</span><span class="inforight">{{item.chat_time}}</span></p>
                 <p><span>{{item.chat_title[0]}}</span> | <span>{{item.chat_title[1]}}</span></p>
-                <p>{{item.chat_msg.chat_msg_detial[0]}}</p>
+                <p>{{item.chat_msg.chat_msg_detial[1]}}</p>
               </div>
             </router-link>
         </ul>
@@ -33,11 +33,11 @@
         const _this=this;
         this.$http.get('/static/data/message.json').then((res)=>{
           var res1 = res.data;
-          console.log(res1.data.chat)
+          // console.log(res1.data.chat)
           if(res.data.code == 0){
-            console.log(111);
+            // console.log(111);
             _this.meschatData=res1.data.chat.chat_lists;
-            console.log(_this.meschatData);
+            // console.log(_this.meschatData);
           }
         }).catch(()=>{
           alert(error)
@@ -47,17 +47,11 @@
   }
 </script>
 
-<style>
+<style lang="scss" scoped>
   .clear:after {
       display: table;
       content: '';
       clear: both;
-  }
-  .left {
-    float: left;
-  }
-  .right {
-    float: right;
   }
   .meschat h4 {
     background: #fff;
@@ -91,13 +85,13 @@
   .chatlist li:last-child {
     border-bottom: none;
   }
-  .chatlist li .left {
+  .chatlist li .infoleft {
     /*padding-right: 0.417rem;*/
     width: 2rem;
     position: relative;
     margin-right: -2rem;
   }
-  .chatlist li .left img {
+  .chatlist li .infoleft img {
     width: 1.389rem;
     height: 1.389rem;
     border-radius: 1.389rem;

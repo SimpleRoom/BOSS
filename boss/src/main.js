@@ -15,8 +15,8 @@ import "./styles/fontstyle.css"
 import "./styles/base.scss"
 
 
-
-Vue.prototype.$http = axios  //其他页面在使用axios的时候直接  this.$http就可以了
+//其他页面在使用axios的时候直接  this.$http就可以了
+Vue.prototype.$http = axios  
 
 //使用mintUI插件
 import MintUI from 'mint-ui'
@@ -38,8 +38,6 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  // 0819.2
-  // store,
   template: '<App/>',
   components: { App }
 })

@@ -3,8 +3,6 @@ import Router from 'vue-router'
 import login from '@/components/login/login'
 // import defaultlogin from '@/components/login/defaultlogin'
 
-// 测试滚动无限加载
-const test = resolve => require(['@/components/testInfiniteScroll'], resolve)
 // 测试vuex
 const testVuex = resolve => require(['@/components/testVuex/test'], resolve)
 
@@ -12,12 +10,15 @@ const testVuex = resolve => require(['@/components/testVuex/test'], resolve)
 const home = resolve => require(['@/components/common/home'], resolve)
 const joblist = resolve => require(['@/components/job/joblist'], resolve)
 const jobdetail = resolve => require(['@/components/job/jobdetail'], resolve)
+
 const company = resolve => require(['@/components/company/company'], resolve)
 const comDetail = resolve => require(['@/components/company/comDetail'], resolve)
+
 const message = resolve => require(['@/components/message/message'], resolve)
 const mesChat = resolve => require(['@/components/message/mesChat'], resolve)
 const mesInteract = resolve => require(['@/components/message/mesInteract'], resolve)
-const meschatDetail = resolve => require(['@/components/message/meschatDetail'], resolve)
+// const meschatDetail = resolve => require(['@/components/message/meschatDetail'], resolve)
+
 const aboutme = resolve => require(['@/components/aboutme/myinfo'], resolve)
 
 
@@ -79,24 +80,15 @@ export default new Router({
               component:company
             },
             {
-              path:"/message",
+              path:"/message/:id",
               component:message,
               children:[
                 {
-                  path:'',
-                  name:"mesChat",
-                  component:mesChat,
-                  // children:[
-                  //   {
-                  //     path:'',
-                  //     name:"meschatDetail",
-                  //     component:meschatDetail
-                  //   }
-                  // ]
+                  path:"",
+                  component:mesChat
                 },
                 {
-                  path:'/mesInteract',
-                  name:"mesInteract",
+                  path:"inter",
                   component:mesInteract
                 }
               ]
@@ -105,12 +97,7 @@ export default new Router({
               path:"/aboutme",
               name:"me",
               component:aboutme
-            },
-            {
-              path:"/testVuex",
-              name:"testVuex",
-              component:testVuex
-            },
+            }
           ]
       },
       {
@@ -123,17 +110,6 @@ export default new Router({
       	path:"/comdetail/:id",
       	name:"comDetail",
       	component:comDetail
-      },
-      // 消息詳情路由
-      {
-        path:'/meschatDetail',
-        name:"meschatDetail",
-        component:meschatDetail
-      },
-      {
-        path:"/test",
-        name:"test",
-        component:test
       }
   ]
 })

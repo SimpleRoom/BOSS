@@ -1,25 +1,21 @@
 <template>
   <div class="message-list">
-        <ul class="head_tab">
-            <router-link tag="li" v-for="(item,index) in messageNav" :key="index" :to="{path : item.route}">
-              {{item.title}}
-            </router-link>
-        </ul>
-        <div class="show_htab">
-            <router-view></router-view>
-        </div>
+    <div class="messge_bar clear">
+      <div class="message_box">
+          <router-link class="border_left" to="/message/msg">消息</router-link>
+          <router-link class="border_right" to="/message/msg/inter">互動</router-link>
+      </div>
+    </div>
+    <div class="message_show">
+      <router-view></router-view>
+    </div>
+    
   </div>
 </template>
 
 <script>
-  import mesChat from './mesChat.vue'
-  import mesInteract from './mesInteract.vue'
 export default {
-  name: 'hello',
-  components:{
-    mesChat,
-    mesInteract
-  },
+  name: 'message',
   data () {
     return {
       messageNav:[
@@ -42,37 +38,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  .message-list {
-    background: #e9efef;
-    min-height: 16.667rem;
-  }
-  .message-list .head_tab {
-    background: #53CAC3;
-    text-align: center;
-    padding: 0.25rem 0;
-  }
-  .message-list .head_tab li {
-    display: inline-block;
-    color: #fff;
-    font-size: 0.4rem;
-    padding: 0.2rem 0.5rem;
-    border: 1px solid #fff;
-    border-radius: 0.125rem;
-    cursor: pointer;
-  }
-  .message-list .head_tab li:first-child {
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  .message-list .head_tab li:nth-child(2) {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-  .message-list .head_tab li.router-link-exact-active{
-    background: #fff;
-    color: #53CAC3;
-  }
+<style lang="scss" scoped>
+@import "../../styles/message.scss";  
 
 </style>
