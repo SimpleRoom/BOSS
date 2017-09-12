@@ -9,7 +9,7 @@
     text-align: center;
     position: fixed;
     z-index: 50;
-    a{
+    span{
         float: left;
         width: 1.8rem;
         text-align: center;
@@ -17,6 +17,14 @@
         @include sc(.4rem,#fff);
         display: inline-block;
     }
+}
+.messge_bar span:nth-child(1){
+    border-top-left-radius: .1rem;
+    border-bottom-left-radius: .1rem;
+}
+.messge_bar span:nth-child(2){
+    border-top-right-radius: .1rem;
+    border-bottom-right-radius: .1rem;
 }
 .message_box{
     position: absolute;
@@ -26,20 +34,10 @@
     border: 1px solid #fff;
     border-radius: .1rem;
 }
-.messge_bar a.router-link-exact-active{
+.messge_bar span.on{
     background: #fff;
     color: $vuecolor;
 }
-.border_left{
-    border-top-left-radius: .1rem;
-    border-bottom-left-radius: .1rem;
-}
-.border_right{
-    border-top-right-radius: .1rem;
-    border-bottom-right-radius: .1rem;
-}
-
-
 // message_show
 .message_show{
     padding-top: 1.2rem;
@@ -47,7 +45,73 @@
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;
 }
-// inter_header
+
+// 消息
+.clear:after {
+    display: table;
+    content: '';
+    clear: both;
+}
+.meschat h4 {
+  background: #fff;
+  line-height: 1.8;
+  padding: 0.167rem 0.417rem;
+  font-size: 0.444rem;
+  border-left: 0.083rem solid #42bfee;
+  margin-top: 0.278rem;
+  border-bottom: 0.028rem solid #e9efef;
+  border-top: 0.028rem solid #e9efef;
+}
+.meschat h4 span {
+  float: right;
+  padding: 0.139rem 0.333rem;
+  background: #c3c3c3;
+  color: #FFF;
+  border-radius: 0.083rem;
+  font-size: 0.278rem;
+  line-height: normal;
+  margin-top: 0.056rem;
+}
+.chatlist {
+  background: #fff;
+  padding: 0 0.556rem
+}
+.chatlist li {
+  position: relative;
+  padding: 0.278rem 0;
+  border-bottom: 0.028rem solid #e9efef;
+}
+.chatlist li:last-child {
+  border-bottom: none;
+}
+.chatlist li .infoleft {
+  /*padding-right: 0.417rem;*/
+  width: 2rem;
+  position: relative;
+  margin-right: -2rem;
+}
+.chatlist li .infoleft img {
+  width: 1.389rem;
+  height: 1.389rem;
+  border-radius: 1.389rem;
+
+}
+.chatlist li .pull_right {
+  width: 100%;
+  padding-left: 2rem;
+}
+.pull_right p {
+  color: #ccc;
+}
+.chatlist li p .name {
+  font-size: 0.389rem;
+  color: #333;
+}
+.chatlist li p span {
+  color: #999;
+}
+
+// 互动
 .inter_header{
     height: 1rem;
     line-height: 1rem;

@@ -15,9 +15,11 @@ const company = resolve => require(['@/components/company/company'], resolve)
 const comDetail = resolve => require(['@/components/company/comDetail'], resolve)
 
 const message = resolve => require(['@/components/message/message'], resolve)
-const mesChat = resolve => require(['@/components/message/mesChat'], resolve)
-const mesInteract = resolve => require(['@/components/message/mesInteract'], resolve)
-// const meschatDetail = resolve => require(['@/components/message/meschatDetail'], resolve)
+// 嵌套路由有BUG ，直接切换了
+// const mesChat = resolve => require(['@/components/message/mesChat'], resolve)
+// const mesInteract = resolve => require(['@/components/message/mesInteract'], resolve)
+
+const meschatDetail = resolve => require(['@/components/message/meschatDetail'], resolve)
 
 const aboutme = resolve => require(['@/components/aboutme/myinfo'], resolve)
 
@@ -80,18 +82,8 @@ export default new Router({
               component:company
             },
             {
-              path:"/message/:id",
-              component:message,
-              children:[
-                {
-                  path:"",
-                  component:mesChat
-                },
-                {
-                  path:"inter",
-                  component:mesInteract
-                }
-              ]
+              path:"/message",
+              component:message
             },
             {
               path:"/aboutme",
@@ -110,6 +102,11 @@ export default new Router({
       	path:"/comdetail/:id",
       	name:"comDetail",
       	component:comDetail
+      },
+      {
+        path:"/meschatDetail",
+        name:"meschatDetail",
+        component:meschatDetail
       }
   ]
 })
