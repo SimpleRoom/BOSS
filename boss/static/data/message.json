@@ -117,8 +117,8 @@
                 }
             ]
         },
-        "interactive":{
-            "interestedme":[
+        "interactive":[
+            [
                 {
                     "id":"0",
                     "comp_pic":"/static/images/logo_4.jpg",
@@ -126,183 +126,203 @@
                     "hot_pos_name":"前端",
                     "seniority":"1-3年",
                     "education":"本科",
-                    "job_money":"10-20k"
+                    "job_money":"10-20k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
                     "comp_pic":"/static/images/logo_2.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_name":"阿里妈妈",
                     "hot_pos_name":"高級開發",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
                     "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_name":"爱奇艺",
                     "hot_pos_name":"html5",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
                     "comp_pic":"/static/images/logo_3.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_name":"优酷",
                     "hot_pos_name":"HTML5",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 },
-                {
-                    "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
-                    "hot_pos_name":"前端工程师",
-                    "seniority":"3-5年",
-                    "education":"本科",
-                    "job_money":"10-15k"
-                },
-                {
-                    "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
-                    "hot_pos_name":"前端工程师",
-                    "seniority":"3-5年",
-                    "education":"本科",
-                    "job_money":"10-15k"
-                },
-                {
-                    "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
-                    "hot_pos_name":"前端工程师",
-                    "seniority":"3-5年",
-                    "education":"本科",
-                    "job_money":"10-15k"
-                },
-                {
-                    "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
-                    "hot_pos_name":"前端工程师",
-                    "seniority":"3-5年",
-                    "education":"本科",
-                    "job_money":"10-15k"
-                },
-                {
-                    "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
-                    "hot_pos_name":"前端工程师",
-                    "seniority":"3-5年",
-                    "education":"本科",
-                    "job_money":"10-15k"
-                },
-                {
-                    "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
-                    "hot_pos_name":"前端工程师",
-                    "seniority":"3-5年",
-                    "education":"本科",
-                    "job_money":"10-15k"
-                }
-            ],
-            "followedme":[
                 {
                     "id":"0",
                     "comp_pic":"/static/images/logo_5.jpg",
-                    "comp_name":"海辉",
-                    "hot_pos_name":"高級前端工程师",
-                    "seniority":"3-5年",
-                    "education":"本科",
-                    "job_money":"10-20k"
-                },
-                {
-                    "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_name":"易企秀",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"14:12"
                 },
                 {
                     "id":"0",
-                    "comp_pic":"/static/images/logo_3.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_pic":"/static/images/logo_4.jpg",
+                    "comp_name":"梦工厂",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"13:00"
                 },
                 {
                     "id":"0",
                     "comp_pic":"/static/images/logo_2.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_name":"海天湖底",
+                    "hot_pos_name":"前端工程师",
+                    "seniority":"3-5年",
+                    "education":"本科",
+                    "job_money":"10-15k",
+                    "end_time":"12:39"
+                },
+                {
+                    "id":"0",
+                    "comp_pic":"/static/images/logo_3.jpg",
+                    "comp_name":"小七霸气",
+                    "hot_pos_name":"前端工程师",
+                    "seniority":"3-5年",
+                    "education":"本科",
+                    "job_money":"10-15k",
+                    "end_time":"11:08"
+                },
+                {
+                    "id":"0",
+                    "comp_pic":"/static/images/logo_1.jpg",
+                    "comp_name":"piapia酱",
+                    "hot_pos_name":"前端工程师",
+                    "seniority":"3-5年",
+                    "education":"本科",
+                    "job_money":"10-15k",
+                    "end_time":"10:26"
+                },
+                {
+                    "id":"0",
+                    "comp_pic":"/static/images/logo_5.jpg",
+                    "comp_name":"白前梦里天",
+                    "hot_pos_name":"前端工程师",
+                    "seniority":"3-5年",
+                    "education":"本科",
+                    "job_money":"10-15k",
+                    "end_time":"08:24"
+                }
+            ],
+            [
+                {
+                    "id":"0",
+                    "comp_pic":"/static/images/logo_5.jpg",
+                    "comp_name":"海辉内冷",
+                    "hot_pos_name":"高級前端工程师",
+                    "seniority":"3-5年",
+                    "education":"本科",
+                    "job_money":"10-20k",
+                    "end_time":"刚刚"
+                },
+                {
+                    "id":"0",
+                    "comp_pic":"/static/images/logo_1.jpg",
+                    "comp_name":"提笔忘字",
+                    "hot_pos_name":"前端工程师",
+                    "seniority":"3-5年",
+                    "education":"本科",
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
+                },
+                {
+                    "id":"0",
+                    "comp_pic":"/static/images/logo_3.jpg",
+                    "comp_name":"钱巴巴理财",
+                    "hot_pos_name":"前端工程师",
+                    "seniority":"3-5年",
+                    "education":"本科",
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
+                },
+                {
+                    "id":"0",
+                    "comp_pic":"/static/images/logo_2.jpg",
+                    "comp_name":"come back",
                     "hot_pos_name":"HTML5",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
+                    "comp_pic":"/static/images/logo_4.jpg",
+                    "comp_name":"海阔天空",
+                    "hot_pos_name":"前端工程师",
+                    "seniority":"3-5年",
+                    "education":"本科",
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
+                },
+                {
+                    "id":"0",
+                    "comp_pic":"/static/images/logo_3.jpg",
+                    "comp_name":"宇文化及",
+                    "hot_pos_name":"前端工程师",
+                    "seniority":"3-5年",
+                    "education":"本科",
+                    "job_money":"10-15k",
+                    "end_time":"09-12"
+                },
+                {
+                    "id":"0",
+                    "comp_pic":"/static/images/logo_5.jpg",
                     "comp_name":"文思海辉",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"09-11"
                 },
                 {
                     "id":"0",
                     "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_name":"携程",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"09-10"
                 },
                 {
                     "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_pic":"/static/images/logo_2.jpg",
+                    "comp_name":"途牛旅游",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"08-11"
                 },
                 {
                     "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_pic":"/static/images/logo_3.jpg",
+                    "comp_name":"ele大前端",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
-                },
-                {
-                    "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
-                    "hot_pos_name":"前端工程师",
-                    "seniority":"3-5年",
-                    "education":"本科",
-                    "job_money":"10-15k"
-                },
-                {
-                    "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
-                    "hot_pos_name":"前端工程师",
-                    "seniority":"3-5年",
-                    "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"07-23"
                 }
             ],
-            "newlists":[
+            [
                 {
                     "id":"0",
                     "comp_pic":"/static/images/logo_4.jpg",
@@ -310,90 +330,100 @@
                     "hot_pos_name":"開發",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-20k"
+                    "job_money":"10-20k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
                     "comp_pic":"/static/images/logo_2.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_name":"文思孟倩",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
                     "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_name":"鲁达科技",
                     "hot_pos_name":"高級前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
                     "comp_pic":"/static/images/logo_3.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_name":"万家娱乐",
                     "hot_pos_name":"HTML5",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
                     "comp_pic":"/static/images/logo_5.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_name":"链家",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_pic":"/static/images/logo_2.jpg",
+                    "comp_name":"我爱我家",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_pic":"/static/images/logo_3.jpg",
+                    "comp_name":"大内蒙",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_pic":"/static/images/logo_5.jpg",
+                    "comp_name":"湖四海崔",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_pic":"/static/images/logo_4.jpg",
+                    "comp_name":"美天科技",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 },
                 {
                     "id":"0",
-                    "comp_pic":"/static/images/logo_1.jpg",
-                    "comp_name":"文思海辉",
+                    "comp_pic":"/static/images/logo_2.jpg",
+                    "comp_name":"露达丝",
                     "hot_pos_name":"前端工程师",
                     "seniority":"3-5年",
                     "education":"本科",
-                    "job_money":"10-15k"
+                    "job_money":"10-15k",
+                    "end_time":"刚刚"
                 }
             ]
-        }
+        ]
     }
 }

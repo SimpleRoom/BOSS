@@ -35,6 +35,16 @@
                  @click="toggleTab(item,index)">{{ item.title }}</li>
             </ul>
         </div>
+        <div class="interact-list">
+          <div class="interact-same" v-for="(same,subScript) in lists" >
+            <div class="inter-img"><img :src="same.comp_pic" alt=""></div>
+            <div class="interact-msg">
+              <h3 class="clear">{{same.hot_pos_name}} <span>{{same.end_time}}</span></h3>
+              <p>{{same.comp_name}}</p>
+              <p><span><i class="icon-seniority"></i>{{same.seniority}}</span><span><i class="icon-education"></i>{{same.education}}</span><span><i class="iconfont icon-qian"></i>{{same.job_money}}</span></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -68,7 +78,9 @@ export default {
         }
       ],
       tempIndex:0,
-      data:[],
+      //4.0 总数据
+      interactData:[],
+      //4.1 要渲染的指定的互动数据
       lists:[]
     }
   },
@@ -81,7 +93,6 @@ export default {
       let domain="http://"+window.location.host+"/";
       var str="static/data/message.json";
       this.apiUrl=domain+str;
-      // console.log(this.apiUrl);
     },
     // 2、请求data
     fenchData(){
@@ -90,9 +101,11 @@ export default {
         var res1 = res.data;
         // console.log(res1.data.chat)
         if(res.data.code == 0){
-          // console.log(111);
+          // 消息的數據
           _this.meschatData=res1.data.chat.chat_lists;
-          // console.log(_this.meschatData);
+          //4.3 互動的數據
+          _this.interactData=res1.data.interactive;
+          _this.lists=_this.interactData[0];
         }
       }).catch(()=>{
         alert(error)
@@ -108,6 +121,8 @@ export default {
       }
     },
     toggleTab(item,index){
+      //4.4
+      this.lists=this.interactData[index];
       // console.log(index);
       if(!item.isHad){
         this.listBar.filter( value=>{
