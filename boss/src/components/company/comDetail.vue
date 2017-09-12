@@ -61,11 +61,10 @@
 
 <script>
 	export default{
-		mounted(){
-			this.fetchData();
-		},
+		
 		data(){
 			return {
+				apiUrl:"",
 				InfoData:{},
 				followData:"关注",
 				hotNum:"",
@@ -77,11 +76,20 @@
 			}
 		},
 		methods:{
+			// 初始化请求接口
+			initApiUrl(){
+				// let domain="https://"+window.location.host+"/";
+				// 本地
+				let domain="http://"+window.location.host+"/";
+				let str="static/data/comdetail.json";
+				this.apiUrl=domain+str;
+				// console.log(this.apiUrl);
+			},
 			fetchData(){
 				const _this=this;
 				const id=parseInt(this.$route.params.id)-1;
 				console.log(id)
-				this.$http.get('/static/data/comdetail.json').then((res)=>{
+				this.$http.get(_this.apiUrl).then((res)=>{
 					if(res.data.code==200){
 						_this.InfoData=res.data.company[id];
 						console.log(_this.InfoData)
@@ -113,6 +121,12 @@
 			checkAc(index){
 				this.nowIndex1=index;
 			}
+		},
+		mounted(){
+		},
+		created(){
+			this.initApiUrl();
+			this.fetchData();
 		}
 	}
 </script>

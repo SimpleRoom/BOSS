@@ -44,6 +44,7 @@ export default {
   },
   data () {
     return {
+		apiUrl:"",
     	loading:false,
     	wrapperHeight:0,
       InfoData:[],
@@ -72,6 +73,15 @@ export default {
 
   },
   methods:{
+	initApiUrl(){
+        // 线上
+        // let domain="https://"+window.location.host+"/";
+        // 本地
+        let domain="http://"+window.location.host+"/";
+        var str="static/data/joblist.json";
+        this.apiUrl=domain+str;
+        // console.log(this.apiUrl);
+    },
   	//模拟无限下拉加载
     loadMore() {
         this.loading = true;
@@ -81,54 +91,42 @@ export default {
             // console.log(this.jobs);
         }, 2500);
     },
-//  willscroll(){
-//      //2.1 使用定时器，防止频繁滚动
-//      if (window.scrollTime) {
-//          window.clearTimeout(window.scrollTime);
-//      }
-//      //2.2 定时器
-//      window.scrollTime = window.setTimeout(() => {
-//          const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-//          this.willshow = (scrollTop > 300) ? true : false;
-//          // console.log("滚动了");
-//      }, 100);
-//  },
-		fenchData(){
-			const _this=this;
-			this.$http.get('/static/data/joblist.json').then((res)=>{
-				if(res.data.code==0){
-					_this.InfoData=res.data.company;
-				}
-			})
+	fenchData(){
+		const _this=this;
+		this.$http.get(_this.apiUrl).then((res)=>{
+			if(res.data.code==0){
+				_this.InfoData=res.data.company;
+			}
+		})
+	},
+	tabChange(index){
+		this.tableIndex=index;
+		this.tabData1=this.tabData[index];
+		this.nowIndex=this.indexSub[index];
+		this.showHide=true;
+		this.$refs.judge.judgeIndex(this.nowIndex);
+		//调用子组件的方法
+		
 		},
-		tabChange(index){
-			this.tableIndex=index;
-			this.tabData1=this.tabData[index];
-			this.nowIndex=this.indexSub[index];
-			this.showHide=true;
-			this.$refs.judge.judgeIndex(this.nowIndex);
-			//调用子组件的方法
-			
-			},
-		hide(){
-			this.showHide=false;
-		},
-		indexData(){
-			this.nowIndex=[0];
+	hide(){
+		this.showHide=false;
+	},
+	indexData(){
+		this.nowIndex=[0];
 //			var title=this.titleData[this.tableIndex].title;
 //			this.titleData[this.tableIndex].title=title.replace(/[^\u4e00-\u9fa5]+/,"")+"("+number+")";
-		},
-		btnSure(number,indexData){
-			this.indexSub[this.tableIndex]=indexData;
-			let title=this.titleData[this.tableIndex].title;
-			if(number!=0){
-				this.titleData[this.tableIndex].title=title.replace(/[^\u4e00-\u9fa5]+/,"")+"("+number+")";
-			}else{
-				this.titleData[this.tableIndex].title=title.replace(/[^\u4e00-\u9fa5]+/,"");
-			}
-			
-			this.showHide=false;
+	},
+	btnSure(number,indexData){
+		this.indexSub[this.tableIndex]=indexData;
+		let title=this.titleData[this.tableIndex].title;
+		if(number!=0){
+			this.titleData[this.tableIndex].title=title.replace(/[^\u4e00-\u9fa5]+/,"")+"("+number+")";
+		}else{
+			this.titleData[this.tableIndex].title=title.replace(/[^\u4e00-\u9fa5]+/,"");
 		}
+		
+		this.showHide=false;
+	}
   },
   // 創建后挂载到root之后调用该钩子函数
   mounted(){
@@ -137,6 +135,7 @@ export default {
   },
   // 该实例被创建还没挂载root之前，ajax可以在这里
   created(){
+	this.initApiUrl();
   	this.fenchData();
   }
 }

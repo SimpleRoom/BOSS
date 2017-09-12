@@ -117,7 +117,7 @@ export default {
   data () {
     return {
       scrollInfo:"职位详情",
-      apiurl: "/static/data/joblist.json",
+      apiUrl: "",
       tempInfo:"",
       id:"",
       isSelected:false,
@@ -190,9 +190,18 @@ export default {
       this.fetchData(this.id);
       // console.log(this.id);
     },
+    initApiUrl(){
+        // 线上
+        // let domain="https://"+window.location.host+"/";
+        // 本地
+        let domain="http://"+window.location.host+"/";
+        var str="static/data/joblist.json";
+        this.apiUrl=domain+str;
+        // console.log(this.apiUrl);
+    },
     fetchData(index){
       let _this=this;
-      this.$http.get('/static/data/joblist.json')
+      this.$http.get(_this.apiUrl)
           .then(response => {
               if(response.data.code=="0"){
                   // 根据id匹配指定的信息列表
@@ -243,6 +252,7 @@ export default {
   },
   // 该实例被创建还没挂载root之前，ajax可以在这里
   created(){
+    this.initApiUrl();
     this.fecthIndex();
   }
 }
