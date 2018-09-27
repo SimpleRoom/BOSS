@@ -10,7 +10,7 @@
     "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
-    "clean":"rimraf dist"
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "axios": "^0.16.2",
