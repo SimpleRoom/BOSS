@@ -47,7 +47,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
   .clear:after {
       display: table;
       content: '';

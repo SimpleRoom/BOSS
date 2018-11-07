@@ -1,0 +1,365 @@
+.job_detial{
+    background: #E9EFEF;
+    position: relative;
+    padding-top: 1.3rem;
+    padding-bottom: 1.5rem;
+    .job_detial_header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 1.6rem;
+        line-height: 1.6rem;
+        z-index: 50;
+    }
+    // padding: .3rem 0 .4rem 0;
+    .top_detial_bg{
+        background: #fff;
+        padding:.25rem .4rem;
+        margin-top: .3rem;
+        .top_detial{
+            h3{
+                span{
+                    color: $red;
+                }
+            }
+        }
+    }
+}
+.top_detial>h3{
+    font-size: .4rem;
+}
+.top_detial>p{
+    margin-top: .3rem;
+    overflow: hidden;
+}
+.top_detial>p>span{
+    float: left;
+    font-size: .4rem;
+}
+.top_detial p span+span{
+    margin-left: .3rem;
+}
+.top_detial p i{
+    color: $vuecolor;
+}
+// 公司信息
+.comp_info{
+    width: 100%;
+    height: 2rem;
+    position: relative;
+    border-bottom: 1px solid #808080;
+}
+.comp_img{
+    width: 1.5rem;
+    height: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    img{
+        width: auto;
+        height: 100%;
+        position: absolute;
+        left: -100%;
+        top: -100%;
+        right: -100%;
+        bottom: -100%;
+        margin: auto;
+        cursor: pointer;
+        z-index: 10;
+    }
+}
+.comp_msg{
+    color: #999;
+    position: absolute;
+    left: 2rem;;
+    top: 50%;
+    transform: translateY(-50%);
+    sc(.35rem,#999);
+    h3{
+        font-weight: 100;
+    }
+}
+.comp_icon{
+    position: absolute;
+    right: .5rem;;
+    top: 50%;
+    transform: translateY(-50%);
+    i{
+        sc(.5rem,#999);
+    }
+}
+.comp_detial_place{
+    margin-top: .25rem;
+    position: relative;
+}
+.comp_detial_place>p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 90%;
+    sc(.35rem,#999);
+    span{
+        color: $vuecolor;
+        margin-right: .15rem;
+    }
+}
+.comp_detial_place>i{
+    sc(.4rem,$vuecolor);
+    position: absolute;
+    right: .2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+// 
+.job_detial_header{
+    background: $vuecolor;
+    h3{
+        text-align: center;
+        sc(.48rem,#fff);
+        font-weight: 100;
+    }
+    a{
+        position: absolute;
+        sc(.6rem,#fff);
+        left: .4rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .job_detial_icon{
+        position: absolute;
+        right: .4rem;
+        top: 50%;
+        transform: translateY(-50%);
+        sc(.8rem,#fff);
+        .icon-aixin{
+            margin-right: .2rem;
+        }
+        .selected{
+            color: $red;
+        }
+    }
+}
+// goos_tips
+.goos_tips{
+    overflow: hidden;
+    border-bottom: 1px solid #808080;
+    padding: .2rem 0;
+    li{
+        float: left;
+        sc(.35rem,#999);
+        padding: 0 .15rem;
+        padding-right: .15rem;
+        position: relative;
+        height: .46rem;
+        line-height: .46rem;
+    }
+    li:after{
+        display: table;
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 80%;
+        background: #808080;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+    }
+}
+// top_detial_bg
+.top_detial_bg>h3{
+    sc(.55rem,$vuecolor);
+    font-weight: 100;
+    position: relative;
+    border-bottom: 1px solid #808080;
+    padding-bottom: .1rem;
+    margin-bottom: .15rem;
+    span{
+        color: #2F2F2F;
+        margin-left: .1rem;
+        font-size: .4rem;
+    }
+    b{
+        sc(.32rem,#999);
+        font-weight: 100;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.job_repon,
+.job_require{
+    overflow: hidden;
+}
+.job_repon>p,
+.job_require>p{
+    color: #999;
+    float: left;
+    width: 100%;
+}
+.toggle_more{
+    margin-top: .15rem;
+}
+.toggle_more p{
+    color: $vuecolor;
+    text-align: center;
+    font-weight: 100;
+}
+.toggle-up{
+    font-size: .2rem;
+    padding-top: .15rem;
+}
+.toggle-down{
+    font-size: .6rem;
+}
+.skills{
+    overflow:hidden;
+    li{
+        float: left;
+        color: #999;
+        margin-right: .15rem;
+    }
+}
+.team{
+    overflow: hidden;
+    p{
+        float: left;
+        color: #999;
+    }
+}
+.compare p{
+    color: #999;
+    height: .4rem;
+    line-height: .4rem;
+    span{
+        color: $vuecolor;
+    }
+}
+// boss_info
+.boss_info{
+    padding: .25rem 0;
+    position: relative;
+    .boss_detail{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 75%;
+        left: 1.8rem;
+        p{
+            line-height: .46rem;
+            color: #999;
+            overflow: hidden;
+            span{
+                float: right;
+            }
+        }
+    }
+}
+.good_tips  { 
+    h3 span{
+        color: $red;
+    }
+    p{
+        color: #999;
+    }
+}
+.boss_img{
+    width: 1.2rem;
+    height: 1.2rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+    img{
+        width: auto;
+        height: 100%;
+        position: absolute;
+        left: -100%;
+        top: -100%;
+        right: -100%;
+        bottom: -100%;
+        margin: auto;
+        cursor: pointer;
+        z-index: 10;
+    }
+}
+// recommend
+.recommend{
+    margin-top: .25rem;
+    text-align: center;
+    color: #999;
+    font-weight: 100;
+    // @include sc(,#999);
+}
+.reco_comp_img{
+    width: 1.5rem;
+    height: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    img{
+        width: auto;
+        height: 100%;
+        position: absolute;
+        left: -100%;
+        top: -100%;
+        right: -100%;
+        bottom: -100%;
+        margin: auto;
+        cursor: pointer;
+        z-index: 10;
+    }
+}
+.recommend_list li{
+    overflow: hidden;
+    border-bottom: 1px solid #808080;
+    padding-bottom: .2rem;
+}
+.recommend_list li+li{
+    margin-top: .25rem;
+}
+.reco_info{
+    float: left;
+    width: 80%;
+    margin-left: .2rem;
+    h3{
+        font-weight: 100;
+        overflow: hidden;
+        span{
+            float: right;
+            color: $red;
+        }
+    }
+    p{
+        color: #999;
+        line-height: .48rem;
+        span{
+            margin-right: .2rem;
+        }
+    }
+}
+
+
+// 立即沟通
+.will_chat{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 50;
+    // height: 1.5rem;
+    background: #fff;
+    padding: .2rem;
+    a{
+        display: block;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        background: $vuecolor;
+        text-align: center;
+        color: #fff;
+        border-radius: .1rem;
+    }
+}

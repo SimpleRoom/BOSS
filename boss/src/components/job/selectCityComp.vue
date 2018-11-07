@@ -5,26 +5,26 @@
       <!--商圈和地铁的按钮切换 -->
       <ul class="tab_bar flex_parent">
         <li class="flex_child" v-for="(item,index) in tabbar" :class="{on:item.isSelected}"
-        @click="toggleSelect(item,index)">
+        @click="toggleSelect(item,index)" :key="index">
           <i class="iconfont" :class="item.iconClass"></i>{{ item.title }}
         </li>
       </ul>
       <!--商圈和地铁的列表切换 -->
       <div class="tab_list_box">
-        <div class="tab_list" v-for="(nav,index) in tabbar" v-show="nav.isSelected">
+        <div class="tab_list" v-for="(nav,index) in tabbar" v-show="nav.isSelected" :key="index">
           <div class="tab_position">
             <!--左边区县或者地铁-->
             <div class="tab_position_left">
               <p v-for="(position,innerIndex) in nav.places" 
               :class="{on:position.isOn}"
-              @click="toggleClass(position,index,innerIndex)">{{ position.name }}</p>
+              @click="toggleClass(position,index,innerIndex)" :key="innerIndex">{{ position.name }}</p>
             </div>
             <!-- 右边具体路或者位置 -->
             <div class="tab_position_right">
               <p v-for="(text,num) in tempList"
               :class="{ishad:text.isHad}"
               :data-id="text.pfid"
-              @click="toggleChange(text,num)"><span>{{text.road}}</span><i class="iconfont icon-correct"></i></p>
+              @click="toggleChange(text,num)" :key="num"><span>{{text.road}}</span><i class="iconfont icon-correct"></i></p>
             </div>
           </div>
         </div>
@@ -264,6 +264,5 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-@import "../../styles/slideTabCom.scss";
+<style lang="stylus" scoped>
 </style>

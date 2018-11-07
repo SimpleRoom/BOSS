@@ -18,7 +18,7 @@
           <span><i class="icon-education"></i>{{job_edu}}</span>
         </p>
         <ul class="goos_tips">
-          <li v-for="tips in good_tips">{{tips}}</li>
+          <li v-for="(tips,index) in good_tips" :key="index">{{tips}}</li>
         </ul>
         <div class="comp_info">
           <div class="comp_img">
@@ -26,7 +26,7 @@
           </div>
           <div class="comp_msg">
             <h3>{{com_name}}</h3>
-            <p><span v-for="list in com_msgarr">{{list}}</span></p>
+            <p><span v-for="(list,index) in com_msgarr" :key="index">{{list}}</span></p>
           </div>
           <div class="comp_icon">
             <i class="icon-right"></i>
@@ -42,21 +42,21 @@
     <div class="top_detial_bg">
       <h3><i class="iconfont icon-jianli"></i><span>职位详情</span></h3>
       <div class="job_repon">
-        <p v-for=" repon in job_respon">{{repon}}</p>
+        <p v-for=" (repon,index) in job_respon" :key="index">{{repon}}</p>
       </div>
       <div class="job_require" v-show="isMore">
-        <p v-for="requires in job_require">{{requires}}</p>
+        <p v-for="(requires,index) in job_require" :key="index">{{requires}}</p>
       </div>
       <div class="toggle_more">
         <p v-if="isMore" class="toggle-up"><i class="icon-top" @click="toggleMore"></i></p>
-        <p v-else ="isMore" class="toggle-down"><i class="icon-down" @click="toggleMore"></i></p>
+        <p v-else class="toggle-down"><i class="icon-down" @click="toggleMore"></i></p>
       </div>
     </div>
     <!--技能要求-->
     <div class="top_detial_bg">
       <h3><i class="iconfont icon-liwuhe"></i><span>技能要求</span></h3>
       <ul class="skills">
-        <li v-for="skill in job_skills">{{skill}}</li>
+        <li v-for="(skill,index) in job_skills" :key="index">{{skill}}</li>
       </ul>
     </div>
     <!--团队信息-->
@@ -90,7 +90,7 @@
     <h3 class="recommend">推荐职位</h3>
     <div class="top_detial_bg">
       <ul class="recommend_list">
-        <li v-for="list in recommend_jobs">
+        <li v-for="(list,index) in recommend_jobs" :key="index">
           <div class="reco_comp_img"><img :src="list.comp_img" alt=""></div>
           <div class="reco_info">
             <h3>{{list.need_job}}<span>{{job_money}}</span></h3>
@@ -259,6 +259,5 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-@import "../../styles/jobdetial.scss";
+<style lang="stylus" scoped>
 </style>

@@ -8,6 +8,7 @@ yarn-error.log*
 test/unit/coverage
 
 # Editor directories and files
+package-lock.json
 .idea
 *.suo
 *.ntvs*

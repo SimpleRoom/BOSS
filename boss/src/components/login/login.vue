@@ -107,7 +107,6 @@
 
 </script>
 
-<style lang="scss" scoped>
-  @import "../../styles/login.scss";
+<style lang="stylus" scoped>
 
 </style>

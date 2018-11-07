@@ -2,7 +2,7 @@
 	<div class="table">
 		<div class="tablecontent">
 			<ul class="clear">
-				<li v-for="(item,index) in tabData" :class="{active:checkActive(index)}" @click="addClass(index,$emit)">{{item}}</li>
+				<li v-for="(item,index) in tabData" :key="index" :class="{active:checkActive(index)}" @click="addClass(index,$emit)">{{item}}</li>
 			</ul>
 		</div>
 		<div class="bottom">
@@ -114,7 +114,7 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
 	.table{
 		background: #F8F8F8;
 		/*padding-top: 0.013333rem;*/

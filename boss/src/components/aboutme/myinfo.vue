@@ -118,7 +118,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
 	.me-info{
 		position: absolute;
 		width: 100%;
@@ -220,7 +220,11 @@ export default {
 		}
 	}
 	.bottom{
-		a{color: #333;display: block;position: relative;}
+		a{
+			color: #333;
+			display: block;
+			position: relative;
+		}
 		a:after{
 			content: "\e90a";
 			position: absolute;

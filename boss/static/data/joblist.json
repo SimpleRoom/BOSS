@@ -705,7 +705,7 @@
   ],
   "company":[
     {
-      "id":"001",
+      "id":"1",
       "comp_name":"文思海辉",
       "comp_address":"上海市黄浦区",
       "comp_nature":"IT软件",
@@ -716,7 +716,7 @@
       "comp_pic":"/static/images/logo_1.jpg"
     },
     {
-      "id":"002",
+      "id":"2",
       "comp_name":"中澜电子",
       "comp_address":"上海市浦东新区张江",
       "comp_nature":"IT软件",
@@ -727,7 +727,7 @@
       "comp_pic":"/static/images/logo_2.jpg"
     },
     {
-      "id":"003",
+      "id":"3",
       "comp_name":"钱咖",
       "comp_address":"上海市黄浦区五里桥",
       "comp_nature":"移动互联网",
@@ -738,7 +738,7 @@
       "comp_pic":"/static/images/logo_3.jpg"
     },
     {
-      "id":"004",
+      "id":"4",
       "comp_name":"携程旅行网",
       "comp_address":"上海市长宁区华漕",
       "comp_nature":"互联网",
@@ -749,7 +749,7 @@
       "comp_pic":"/static/images/logo_4.jpg"
     },
     {
-      "id":"005",
+      "id":"5",
       "comp_name":"沪江",
       "comp_address":"上海市浦东新区张江",
       "comp_nature":"移动互联网",
@@ -760,7 +760,7 @@
       "comp_pic":"/static/images/logo_5.jpg"
     },
     {
-      "id":"006",
+      "id":"6",
       "comp_name":"唯品会",
       "comp_address":"上海市闵行区华漕",
       "comp_nature":"电子商务",
@@ -771,7 +771,7 @@
       "comp_pic":"/static/images/logo_1.jpg"
     },
     {
-      "id":"007",
+      "id":"7",
       "comp_name":"支付宝",
       "comp_address":"上海市浦东新区",
       "comp_nature":"移动互联网",
@@ -782,7 +782,7 @@
       "comp_pic":"/static/images/logo_2.jpg"
     },
     {
-      "id":"008",
+      "id":"8",
       "comp_name":"哔哩哔哩",
       "comp_address":"上海市浦东新区陆家嘴",
       "comp_nature":"互联网",
@@ -793,7 +793,7 @@
       "comp_pic":"/static/images/logo_3.jpg"
     },
     {
-      "id":"009",
+      "id":"9",
       "comp_name":"借贷宝",
       "comp_address":"上海市徐汇区徐家汇",
       "comp_nature":"互联网",
@@ -804,7 +804,7 @@
       "comp_pic":"/static/images/logo_4.jpg"
     },
     {
-      "id":"010",
+      "id":"10",
       "comp_name":"阿里妈妈",
       "comp_address":"上海市嘉定区",
       "comp_nature":"互联网",

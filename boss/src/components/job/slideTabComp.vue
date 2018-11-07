@@ -3,7 +3,7 @@
     <ul class="slide_one">
       <li v-for="(list,index) in slideTemp"
       :class="{ selected: list.hadSelested }"
-      @click="toggleSelected(list,index)"><span>{{list.name}}</span><i class="iconfont icon-correct"></i></li>
+      @click="toggleSelected(list,index)" :key="index"><span>{{list.name}}</span><i class="iconfont icon-correct"></i></li>
     </ul>
     <div id="mask" class="mask" @click="hide"></div>
   </div>
@@ -69,6 +69,5 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-@import "../../styles/slideTabCom.scss";  
+<style lang="stylus" scoped>
 </style>

@@ -7,7 +7,7 @@
 	    </div>
 	    <div class="head-tab"  ref="wrapper">
 	    	<ul class="clear">
-	    		<li v-for="(item,index) in titleData" @click="tabChange(index)">{{item.title}}<span class="icon-down"></span></li>
+	    		<li v-for="(item,index) in titleData" :key="item.id" @click="tabChange(index)">{{item.title}}<span class="icon-down"></span></li>
 	    	</ul>
 
 	    	 <tableView ref="judge" :tabData="tabData1" :nowIndex="nowIndex" @hide="hide" @indexData="indexData" @btnSure="btnSure" v-show="showHide"></tableView>
@@ -16,7 +16,7 @@
     </div>
     <div class="content">
     	<ul v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="50">
-    		<router-link tag="li" class="clear" v-for="item in InfoData" :key="item.id" :to="{path : /comdetail/+item.id}">
+    		<router-link tag="li" class="clear" v-for="(item,index) in InfoData" :key="index" :to="{path : /comdetail/+item.id}">
     			<div class="right pull-left">
     				<img :src="item.comp_pic" alt="" />
     			</div>
@@ -38,7 +38,7 @@
 <script>
 import tableView from "./table.vue";
 export default {
-  name: "hello",
+  name: "company",
   components: {
     tableView
   },
@@ -51,7 +51,7 @@ export default {
       nowIndex: [0],
       indexSub: [[0], [0], [0]],
       tableIndex: 0,
-      titleData: [{ title: "融资" }, { title: "规模" }, { title: "行业" }],
+      titleData: [{ title: "融资",id:1 }, { title: "规模",id:2 }, { title: "行业",id:3 }],
       tabData: [
         [
           "全部",
@@ -167,7 +167,6 @@ export default {
   // 創建后挂载到root之后调用该钩子函数
   mounted() {
     //		window.addEventListener("scroll", this.willscroll);
-    //  this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top;
   },
   // 该实例被创建还没挂载root之前，ajax可以在这里
   created() {
@@ -178,7 +177,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
 .loadStyle {
   text-align: center;
   color: rgb(118, 213, 207);

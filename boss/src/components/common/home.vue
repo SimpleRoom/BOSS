@@ -52,8 +52,8 @@
 
 </script>
 
-<style lang="scss" scoped>
-    @import "../../styles/mixin.scss";
+<style lang="stylus" scoped>
+@import "../../styles/mixin.styl";
     .navbar{
       width: 100%;
       position: fixed;

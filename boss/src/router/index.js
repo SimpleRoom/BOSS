@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import login from '@/components/login/login'
-// import defaultlogin from '@/components/login/defaultlogin'
 
 // 测试vuex
-const testVuex = resolve => require(['@/components/testVuex/test'], resolve)
+// const testVuex = resolve => require(['@/components/testVuex/test'], resolve)
 
 //1 、组件异步加载，只有在组件被访问的时候才会加载，提高了性能
 const home = resolve => require(['@/components/common/home'], resolve)

@@ -21,7 +21,7 @@
 			</li>
 		</ul>
 		<ol class="clear">
-			<li v-for="(item,index) in tabData" @click="change(index)" :class="{active:index==nowIndex}">
+			<li v-for="(item,index) in tabData" @click="change(index)" :key="index" :class="{active:index==nowIndex}">
 				<a v-if="index==0"  href="javascript:;">{{item.title}}</a>
 				<a v-else  href="javascript:;">{{item.title}}({{InfoData.hot_pos_no}})</a>
 			</li>
@@ -52,7 +52,7 @@
 				</div>
 			</div>
 			<div class=" job" v-show="nowIndex==1">
-				<span v-for="(item,index) in jobData" @click="checkAc(index)" :class="{tive:index==nowIndex1}">{{item}}</span>
+				<span v-for="(item,index) in jobData" @click="checkAc(index)" :key="index" :class="{tive:index==nowIndex1}">{{item}}</span>
 			</div>
 		</div>
 	</div>
@@ -136,7 +136,9 @@ export default {
       this.nowIndex1 = index;
     }
   },
-  mounted() {},
+  mounted() {
+    console.log(this.tabData,`111`)
+  },
   created() {
     this.initApiUrl();
     this.fetchData();
@@ -144,7 +146,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="stylus" scoped>
 .head {
   position: relative;
   .swiper {

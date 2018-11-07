@@ -1,0 +1,142 @@
+.login-bg{
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom,  #A46E92 0%,#27455D 100%);
+  }
+  #login{
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+    // @include center;
+    width: 90%;
+    box-sizing: border-box;
+    & h3{
+      text-align: center;
+      margin-bottom: 1.2rem;
+      sc(1.2rem,#fff);
+    }
+  }
+  .info-login li:nth-child(1),
+  .info-login li:nth-child(2){
+      margin-top: .6rem;
+  }
+  .info-login li:nth-child(3){
+      margin-top: 1.5rem;
+  }
+  .info-login li{
+    height: 1.2rem;
+    line-height: 1.2rem;
+    position: relative;
+    & label{
+      sc(.3rem,#999);
+    }
+    & input{
+      sc(.4rem,#fff);
+      background-image: none;
+      transition:all .3s;
+      background: rgba(154,165,181,.3);
+    }
+    & input[type=text],input[type=password]{
+      width: 100%;
+      line-height: 1.2rem;
+      padding-left:2rem;
+      border-radius: .8rem;
+    }
+    & input[type=text]:focus,input[type=password]:focus{
+      border-color: $vuecolor;
+    }
+    & input[type=submit],input[type=button]{
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      background-color: $vuecolor;
+      border: 1px solid $vuecolor;
+      border-radius: .8rem;
+      -webkit-appearance: none;
+      white-space: nowrap;
+      
+    }
+    & input[type=submit]:hover,input[type=button]:hover{
+      background-color: #42AA83;
+    }
+  }
+.info-login li:nth-child(1) b{
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    color: #fff;
+    font-weight: 100;
+    left: .4rem;
+}
+.info-login li:nth-child(1):before,
+.info-login li:nth-child(2):before{
+    display: table;
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 1px;
+    height: 100%;
+    top: 50%;
+    left: 1.6rem;
+    -webkit-transform: scaleY(0.3) translateY(-50%);
+    transform: scaleY(0.3) translateY(-50%);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+  .info-login li:nth-child(2) span{
+    display: block;
+    width: .6rem;
+    height: .6rem;
+    background: url(/static/images/icon_phone.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: .4rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .info-login li:nth-child(2) b{
+      display: block;
+      height: .6rem;
+      padding: 0 .3rem;
+      line-height: .6rem;
+      position: absolute;
+      border: 1px solid #fff;
+      border-radius: .3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      right: .4rem;
+      color: #fff;
+      font-weight: 100;
+      font-size: .3rem;
+      z-index: 10;
+  }
+  .login-footer{
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      & a{
+          line-height: 1.8rem;
+          color: #fff;
+          display: block;
+          text-align: center;
+          font-size: .35rem;
+      }
+  }
+  .login-footer:before{
+    display: table;
+    content: '';
+    position: absolute;
+    left: 0;
+    background: #42b983;
+    width: 100%;
+    height: 1px;
+    -webkit-transform: scaleY(0.3);
+    transform: scaleY(0.3);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }

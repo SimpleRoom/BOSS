@@ -1,0 +1,175 @@
+.slide_one{
+    background: #E9EFEF;
+    padding: .4rem .6rem;
+    li{
+        
+        color: #8D8D8D;
+        overflow: hidden;
+        i{
+            margin-left: .15rem;
+        }
+    }
+    .selected{
+        color: $vuecolor;
+    }
+}
+.slide_one li span,
+.slide_one li i{
+    float: left;
+    line-height: 1.2rem;
+}
+.slide_one li i{
+    display: none;
+}
+.slide_one li.selected i{
+    display: block;
+}
+.mask{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 99;
+}
+
+// tab_bar
+.tab_bar li{
+    line-height: 1.2rem;
+    text-align: center;
+    sc(.4rem,#999);
+    i{
+        margin-right: .15rem;
+    }
+    border-bottom: 2px solid transparent;
+}
+.tab_bar li.on{
+    color: $vuecolor;
+    border-bottom: 2px solid $vuecolor;
+}
+
+.tab_position{
+    overflow: hidden;
+}
+.tab_position_left,
+.tab_position_right{
+    float: left;
+    height: 10rem;
+    width: 50%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;  
+}
+.tab_position_right{
+    background: #F8F8F8;
+}
+.tab_position_left p,
+.tab_position_right p{
+    text-align: center;
+    sc(.35rem,#999);
+    line-height: 1.2rem;
+    overflow: hidden;
+}
+.tab_position_left p.on{
+    background: #F2F2F2;
+    color: $vuecolor;
+}
+
+.tab_position_right p i{
+    margin-left: .15rem;
+    width: .4rem;
+    visibility: hidden;
+}
+.tab_position_right p.ishad{
+    color: $vuecolor;
+}
+.tab_position_right p.ishad i{
+    visibility: visible;
+}
+// reset_city
+.reset_city{
+    position: relative;
+    background: #fff;
+}
+/*reset_city 移动端1px*/
+.reset_city:before,
+.reset_city:after{
+    display: table;
+    content: '';
+    position: absolute;
+    background: #E5E5E5;
+    width: 100%;
+    height: 1px;
+    -webkit-transform: scaleY(0.3);
+    transform: scaleY(0.1);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+} 
+.reset_city:before{
+    left: 0;
+    top: 0;
+}
+.reset_city:after{
+    left: 0;
+    bottom: 0;
+}
+.reset_city li{
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    color: #999;
+    position: relative;
+}
+
+.reset_city li.on{
+    color: $vuecolor;
+}
+
+// toggle_cities
+.toggle_cities p{
+    text-align: center;
+    height: 1rem;
+    line-height: 1rem;
+    color: #999;
+}
+// same_mask
+.same_mask{
+    overflow: hidden;
+    background: #F8F8F8;
+}
+.slide_sametab{
+    padding: 0 .35rem;
+    padding-bottom: .3rem;
+    height: 10rem;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.same_list ul{
+    overflow: hidden;
+}
+
+.same_list{
+    color: #808080;
+    margin-top: .4rem;
+}
+.same_list p{
+    line-height: .8rem;
+}
+.same_list li{
+    float: left;
+    background: #fff;
+    border: 1px solid #CECECE;
+    border-radius: .15rem;
+    text-align: center;
+    margin-right: .45rem;
+    margin-bottom: .2rem;
+    min-width: 1.8rem;
+    height: .7rem;
+    line-height: .7rem;
+    padding: 0 .1rem;
+}
+.same_list li.actived{
+    background: $vuecolor;
+    color: #fff;
+    border-color: $vuecolor;
+}

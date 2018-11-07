@@ -12,7 +12,7 @@ import axios from 'axios'
 import "./js/flexible"
 //导入字体样式
 import "./styles/fontstyle.css"
-import "./styles/base.scss"
+import "./styles/index.styl"
 
 
 //其他页面在使用axios的时候直接  this.$http就可以了

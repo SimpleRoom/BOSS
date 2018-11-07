@@ -4,7 +4,7 @@
       <div class="message_box">
           <span v-for="(nav,index) in messageNav"
            :class="{on:nav.isOn}"
-           @click="toggleOn(nav,index)">{{nav.title}}</span>
+           @click="toggleOn(nav,index)" :key="index">{{nav.title}}</span>
       </div>
     </div>
     <div class="message_show">
@@ -32,11 +32,11 @@
             <ul class="inter_bar flex_parent">
                 <li v-for="(item,index) in listBar"
                  :class="{ isHad:item.isHad }" class="flex_child"
-                 @click="toggleTab(item,index)">{{ item.title }}</li>
+                 @click="toggleTab(item,index)" :key="index">{{ item.title }}</li>
             </ul>
         </div>
         <div class="interact-list">
-          <div class="interact-same" v-for="(same,subScript) in lists" >
+          <div class="interact-same" v-for="(same,subScript) in lists" :key="subScript">
             <div class="inter-img"><img :src="same.comp_pic" alt=""></div>
             <div class="interact-msg">
               <h3 class="clear">{{same.hot_pos_name}} <span>{{same.end_time}}</span></h3>
@@ -145,7 +145,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-@import "../../styles/message.scss";  
+<style lang="stylus" scoped>
 
 </style>

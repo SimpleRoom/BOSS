@@ -17,7 +17,7 @@
                 <ul class="flex_parent">
                     <li class="flex_child" v-for="(nav,index) in navlist"
                      :class="{ selected: nav.isSelected }"
-                     @click="changeColor(nav,index)">
+                     @click="changeColor(nav,index)" :key="index">
                      {{nav.title}}<span class="icon-down"></span>
                     </li>
                 </ul>
@@ -25,14 +25,14 @@
                     <slideTabComp v-show="navlist[0].isSelected" @toParent="fromChild" @hide="hide" v-if="slideIndex==0" :slideTemp="slideTemp"></slideTabComp>
                     <selectCityComp v-show="navlist[1].isSelected" @hide="hide" v-else-if="slideIndex==1"></selectCityComp>
                     <compRequireComp v-show="navlist[2].isSelected" @hide="hide" v-else-if="slideIndex==2" :indexArr="indexArr[0]" :slideTemp="slideTemp"></compRequireComp>
-                    <compRequireComp v-show="navlist[3].isSelected" @hide="hide" v-else="slideIndex==3" :indexArr="indexArr[1]" :slideTemp="slideTemp"></compRequireComp>
+                    <compRequireComp v-show="navlist[3].isSelected" @hide="hide" else="slideIndex==3" :indexArr="indexArr[1]" :slideTemp="slideTemp"></compRequireComp>
                 </keep-alive>
             </div>
         </div>
         <!--列表-->
         <div class="job_content" id="jobcontent" ref="wrapper">
             <ul class="page-infinite-list job_lists" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="50">
-                <li v-for="job in jobs">
+                <li v-for="(job,index) in jobs" :key="index">
                     <router-link @click="changeDetialId(job)" :to="{ name: 'detail', params: { jobId: job.id }}">
                         <h4 class="clear">{{job.need_job}}<span class="inforight">{{job.job_money}}</span>
                         </h4>
@@ -292,6 +292,5 @@
 
 </script>
 
-<style lang="scss" scoped>
-    @import "../../styles/main.scss";  
+<style lang="stylus" scoped>
 </style>

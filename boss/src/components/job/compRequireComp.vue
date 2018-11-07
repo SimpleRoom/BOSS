@@ -2,12 +2,12 @@
   <div class="same_mask">
     <!--  -->
       <div class="slide_sametab">
-          <div class="same_list" v-for="(outList,index) in slideTemp">
+          <div class="same_list" v-for="(outList,index) in slideTemp" :key="index">
             <p>{{outList.title}}</p>
             <ul>
               <li v-for="(inner,innerIndex) in outList.list"
               :class="{actived:checkOut(index,innerIndex)}"
-              @click="addClass(outList,index,innerIndex)">{{inner}}</li>
+              @click="addClass(outList,index,innerIndex)" :key="innerIndex">{{inner}}</li>
             </ul>
           </div>
         </div>
@@ -151,6 +151,5 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-@import "../../styles/slideTabCom.scss";  
+<style lang="stylus" scoped>
 </style>

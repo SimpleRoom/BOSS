@@ -2,7 +2,7 @@
   <div class="mesInteract">
     <div class="inter_header">
         <ul class="inter_bar flex_parent">
-            <li v-for="(item,index) in listBar" :class="{ isHad:item.isHad }" class="flex_child">{{ item.title }}</li>
+            <li v-for="(item,index) in listBar" :class="{ isHad:item.isHad }" :key="index" class="flex_child">{{ item.title }}</li>
         </ul>
     </div>
     <!-- 数据列表 -->
@@ -77,6 +77,5 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  @import "../../styles/message.scss";  
+<style lang="stylus" scoped>
 </style>
