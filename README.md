@@ -1,8 +1,6 @@
 # boss
 
-> 一、Just like BOSS
-
-## Build Setup
+> 一、如何使用
 
 ``` bash
 # install dependencies
