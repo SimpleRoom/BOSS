@@ -27,8 +27,8 @@ npm test
 > 二、文件结构
 
 ```shell
-		┌── assets      资源文件
-		├── components  页面以及组件
+	┌── assets      资源文件
+	├── components  页面以及组件
 	     ├── js          插件和工具
 	     ├── router      路由配置
 	src──├── styles      页面样式
