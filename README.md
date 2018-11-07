@@ -35,7 +35,7 @@ npm test
 	     ├── vuex        vuex配置，暂时未使用
 	     ├── App.vue 	页面
 	     └── main.js  	页面配置入口
-	┌── data    页面所需静态JOSON数据
+	        ┌── data    页面所需静态JOSON数据
 	static──├── images  页面所需静态图片
 
 ```
