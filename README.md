@@ -44,4 +44,8 @@ npm test
 
 [https://wjf444128852.github.io/demo01/BOSS/#/](https://wjf444128852.github.io/demo01/BOSS/#/)
 
+### License
+
+[MIT](http://opensource.org/licenses/MIT)
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
