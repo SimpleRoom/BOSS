@@ -112,10 +112,12 @@ export default {
   mounted() {
     //加载之前先给一个可以登录的用户
     const admin = {
-      session_id: 123,
+      session_id: Math.random().toString(32).slice(2),
       userid: '13800000000',
       userpwd: '123456',
     };
+    // 使用：改变session_id
+    this.$store.commit("logIn/getSession_id", admin.session_id)
     this.userlist.push(admin)
     this.userules.userid = admin.userid
     this.userules.userpwd = admin.userpwd

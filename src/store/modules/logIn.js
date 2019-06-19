@@ -1,7 +1,7 @@
 // initial state
 const state = {
     session_id: "",
-    user: "",
+    userid: "",
     userImage: "",
 }
 
@@ -14,7 +14,7 @@ const mutations = {
         state.session_id = value
     },
     getUser(state, value) {
-        state.usermobile = value
+        state.userid = value
     },
     getUserImage(state, value) {
         state.userImage = value
