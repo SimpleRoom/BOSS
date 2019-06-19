@@ -32,8 +32,8 @@ npm test
 	     ├── js          插件和工具
 	     ├── router      路由配置
 	src──├── styles      页面样式
-			 ├             ┌── module/login：vuex登录session_id简单使用
-	     ├── store   ──├──
+			 ├
+	     ├── store      module/login：vuex登录session_id简单使用
 			 ├ 
 	     ├── App.vue 	页面
 	     └── main.js  	页面配置入口
