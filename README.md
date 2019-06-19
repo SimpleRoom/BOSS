@@ -32,7 +32,9 @@ npm test
 	     ├── js          插件和工具
 	     ├── router      路由配置
 	src──├── styles      页面样式
-	     ├── vuex        vuex配置，暂时未使用
+			 ├             ┌── module/login：vuex登录session_id简单使用
+	     ├── store   ──├──
+			 ├ 
 	     ├── App.vue 	页面
 	     └── main.js  	页面配置入口
 	        ┌── data    页面所需静态JOSON数据
