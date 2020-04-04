@@ -31,7 +31,7 @@
     methods:{
       fenchData(){
         const _this=this;
-        this.$http.get('/static/data/message.json').then((res)=>{
+        this.$http.get('/boss/static/data/message.json').then((res)=>{
           var res1 = res.data;
           // console.log(res1.data.chat)
           if(res.data.code == 0){

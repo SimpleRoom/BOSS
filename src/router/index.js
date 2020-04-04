@@ -58,6 +58,7 @@ const scrollBehavior = (to, from, savedPosition) => {
 
 export default new Router({
   mode: 'history',
+  base: '/boss/',
   scrollBehavior,
   routes: [
       {

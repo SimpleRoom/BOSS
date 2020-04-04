@@ -24,7 +24,7 @@ export default {
   methods:{
     fenchData(){
       const _this=this;
-      this.$http.get('/static/data/message.json').then((res)=>{
+      this.$http.get('/boss/static/data/message.json').then((res)=>{
         if(res.data.code==0){
           _this.messageData=res.data.chat;
           console.log(_this.messageData)

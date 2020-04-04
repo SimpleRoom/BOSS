@@ -30,7 +30,7 @@
 			<div v-show="nowIndex==0">
 				<div class="info">
 					<h3>公司介绍</h3>
-					<p :class="{showMore:this.isMore}">{{InfoData.detial}}</p>	
+					<p :class="{showMore:this.isMore}">{{InfoData.detial}}</p>
 				</div>
 				<div class="loadMore">
 					<span v-if="isMore"  @click="loadMore" class="icon-down"></span>
@@ -46,7 +46,6 @@
 							<p>{{InfoData.comp_name}}</p>
 							<p>XXXXXXXX</p>
 							<p>XXXXXXXXX</p>
-							
 						</div>
 					</div>
 				</div>
@@ -92,7 +91,7 @@ export default {
       // let domain="https://"+window.location.host+"/";
       // 本地
       let domain = "http://" + window.location.host + "/";
-      let str = "static/data/comdetail.json";
+      let str = "boss/static/data/comdetail.json";
       this.apiUrl = domain + str;
       // console.log(this.apiUrl);
     },
