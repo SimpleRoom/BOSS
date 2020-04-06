@@ -44,7 +44,7 @@ npm test
 
 > 三、在线体验
 
-[https://wjf444128852.github.io/demo01/BOSS/#/](https://wjf444128852.github.io/demo01/BOSS/#/)
+[https://jiucheng-front.github.io/demo01/BOSS/#/](https://jiucheng-front.github.io/demo01/BOSS/#/)
 
 ### License
 
